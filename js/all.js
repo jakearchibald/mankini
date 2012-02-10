@@ -1,7 +1,10 @@
 (function() {
 	var scripts = [
 		'jquery-1.7.1.js',
-		'test.js'
+		'jquery.transition.js',
+		'jslides.js',
+		'jslides.Presentation.js',
+		'main.js'
 	];
 
 	var scriptPath = (function() {

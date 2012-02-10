@@ -1,5 +1,5 @@
 html {
-	background: #fff;
+	background: #000;
 	overflow: hidden;
 }
 
@@ -8,6 +8,11 @@ html, body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
+}
+
+body {
+	-webkit-perspective: 823;
+	-webkit-perspective-origin: 50% 50%;
 }
 
 /* Reset */
@@ -128,6 +133,8 @@ html, body {
 	background-image: -o-linear-gradient($angle, $start, $end);
 	background-image: linear-gradient($angle, $start, $end);
 }
+
+$prefixes: ('-webkit-', '-moz-', '-o-', '');
 
 /********************************************
  ***************** Includes *****************
