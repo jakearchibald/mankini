@@ -13,7 +13,7 @@
 		console.log('Second state');
 	});
 
-	slide.setTransition( jslides.transitions.cubeSpin );
+	slide.setTransition( jslides.transitions.slideFromRight );
 
 
 	slide = presentation.newSlide();
