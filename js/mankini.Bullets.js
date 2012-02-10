@@ -47,5 +47,5 @@
 		}
 	};
 
-	jslides.Bullets = Bullets;
+	mankini.Bullets = Bullets;
 })();

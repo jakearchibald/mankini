@@ -1,6 +1,6 @@
 (function() {
 	function Presentation( container ) {
-		this.$container = $('<div class="jslides-presentation"/>').appendTo( container );
+		this.$container = $('<div class="mankini-presentation"/>').appendTo( container );
 		this._slides = [];
 		this._slideIndex = 0;
 	}
@@ -8,7 +8,7 @@
 	var PresentationProto = Presentation.prototype;
 
 	PresentationProto.newSlide = function() {
-		var slide = new jslides.Slide( this );
+		var slide = new mankini.Slide( this );
 		this._slides.push( slide );
 		return slide;
 	};
@@ -45,5 +45,5 @@
 		});
 	};
 
-	jslides.Presentation = Presentation;
+	mankini.Presentation = Presentation;
 })();

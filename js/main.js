@@ -1,5 +1,5 @@
 (function() {
-	var presentation = new jslides.Presentation( document.body );
+	var presentation = new mankini.Presentation( document.body );
 
 	var slide = presentation.newSlide();
 	var bullets1, bullets2;
@@ -7,7 +7,7 @@
 	slide.newState('Test State').addAction(function( animate, $slide ) {
 
 		console.log('State!');
-		bullets1 = new jslides.Bullets();
+		bullets1 = new mankini.Bullets();
 		bullets1.$container.appendTo( $slide );
 		bullets1.add( animate, ["Hello", "World"] );
 
@@ -22,14 +22,14 @@
 	});
 
 
-	slide.setTransition( jslides.transitions.cubeSpin );
+	slide.setTransition( mankini.transitions.cubeSpin );
 
 
 	slide = presentation.newSlide();
 
 	slide.newState('Second slide state').addAction(function( animate, $slide ) {
 		console.log('New slide');
-		bullets2 = new jslides.Bullets();
+		bullets2 = new mankini.Bullets();
 		bullets2.$container.appendTo( $slide );
 		bullets2.add( animate, ["Hi"] );
 	});

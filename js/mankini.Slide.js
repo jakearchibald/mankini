@@ -3,14 +3,14 @@
 		this._presentation = presentation;
 		this._states = [];
 		this._stateIndex = 0;
-		this._transitionFunc = jslides.transitions.swap;
+		this._transitionFunc = mankini.transitions.swap;
 		this.$container = $('<section class="slide"/>');
 	}
 
 	var SlideProto = Slide.prototype;
 
 	SlideProto.newState = function(name) {
-		var state = new jslides.State(this, name);
+		var state = new mankini.State(this, name);
 		this._states.push( state );
 		return state;
 	};
@@ -20,7 +20,7 @@
 	};
 
 	SlideProto.transition = function(animate, newSlide) {
-		var transitionFunc = animate ? this._transitionFunc : jslides.transitions.swap;
+		var transitionFunc = animate ? this._transitionFunc : mankini.transitions.swap;
 		transitionFunc( this._presentation, this, newSlide );
 	};
 
@@ -37,5 +37,5 @@
 		this._states[ ++this._stateIndex ].go( animate );
 	};
 
-	jslides.Slide = Slide;
+	mankini.Slide = Slide;
 })();

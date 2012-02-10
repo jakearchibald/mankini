@@ -58,5 +58,5 @@
 		slideFromLeft:  slideFrom(false)
 	};
 
-	jslides.transitions = transitions;
+	mankini.transitions = transitions;
 })();

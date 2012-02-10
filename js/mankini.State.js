@@ -20,5 +20,5 @@
 		return this;
 	};
 
-	jslides.State = State;
+	mankini.State = State;
 })();

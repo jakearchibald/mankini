@@ -2,12 +2,12 @@
 	var scripts = [
 		'jquery-1.7.1.js',
 		'jquery.transition.js',
-		'jslides.js',
-		'jslides.Presentation.js',
-		'jslides.Slide.js',
-		'jslides.State.js',
-		'jslides.Bullets.js',
-		'jslides.transitions.js',
+		'mankini.js',
+		'mankini.Presentation.js',
+		'mankini.Slide.js',
+		'mankini.State.js',
+		'mankini.Bullets.js',
+		'mankini.transitions.js',
 		'main.js'
 	];
 
