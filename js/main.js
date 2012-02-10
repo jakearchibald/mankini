@@ -13,6 +13,8 @@
 		console.log('Second state');
 	});
 
+	slide.setTransition( jslides.transitions.cubeSpin );
+
 
 	slide = presentation.newSlide();
 

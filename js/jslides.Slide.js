@@ -4,7 +4,7 @@
 		this._states = [];
 		this._stateIndex = 0;
 		this._transitionFunc = jslides.transitions.swap;
-		this.$container = $('<div class="slide"/>');
+		this.$container = $('<section class="slide"/>');
 	}
 
 	var SlideProto = Slide.prototype;

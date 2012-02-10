@@ -1,6 +1,6 @@
 (function() {
 	function Presentation( container ) {
-		this.$container = $('<section class="jslides-presentation"/>').appendTo( container );
+		this.$container = $('<div class="jslides-presentation"/>').appendTo( container );
 		this._slides = [];
 		this._slideIndex = 0;
 	}
@@ -39,8 +39,9 @@
 	PresentationProto._initControls = function() {
 		var presentation = this;
 		
-		this.$container.click(function() {
+		this.$container.click(function(event) {
 			presentation.next( true );
+			event.preventDefault();
 		});
 	};
 

@@ -4,6 +4,5 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	-webkit-perspective: 823;
-	-webkit-perspective-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
 }
