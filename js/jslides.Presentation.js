@@ -17,6 +17,7 @@
 		var slide = this._slides[0];
 		this.$container.append( slide.$container );
 		slide.init( true );
+		this._initControls();
 	};
 
 	PresentationProto.next = function( animate ) {
@@ -33,6 +34,14 @@
 				slide.transition( animate, nextSlide );
 			}
 		}
+	};
+
+	PresentationProto._initControls = function() {
+		var presentation = this;
+		
+		this.$container.click(function() {
+			presentation.next( true );
+		});
 	};
 
 	jslides.Presentation = Presentation;
