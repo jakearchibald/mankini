@@ -10,104 +10,99 @@ html, body {
   width: 100%;
   height: 100%; }
 
-/* line 13, all.scss */
-body {
-  -webkit-perspective: 823;
-  -webkit-perspective-origin: 50% 50%; }
-
 /* Reset */
-/* line 19, all.scss */
+/* line 14, all.scss */
 ul, ol, li, form, dl, dt, dd {
   padding: 0;
   margin: 0;
   display: block; }
 
-/* line 24, all.scss */
+/* line 19, all.scss */
 ul, ol {
   list-style: none; }
 
-/* line 28, all.scss */
+/* line 23, all.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 31, all.scss */
+/* line 26, all.scss */
 img {
   -ms-interpolation-mode: bicubic; }
 
 /* Text/Fonts */
-/* line 33, all.scss */
+/* line 28, all.scss */
 body, select, input, textarea {
   color: #000; }
 
-/* line 36, all.scss */
+/* line 31, all.scss */
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small; }
 
-/* line 40, all.scss */
+/* line 35, all.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif; }
 
-/* line 41, all.scss */
+/* line 36, all.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative; }
 
-/* line 42, all.scss */
+/* line 37, all.scss */
 sup {
   top: -0.5em; }
 
-/* line 43, all.scss */
+/* line 38, all.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 44, all.scss */
+/* line 39, all.scss */
 p {
   line-height: 1.4; }
 
 /* Links */
-/* line 48, all.scss */
+/* line 43, all.scss */
 a img {
   border: 0; }
 
-/* line 52, all.scss */
+/* line 47, all.scss */
 a:link, a:visited {
   text-decoration: none;
   color: #289de9; }
 
-/* line 57, all.scss */
+/* line 52, all.scss */
 a:hover, a:active {
   text-decoration: underline; }
 
 /* Forms */
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-/* line 62, all.scss */
+/* line 57, all.scss */
 select, input, textarea, button {
   font: 99% sans-serif;
   margin: 0; }
 
-/* line 64, all.scss */
+/* line 59, all.scss */
 input, select {
   vertical-align: middle;
   _vertical-align: text-bottom; }
 
-/* line 69, all.scss */
+/* line 64, all.scss */
 input[type="radio"] {
   vertical-align: text-bottom; }
 
-/* line 70, all.scss */
+/* line 65, all.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
   *vertical-align: baseline; }
 
-/* line 72, all.scss */
+/* line 67, all.scss */
 textarea, input {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
-/* line 77, all.scss */
+/* line 72, all.scss */
 button.custom {
   padding: 0;
   margin: 0;
@@ -119,16 +114,16 @@ button.custom {
   font-size: 1em;
   width: auto; }
 
-/* line 88, all.scss */
+/* line 83, all.scss */
 button.custom::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 92, all.scss */
+/* line 87, all.scss */
 legend {
   *margin-left: -7px; }
 
-/* line 94, all.scss */
+/* line 89, all.scss */
 label, input[type="button"], input[type="submit"], input[type="image"], button {
   cursor: pointer; }
 
@@ -167,6 +162,16 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /********************************************
  ***************** Includes *****************
  ********************************************/
+/* line 1, _presentation.scss */
+.jslides-presentation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-perspective: 823;
+  -webkit-perspective-origin: 50% 50%; }
+
 /* line 1, _slide.scss */
 .slide {
   width: 100%;
@@ -175,6 +180,4 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   left: 0;
   top: 0;
   background: url("imgs/slide/bg.jpg");
-  background-size: 100% 100%;
-  -webkit-transform: rotateY(0);
-  -webkit-transform-origin: 50% 50% -645px; }
+  background-size: 100% 100%; }

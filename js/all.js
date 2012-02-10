@@ -4,6 +4,9 @@
 		'jquery.transition.js',
 		'jslides.js',
 		'jslides.Presentation.js',
+		'jslides.Slide.js',
+		'jslides.State.js',
+		'jslides.transitions.js',
 		'main.js'
 	];
 
