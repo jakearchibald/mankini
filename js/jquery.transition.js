@@ -117,7 +117,10 @@
 		this.queue(function(next) {
 			var $elm = $(this);
 			
-			function complete() {
+			function complete(event) {
+				if ( event.target != $elm[0] ) {
+					return;
+				}
 				$elm.unbind(transitionend, complete);
 				$elm.css(transitionProp, '');
 				opts.complete($elm);
