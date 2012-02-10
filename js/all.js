@@ -6,6 +6,7 @@
 		'jslides.Presentation.js',
 		'jslides.Slide.js',
 		'jslides.State.js',
+		'jslides.Bullets.js',
 		'jslides.transitions.js',
 		'main.js'
 	];

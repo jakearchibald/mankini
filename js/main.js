@@ -2,28 +2,41 @@
 	var presentation = new jslides.Presentation( document.body );
 
 	var slide = presentation.newSlide();
+	var bullets1, bullets2;
 
-	slide.newState('Test State').addAction(function( animate, $container ) {
+	slide.newState('Test State').addAction(function( animate, $slide ) {
+
 		console.log('State!');
-	}).addAction(function( animate, $container ) {
+		bullets1 = new jslides.Bullets();
+		bullets1.$container.appendTo( $slide );
+		bullets1.add( animate, ["Hello", "World"] );
+
+	}).addAction(function( animate, $slide ) {
 		console.log('Another part of the state');
 	});
 
-	slide.newState('Part of a new state').addAction(function( animate, $container ) {
+
+	slide.newState('Part of a new state').addAction(function( animate, $slide ) {
+		bullets1.add( animate, ["Foo", "Bar"] );
 		console.log('Second state');
 	});
 
-	slide.setTransition( jslides.transitions.slideFromRight );
+
+	slide.setTransition( jslides.transitions.cubeSpin );
 
 
 	slide = presentation.newSlide();
 
-	slide.newState('Second slide state').addAction(function( animate, $container ) {
+	slide.newState('Second slide state').addAction(function( animate, $slide ) {
 		console.log('New slide');
+		bullets2 = new jslides.Bullets();
+		bullets2.$container.appendTo( $slide );
+		bullets2.add( animate, ["Hi"] );
 	});
 
-	slide.newState('Second slide, second state').addAction(function( animate, $container ) {
+	slide.newState('Second slide, second state').addAction(function( animate, $slide ) {
 		console.log('Second slide, second state');
+		bullets2.add( animate, ["Will this work?"] );
 	});
 
 	presentation.start();

@@ -173,8 +173,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden; }
+  -webkit-transform-style: preserve-3d; }
 
 /* line 1, _slide.scss */
 .slide {
@@ -184,5 +183,4 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   left: 0;
   top: 0;
   background: url("imgs/slide/bg.jpg");
-  background-size: 100% 100%;
-  -webkit-backface-visibility: hidden; }
+  background-size: 100% 100%; }
