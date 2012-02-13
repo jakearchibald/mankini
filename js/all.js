@@ -17,6 +17,10 @@
 	})();
 
 	scripts.forEach(function(src) {
-		document.write('<script src="' + scriptPath + src + '"></script>');
+		/*var script = document.createElement('script');
+		script.defer = true;
+		script.src = scriptPath + src;
+		document.body.appendChild(script);*/
+		document.write('<script src="' + scriptPath + src + '" defer></script>');
 	});
 })();

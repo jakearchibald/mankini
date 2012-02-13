@@ -36,12 +36,42 @@
 		}
 	};
 
+	PresentationProto.prev = function() {
+		var slide = this._slides[ this._slideIndex ],
+			prevSlide;
+
+		if ( slide.hasPrev() ) {
+			slide.prev();
+		}
+		else {
+			prevSlide = this._slides[ --this._slideIndex ];
+
+			if ( prevSlide ) {
+				slide.transition( false, prevSlide );
+				prevSlide.gotoLastState();
+			}
+		}
+	};
+
 	PresentationProto._initControls = function() {
 		var presentation = this;
 		
 		this.$container.click(function(event) {
 			presentation.next( true );
 			event.preventDefault();
+		});
+
+		$(document).keydown(function(event) {
+			switch(event.which) {
+				case 37: // left
+					presentation.prev();
+					event.preventDefault();
+					break;
+				case 39: // right
+					presentation.next( false );
+					event.preventDefault();
+					break;
+			}
 		});
 	};
 

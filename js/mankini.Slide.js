@@ -2,9 +2,10 @@
 	function Slide( presentation ) {
 		this._presentation = presentation;
 		this._states = [];
-		this._stateIndex = 0;
 		this._transitionFunc = mankini.transitions.swap;
 		this.$container = $('<section class="slide"/>');
+		// Defined elsewhere
+		//this._stateIndex = 0;
 	}
 
 	var SlideProto = Slide.prototype;
@@ -26,6 +27,7 @@
 
 	SlideProto.init = function(animate) {
 		this.$container.empty();
+		this._stateIndex = 0;
 		this._states[0].go( animate );
 	};
 
@@ -33,8 +35,29 @@
 		return !!this._states[ this._stateIndex + 1 ];
 	};
 
+	SlideProto.hasPrev = function() {
+		return this._stateIndex !== 0;
+	};
+
+	SlideProto.prev = function() {
+		var target = this._stateIndex - 1;
+		
+		this._stateIndex = 0;
+		this.init( false );
+
+		while ( this._stateIndex < target ) {
+			this.next( false );
+		}
+	};
+
 	SlideProto.next = function(animate) {
 		this._states[ ++this._stateIndex ].go( animate );
+	};
+
+	SlideProto.gotoLastState = function() {
+		for ( var target = this._states.length -1; this._stateIndex < target; ) {
+			this.next(false);
+		}
 	};
 
 	mankini.Slide = Slide;
