@@ -4,7 +4,9 @@
 	var slide = presentation.newSlide();
 	var bullets1, bullets2;
 
-	slide.newState('Test State').addAction(function( animate, $slide ) {
+	var notes = new mankini.Notes().setNotes(['Hello', 'World']);
+
+	slide.newState().addAction(function( animate, $slide ) {
 
 		console.log('State!');
 		bullets1 = new mankini.slide.Bullets();
@@ -16,7 +18,7 @@
 	});
 
 
-	slide.newState('Part of a new state').addAction(function( animate, $slide ) {
+	slide.newState().addAction(function( animate, $slide ) {
 		bullets1.add( animate, ["Foo", "Bar"] );
 		console.log('Second state');
 	});
@@ -27,14 +29,14 @@
 
 	slide = presentation.newSlide();
 
-	slide.newState('Second slide state').addAction(function( animate, $slide ) {
+	slide.newState().addAction(function( animate, $slide ) {
 		console.log('New slide');
 		bullets2 = new mankini.slide.Bullets();
 		bullets2.$container.appendTo( $slide );
 		bullets2.add( animate, ["Hi"] );
 	});
 
-	slide.newState('Second slide, second state').addAction(function( animate, $slide ) {
+	slide.newState().addAction(function( animate, $slide ) {
 		console.log('Second slide, second state');
 		bullets2.add( animate, ["Will this work?"] );
 	});

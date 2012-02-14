@@ -10,8 +10,8 @@
 
 	var SlideProto = Slide.prototype;
 
-	SlideProto.newState = function(name) {
-		var state = new mankini.State(this, name);
+	SlideProto.newState = function() {
+		var state = new mankini.State(this);
 		this._states.push( state );
 		return state;
 	};

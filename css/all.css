@@ -184,3 +184,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   top: 0;
   background: url("imgs/slide/bg.jpg");
   background-size: 100% 100%; }
+
+/* line 1, _notes.scss */
+.notes-page {
+  background: #fff; }

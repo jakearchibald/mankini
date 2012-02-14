@@ -1,6 +1,5 @@
 (function() {
-	function State(slide, name) {
-		this.name = name;
+	function State(slide) {
 		this.slide = slide;
 		this._actions = [];
 	}
