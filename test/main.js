@@ -4,7 +4,7 @@
 	var slide = presentation.newSlide();
 	var bullets1, bullets2;
 
-	var notes = new mankini.Notes().setNotes(['Hello', 'World']);
+	var notes = new mankini.Notes().setNotes(['Hello', 'World']).setNext('This is next').startTime();
 
 	slide.newState().addAction(function( animate, $slide ) {
 

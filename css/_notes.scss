@@ -1,3 +1,33 @@
-.notes-page {
+.notes-page body {
 	background: #fff;
+	font: normal 60px/1.4 sans-serif;
+}
+
+.slide-notes li,
+.slide-next,
+.notes-page time {
+	padding: 5px 20px;
+}
+
+.slide-notes li {
+	display: list-item;
+
+	&:nth-child(even) {
+		background: #eee;
+	}
+}
+
+.slide-next {
+	float: right;
+	background: #ccc;
+	margin: 0 0 10px;
+}
+
+.notes-page time {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 300px;
+	text-align: right;
+	background: #ccc;
 }
