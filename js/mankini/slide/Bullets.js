@@ -47,5 +47,5 @@
 		}
 	};
 
-	mankini.Bullets = Bullets;
+	mankini.slide.Bullets = Bullets;
 })();

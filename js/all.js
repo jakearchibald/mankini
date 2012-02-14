@@ -2,13 +2,13 @@
 	var scripts = [
 		'jquery-1.7.1.js',
 		'jquery.transition.js',
-		'mankini.js',
-		'mankini.Presentation.js',
-		'mankini.Slide.js',
-		'mankini.State.js',
-		'mankini.Bullets.js',
-		'mankini.transitions.js',
-		'main.js'
+		'mankini/base.js',
+		'mankini/Presentation.js',
+		'mankini/Slide.js',
+		'mankini/State.js',
+		'mankini/transitions.js',
+		'mankini/slide/base.js',
+		'mankini/slide/Bullets.js'
 	];
 
 	var scriptPath = (function() {

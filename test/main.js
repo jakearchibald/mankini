@@ -7,7 +7,7 @@
 	slide.newState('Test State').addAction(function( animate, $slide ) {
 
 		console.log('State!');
-		bullets1 = new mankini.Bullets();
+		bullets1 = new mankini.slide.Bullets();
 		bullets1.$container.appendTo( $slide );
 		bullets1.add( animate, ["Hello", "World"] );
 
@@ -29,7 +29,7 @@
 
 	slide.newState('Second slide state').addAction(function( animate, $slide ) {
 		console.log('New slide');
-		bullets2 = new mankini.Bullets();
+		bullets2 = new mankini.slide.Bullets();
 		bullets2.$container.appendTo( $slide );
 		bullets2.add( animate, ["Hi"] );
 	});
