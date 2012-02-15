@@ -1,6 +1,10 @@
 (function() {
 	var ui = mankini.slide;
 
+	function toArray(arrayLike) {
+		return Array.prototype.slice.call(arrayLike, 0);
+	}
+
 	function Builder(presentation) {
 		this._presentation = presentation;
 		this._notes = new mankini.Notes();
@@ -30,7 +34,6 @@
 					event.preventDefault();
 					break;
 				case 84: // t
-					console.log('hi');
 					notes.startTime();
 					event.preventDefault();
 					break;
@@ -78,12 +81,11 @@
 	};
 
 	BuilderProto.stateBullets = function() {
-		var bulletStrings = Array.prototype.slice.call(arguments, 0);
-		return this.state( bulletStrings[0] ).bullets.apply( this, bulletStrings );
+		return this.state( arguments[0] ).bullets.apply( this, arguments );
 	};
 
 	BuilderProto.bullets = function() {
-		var bulletStrings = Array.prototype.slice.call(arguments, 0),
+		var bulletStrings = toArray(arguments),
 			builder = this;
 
 		return this.action(function( animate, $slide ) {
@@ -92,6 +94,15 @@
 				builder._bullets.$container.appendTo( $slide );
 			}
 			builder._bullets.add( animate, bulletStrings );
+		});
+	};
+
+	BuilderProto.notes = function() {
+		var noteStrings = toArray( arguments ),
+			builder = this;
+
+		return this.action(function() {
+			builder._notes.setNotes( noteStrings );
 		});
 	};
 
