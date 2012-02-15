@@ -1,5 +1,9 @@
+$minor-bg: #111;
+$overlay-bg: #333;
+
 .notes-page body {
-	background: #fff;
+	background: #000;
+	color: #fff;
 	font: normal 60px/1.4 sans-serif;
 }
 
@@ -13,14 +17,15 @@
 	display: list-item;
 
 	&:nth-child(even) {
-		background: #eee;
+		background: $minor-bg;
 	}
 }
 
 .slide-next {
 	float: right;
-	background: #ccc;
+	background: $overlay-bg;
 	margin: 0 0 10px;
+	max-width: 33%;
 }
 
 .notes-page time {
@@ -29,5 +34,5 @@
 	right: 0;
 	width: 300px;
 	text-align: right;
-	background: #ccc;
+	background: $overlay-bg;
 }
