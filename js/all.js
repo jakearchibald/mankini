@@ -2,6 +2,7 @@
 	var scripts = [
 		'jquery-1.7.1.js',
 		'jquery.transition.js',
+		'MicroEvent.js',
 		'mankini/base.js',
 		'mankini/Presentation.js',
 		'mankini/Notes.js',
@@ -9,7 +10,8 @@
 		'mankini/State.js',
 		'mankini/transitions.js',
 		'mankini/slide/base.js',
-		'mankini/slide/Bullets.js'
+		'mankini/slide/Bullets.js',
+		'mankini/Builder.js'
 	];
 
 	var scriptRoot = (function() {

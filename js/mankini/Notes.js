@@ -1,15 +1,14 @@
 (function() {
 	function Notes() {
 		var notes = this;
-
-		this._ready = $.Deferred();
-
-		this._win = window.open(
+		var win = window.open(
 			scriptRoot + '../html/notes.html', 'notes',
 			'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
 		);
 
-		$(this._win).on('load', function() {
+		this._ready = $.Deferred();
+
+		$(win).on('load', function() {
 			var doc = this.document;
 			notes._$notes = $('.slide-notes', doc);
 			notes._$next  = $('.slide-next', doc);

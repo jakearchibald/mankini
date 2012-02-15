@@ -8,7 +8,7 @@
 		//this._stateIndex = 0;
 	}
 
-	var SlideProto = Slide.prototype;
+	var SlideProto = Slide.prototype = Object.create( MicroEvent.prototype );
 
 	SlideProto.newState = function() {
 		var state = new mankini.State(this);
@@ -27,6 +27,7 @@
 
 	SlideProto.init = function(animate) {
 		this.$container.empty();
+		this.trigger('show');
 		this._stateIndex = 0;
 		this._states[0].go( animate );
 	};
