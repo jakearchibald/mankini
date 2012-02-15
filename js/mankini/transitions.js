@@ -14,7 +14,7 @@
 			presentation.$container.vendorCss({
 				transform: 'translate3d(0,0,0)'
 			}).transition({
-				transform: 'translate3d(-100%,0,0)'
+				transform: 'translate3d(' + presentationEnd + ',0,0)'
 			}, {
 				duration: 1000,
 				easing: 'easeInOutQuad',
