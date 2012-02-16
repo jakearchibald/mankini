@@ -219,3 +219,23 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: 300px;
   text-align: right;
   background: #333333; }
+
+/* line 1, _bullets.scss */
+.mankini-bullet {
+  opacity: 0; }
+
+/* line 5, _bullets.scss */
+.mankini-bullet.animate {
+  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+/* line 9, _bullets.scss */
+.mankini-bullet.on {
+  opacity: 1; }
+
+/* line 13, _bullets.scss */
+.mankini-bullet.previous {
+  opacity: 0.5; }

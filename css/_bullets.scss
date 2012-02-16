@@ -1,0 +1,15 @@
+.mankini-bullet {
+	opacity: 0;
+}
+
+.mankini-bullet.animate {
+	@include transition(opacity, .5s, $ease-in-out-quad);
+}
+
+.mankini-bullet.on {
+	opacity: 1;
+}
+
+.mankini-bullet.previous {
+	opacity: 0.5;
+}

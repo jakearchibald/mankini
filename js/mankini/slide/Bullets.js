@@ -13,38 +13,20 @@
 		this._fadeCurrent( animate );
 
 		bullets.forEach(function(bullet) {
-			var $li = $('<li/>').text( bullet );
+			var $li = $('<li class="mankini-bullet" />').text( bullet );
 			$container.append( $li );
 			$newLis = $newLis.add( $li );
 		});
 
-		if (animate) {
-			$newLis.css({
-				opacity: 0
-			}).transition({
-				opacity: 1
-			}, {
-				duration: 1000,
-				easing: 'easeOutQuad'
-			});
-		}
+		mankini.slide.animateToClass( animate, $newLis );
 	};
 
 	BulletsProto._fadeCurrent = function( animate ) {
-		var $toFade = this.$container.children().slice( this._fadedTo ),
-			target = { opacity: 0.5 };
+		var $toFade = this.$container.children().slice( this._fadedTo );
 		
 		this._fadedTo += $toFade.length;
 
-		if (animate) {
-			$toFade.transition(target, {
-				duration: 1000,
-				easing: 'easeOutQuad'
-			});
-		}
-		else {
-			$toFade.css(target);
-		}
+		mankini.slide.animateToClass( animate, $toFade, 'previous' );
 	};
 
 	mankini.slide.Bullets = Bullets;

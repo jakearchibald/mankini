@@ -13,20 +13,36 @@
 				.notes("Yey", "Notes")
 			.stateBullets("Will this work?")
 				.notes("And no more")
+			.transition('slideFromRight')
+		.slide()
+			.stateBullets("I'm from the right!")
+			.transition('slideFromLeft')
+		.slide()
+			.stateBullets("I'm from the left!")
 	/* TODOs
+		.slideTitle(mainTitle, subTitle)
+		.slideSectionTitle(mainTitle, subTitle)
 		.slideHeading("This is a heading")
 		.slide()
 			.addClass( classNames )
-			.stateText( string, className ) // add a div with text
-			.stateVideo( url, classNames )
-			.stateVideoPlay( pauseAtOptional )
-			.stateVideoPlay( pauseAtOptional )
-			.stateVideoSeek( time )
+				.bullet( text, classNames )
+				.video( url, classNames )
+				.videoPlay( pauseAtOptional )
+				.videoSeek( time )
 				.code( string, lang, lineStart, lineEnd )
 				.codeLines( lineStart, lineEnd ) // uses previous code
-			.stateImage( url, classNames ) // should cache the img obj
-			.stateArrow( classNames ) // should float
-	*/
+				.image( url, classNames ) // should cache the img obj
+				.imageAction(function(animate, imageElm, loadedDeferred) {
+					// For transitions and transforms
+					// should image be a jq object? Probably, yes
+				})
+				.arrow( classNames ) // should float
+	
+		// for all transitioning items, apply 'off' and 'on' class names for transitions
+		// also 'animate' class? Yes
+		// do transitions in css for bullets - use mixin
+	*/	
+
 	
 	;presentation.start();
 })();
