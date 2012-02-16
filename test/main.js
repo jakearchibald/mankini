@@ -7,6 +7,7 @@
 				.action(function(animate, $slide) {
 					var arrow = new mankini.slide.Arrow(1, 'tmp-arrow');
 					$slide.append( arrow.$container );
+					arrow.draw();
 				})
 				.notes("Some", "Notes")
 			.stateBullets("Foo", "Bar")

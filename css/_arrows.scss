@@ -1,6 +1,7 @@
 .mankini-arrow1 {
 	width: 112px;
 	height: 204px;
+	@include transform-origin(0, 0);
 }
 
 .mankini-arrow1 svg {

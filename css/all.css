@@ -243,14 +243,19 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /* line 1, _arrows.scss */
 .mankini-arrow1 {
   width: 112px;
-  height: 204px; }
+  height: 204px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0; }
 
-/* line 6, _arrows.scss */
+/* line 7, _arrows.scss */
 .mankini-arrow1 svg {
   position: relative;
   left: -93px; }
 
-/* line 11, _arrows.scss */
+/* line 12, _arrows.scss */
 .mankini-arrow1 path {
   stroke: #f00;
   fill: none;
@@ -258,7 +263,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   stroke-linecap: round;
   stroke-linejoin: round; }
 
-/* line 19, _arrows.scss */
+/* line 20, _arrows.scss */
 .tmp-arrow {
   position: absolute;
   top: 0;

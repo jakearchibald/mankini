@@ -156,11 +156,19 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 
 @mixin transition($properties, $duration, $easing, $delay: 0s) {
- 	-webkit-transition: $properties $duration $easing $delay;
- 	   -moz-transition: $properties $duration $easing $delay;
- 	    -ms-transition: $properties $duration $easing $delay;
- 	     -o-transition: $properties $duration $easing $delay;
- 	        transition: $properties $duration $easing $delay;
+	-webkit-transition: $properties $duration $easing $delay;
+	   -moz-transition: $properties $duration $easing $delay;
+	    -ms-transition: $properties $duration $easing $delay;
+	     -o-transition: $properties $duration $easing $delay;
+	        transition: $properties $duration $easing $delay;
+}
+
+@mixin transform-origin($top, $left) {
+	-webkit-transform-origin: $top $left;
+	   -moz-transform-origin: $top $left;
+	    -ms-transform-origin: $top $left;
+	     -o-transform-origin: $top $left;
+	        transform-origin: $top $left;
 }
 
 /********************************************
