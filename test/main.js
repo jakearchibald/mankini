@@ -38,9 +38,6 @@
 				})
 				.arrow( classNames ) // should float
 	
-		// for all transitioning items, apply 'off' and 'on' class names for transitions
-		// also 'animate' class? Yes
-		// do transitions in css for bullets - use mixin
 	*/	
 
 	

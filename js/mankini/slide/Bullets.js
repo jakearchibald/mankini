@@ -6,7 +6,7 @@
 
 	var BulletsProto = Bullets.prototype;
 
-	BulletsProto.add = function(animate, bullets) {
+	BulletsProto.add = function(animate, bullets, className) {
 		var $container = this.$container,
 			$newLis = $();
 		
@@ -14,6 +14,11 @@
 
 		bullets.forEach(function(bullet) {
 			var $li = $('<li class="mankini-bullet" />').text( bullet );
+			
+			if (className) {
+				$li.addClass( className );
+			}
+
 			$container.append( $li );
 			$newLis = $newLis.add( $li );
 		});

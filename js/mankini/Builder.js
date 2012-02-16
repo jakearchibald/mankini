@@ -88,12 +88,22 @@
 		var bulletStrings = toArray(arguments),
 			builder = this;
 
+		return this.bulletsClass( bulletStrings );
+	};
+
+	BuilderProto.bulletsClass = function(bulletStrings, className) {
+		var builder = this;
+
+		if ( !$.isArray( bulletStrings ) ) {
+			bulletStrings = [bulletStrings];
+		}
+
 		return this.action(function( animate, $slide ) {
 			if ( !builder._bullets ) {
 				builder._bullets = new ui.Bullets();
 				builder._bullets.$container.appendTo( $slide );
 			}
-			builder._bullets.add( animate, bulletStrings );
+			builder._bullets.add( animate, bulletStrings, className );
 		});
 	};
 
