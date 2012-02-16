@@ -226,11 +226,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 
 /* line 5, _bullets.scss */
 .mankini-bullet.animate {
-  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
 
 /* line 9, _bullets.scss */
 .mankini-bullet.on {
@@ -239,3 +239,27 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /* line 13, _bullets.scss */
 .mankini-bullet.previous {
   opacity: 0.5; }
+
+/* line 1, _arrows.scss */
+.mankini-arrow1 {
+  width: 112px;
+  height: 204px; }
+
+/* line 6, _arrows.scss */
+.mankini-arrow1 svg {
+  position: relative;
+  left: -93px; }
+
+/* line 11, _arrows.scss */
+.mankini-arrow1 path {
+  stroke: #f00;
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round; }
+
+/* line 19, _arrows.scss */
+.tmp-arrow {
+  position: absolute;
+  top: 0;
+  left: 50%; }

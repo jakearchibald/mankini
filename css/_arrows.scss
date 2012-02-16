@@ -1,0 +1,23 @@
+.mankini-arrow1 {
+	width: 112px;
+	height: 204px;
+}
+
+.mankini-arrow1 svg {
+	position: relative;
+	left: -93px;
+}
+
+.mankini-arrow1 path {
+	stroke: #f00;
+	fill: none;
+	stroke-width: 7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.tmp-arrow {
+	position: absolute;
+	top: 0;
+	left: 50%;
+}

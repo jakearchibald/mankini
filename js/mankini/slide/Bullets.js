@@ -23,7 +23,7 @@
 			$newLis = $newLis.add( $li );
 		});
 
-		mankini.slide.animateToClass( animate, $newLis );
+		mankini.utils.animateToClass( animate, $newLis );
 	};
 
 	BulletsProto._fadeCurrent = function( animate ) {
@@ -31,7 +31,7 @@
 		
 		this._fadedTo += $toFade.length;
 
-		mankini.slide.animateToClass( animate, $toFade, 'previous' );
+		mankini.utils.animateToClass( animate, $toFade, 'previous' );
 	};
 
 	mankini.slide.Bullets = Bullets;

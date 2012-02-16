@@ -4,6 +4,10 @@
 	presentation.builder
 		.slide()
 			.stateBullets("Hello", "World")
+				.action(function(animate, $slide) {
+					var arrow = new mankini.slide.Arrow(1, 'tmp-arrow');
+					$slide.append( arrow.$container );
+				})
 				.notes("Some", "Notes")
 			.stateBullets("Foo", "Bar")
 				.notes("Some", "More", "Notes")
@@ -25,7 +29,6 @@
 		.slideHeading("This is a heading")
 		.slide()
 			.addClass( classNames )
-				.bullet( text, classNames )
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )

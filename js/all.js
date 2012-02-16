@@ -4,6 +4,7 @@
 		'jquery.transition.js',
 		'MicroEvent.js',
 		'mankini/base.js',
+		'mankini/utils.js',
 		'mankini/Presentation.js',
 		'mankini/Notes.js',
 		'mankini/Slide.js',
@@ -11,6 +12,7 @@
 		'mankini/transitions.js',
 		'mankini/slide/base.js',
 		'mankini/slide/Bullets.js',
+		'mankini/slide/Arrow.js',
 		'mankini/Builder.js'
 	];
 
