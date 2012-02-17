@@ -39,7 +39,6 @@
 
 		$paths.each(function() {
 			var path = this,
-				// 1.1 solves a rounding error in Firefox
 				length = path.getTotalLength();
 			
 			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
