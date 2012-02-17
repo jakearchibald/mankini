@@ -124,5 +124,10 @@
 		});
 	};
 
+	BuilderProto.addClass = function(className) {
+		this._slide.$container.addClass(className);
+		return this;
+	};
+
 	mankini.Builder = Builder;
 })();
