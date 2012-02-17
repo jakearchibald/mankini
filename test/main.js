@@ -6,11 +6,7 @@
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
 			.stateBullets("Foo", "Bar")
-				.action(function(animate, $slide) {
-					var arrow = new mankini.slide.Arrow(1, 'tmp-arrow');
-					$slide.append( arrow.$container );
-					arrow.draw( animate );
-				})
+				.arrow(1, 'tmp-arrow')
 				.notes("Some", "More", "Notes")
 			.transition('cubeSpin')
 		.slide()

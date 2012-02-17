@@ -116,5 +116,13 @@
 		});
 	};
 
+	BuilderProto.arrow = function(arrowType, className) {
+		return this.action(function(animate, $slide) {
+			var arrow = new ui.Arrow(arrowType, className);
+			$slide.append( arrow.$container );
+			arrow.draw( animate );
+		});
+	};
+
 	mankini.Builder = Builder;
 })();
