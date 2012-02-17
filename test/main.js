@@ -36,7 +36,6 @@
 					// For transitions and transforms
 					// should image be a jq object? Probably, yes
 				})
-				.arrow( classNames ) // should float
 	
 	*/	
 
