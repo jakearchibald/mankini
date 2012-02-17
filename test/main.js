@@ -5,11 +5,7 @@
 		.slide()
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
-				.action(function(animate, $slide) {
-					var code = new mankini.slide.Code('test-class-name').fromFile('example.js');
-					$slide.append( code.$container );
-					code.showLines(animate, 0);
-				})
+				.newCode('example.js').showCode()
 			.stateBullets("Foo", "Bar")
 				.arrow(1, 'tmp-arrow')
 				.notes("Some", "More", "Notes")
@@ -33,15 +29,13 @@
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )
-				.code( string, lang, lineStart, lineEnd )
-				.codeLines( lineStart, lineEnd ) // uses previous code
 				.image( url, classNames ) // should cache the img obj
 				.imageAction(function(animate, imageElm, loadedDeferred) {
 					// For transitions and transforms
 					// should image be a jq object? Probably, yes
 				})
 	
-	*/	
+	*/
 
 	
 	;presentation.start();

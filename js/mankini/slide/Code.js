@@ -29,12 +29,13 @@
 	CodeProto.fromString = function(code, lang) {
 		this._codeLines = splitLines(code);
 		this._lang = lang;
+		this._codeLoader = $.Deferred().resolve();
 		return this;
 	};
 
 	CodeProto.showLines = function(animate, from, to) {
 		var code = this;
-		
+
 		this._codeLoader.done(function() {
 			code._$code.text( code._codeLines.slice(from, to).join('\n') );
 		});

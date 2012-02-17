@@ -48,7 +48,8 @@
 		
 		// Clear retained instances
 		this._slide.on('show', function() {
-			builder._bullets = undefined;
+			builder._code =
+				builder._bullets = undefined;
 		});
 
 		return this;
@@ -127,6 +128,21 @@
 	BuilderProto.addClass = function(className) {
 		this._slide.$container.addClass(className);
 		return this;
+	};
+
+	BuilderProto.newCode = function(filePath, lang, className) {
+		var builder = this;
+		return this.action(function( animate, $slide ) {
+			builder._code = new ui.Code( className ).fromFile( filePath, lang );
+			$slide.append( builder._code.$container );
+		});
+	};
+
+	BuilderProto.showCode = function(from, to) {
+		var builder = this;
+		return this.action(function(animate) {
+			builder._code.showLines(animate, from, to);
+		});
 	};
 
 	mankini.Builder = Builder;
