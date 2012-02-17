@@ -1,50 +1,60 @@
 (function() {
-	var markupFetch = $.ajax( scriptRoot + 'mankini/slide/arrows.html' ),
-		$arrows;
+	var arrows = [
+		[
+			"M 3.8338616,198.20593 C 34.344111,157.53974 76.205891,100.01645 93.549591,4.294256",
+			"m 46.549591,51.708466 c 16.8351,-19.82803 28.5074,-36.14446 48,-48 8.196209,17.47045 10.986739,40.34659 13.999999,63"
+		]
+	];
 
-	markupFetch.done(function(text) {
-		$arrows = $(text);
-	});
+	var svgNs = "http://www.w3.org/2000/svg";
 
 	function Arrow(arrowType, className) {
-		var $container = this.$container = $('<div/>');
+		var $container = this.$container = $('<div/>').addClass('mankini-arrow' + arrowType).addClass(className),
+			paths = arrows[arrowType-1];
 		
-		markupFetch.done(function() {
-			var $arrow = $arrows.filter('.mankini-arrow' + arrowType).clone().addClass( className );
-			$container.append( $arrow );
+		var svg = document.createElementNS(svgNs, 'svg');
+
+		paths.forEach(function(pathStr) {
+			var path = document.createElementNS(svgNs, 'path');
+			path.setAttribute( 'd', pathStr );
+			svg.appendChild( path );
 		});
+
+		$container.append(svg);
 	}
 
 	var ArrowProto = Arrow.prototype;
 
-	ArrowProto.draw = function() {
+	ArrowProto.draw = function(animate) {
 		var arrow = this;
+		if (!animate) {
+			return;
+		}
 
-		markupFetch.done(function() {
-			var $paths = arrow.$container.find('path'),
-				dur = 0.4,
-				gap = 0.1,
-				begin = 0;
+		var $paths = arrow.$container.find('path'),
+			// Some values here cause chrome to misbehave :(
+			dur = 0.25,
+			gap = 0.1,
+			begin = 0;
 
-			$paths.each(function() {
-				var path = this,
-					length = path.getTotalLength().toString();
-				
-				path.setAttribute('stroke-dasharray', length + ' ' + length);
-				path.setAttribute('stroke-dashoffset', length);
+		$paths.each(function() {
+			var path = this,
+				// 1.1 solves a rounding error in Firefox
+				length = path.getTotalLength();
+			
+			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
+			path.setAttribute( 'stroke-dashoffset', length );
 
-				var animate = document.createElementNS("http://www.w3.org/2000/svg", "animate");
-				animate.setAttribute('attributeName', 'stroke-dashoffset');
-				animate.setAttribute('from', length);
-				animate.setAttribute('dur', dur + 's');
-				animate.setAttribute('begin', begin + 's');
-				animate.setAttribute('fill', 'freeze');
-				animate.setAttribute('values', length + ';0');
-				
-				path.appendChild( animate );
+			mankini.utils.animateProperty(
+				path.attributes.getNamedItem('stroke-dashoffset'),
+				'nodeValue',
+				length,
+				1,
+				dur * 1000,
+				begin * 1000
+			);
 
-				begin += dur + gap;
-			});
+			begin += dur + gap;
 		});
 	};
 

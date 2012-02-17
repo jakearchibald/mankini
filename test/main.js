@@ -4,13 +4,13 @@
 	presentation.builder
 		.slide()
 			.stateBullets("Hello", "World")
+				.notes("Some", "Notes")
+			.stateBullets("Foo", "Bar")
 				.action(function(animate, $slide) {
 					var arrow = new mankini.slide.Arrow(1, 'tmp-arrow');
 					$slide.append( arrow.$container );
-					arrow.draw();
+					arrow.draw( animate );
 				})
-				.notes("Some", "Notes")
-			.stateBullets("Foo", "Bar")
 				.notes("Some", "More", "Notes")
 			.transition('cubeSpin')
 		.slide()

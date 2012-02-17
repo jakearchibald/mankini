@@ -2,7 +2,7 @@ mankini.utils = {};
 
 (function() {
 	function requestAnimationFrame(func) {
-		window.webkitRequestAnimationFrame( func );
+		(window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)(func);
 	}
 
 	var transitionend = 'transitionend webkitTransitionEnd oTransitionEnd';
@@ -31,5 +31,32 @@ mankini.utils = {};
 		});
 	}
 
+	function animateProperty(obj, propertyName, from, to, dur, delay, easing) {
+		var delta = to - from,
+			start;
+		
+		obj[propertyName] = from;
+
+		function run(now) {
+			var pos = (now.valueOf() - start) / dur;
+			if (pos > 1) {
+				pos = 1;
+			}
+			
+			obj[propertyName] = from + (pos * delta);
+
+			if (pos != 1) {
+				requestAnimationFrame( run );
+			}
+		}
+
+		setTimeout(function() {
+			start = new Date().valueOf();
+			run(start);
+		}, delay);
+	}
+
 	mankini.utils.animateToClass = animateToClass;
+	mankini.utils.requestAnimationFrame = requestAnimationFrame;
+	mankini.utils.animateProperty = animateProperty;
 })();
