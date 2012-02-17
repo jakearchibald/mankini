@@ -5,6 +5,11 @@
 		.slide()
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
+				.action(function(animate, $slide) {
+					var code = new mankini.slide.Code('test-class-name').fromFile('example.js');
+					$slide.append( code.$container );
+					code.showLines(animate, 0);
+				})
 			.stateBullets("Foo", "Bar")
 				.arrow(1, 'tmp-arrow')
 				.notes("Some", "More", "Notes")
@@ -24,8 +29,7 @@
 		.slideTitle(mainTitle, subTitle)
 		.slideSectionTitle(mainTitle, subTitle)
 		.slideHeading("This is a heading")
-		.slide()
-			.addClass( classNames )
+			.state(name)
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )

@@ -13,6 +13,7 @@
 		'mankini/slide/base.js',
 		'mankini/slide/Bullets.js',
 		'mankini/slide/Arrow.js',
+		'mankini/slide/Code.js',
 		'mankini/Builder.js'
 	];
 
