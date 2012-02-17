@@ -31,19 +31,30 @@ mankini.utils = {};
 		});
 	}
 
-	function animateProperty(obj, propertyName, from, to, dur, delay, easing) {
-		var delta = to - from,
+	function animateProperty(obj, propertyName, opts) {
+		opts = $.extend({
+			from: obj[propertyName],
+			to: obj[propertyName],
+			duration: 1000,
+			delay: 0,
+			easing: function(pos) { return pos; }
+		}, opts);
+		
+		var from = opts.from,
+			delta = opts.to - from,
+			duration = opts.duration,
+			easing = opts.easing,
 			start;
 		
 		obj[propertyName] = from;
 
 		function run(now) {
-			var pos = (now.valueOf() - start) / dur;
+			var pos = (now.valueOf() - start) / duration;
 			if (pos > 1) {
 				pos = 1;
 			}
 			
-			obj[propertyName] = from + (pos * delta);
+			obj[propertyName] = from + (easing(pos) * delta);
 
 			if (pos != 1) {
 				requestAnimationFrame( run );
@@ -53,7 +64,7 @@ mankini.utils = {};
 		setTimeout(function() {
 			start = new Date().valueOf();
 			run(start);
-		}, delay);
+		}, opts.delay);
 	}
 
 	mankini.utils.animateToClass = animateToClass;

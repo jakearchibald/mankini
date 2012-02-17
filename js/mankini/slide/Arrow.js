@@ -44,14 +44,12 @@
 			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
 			path.setAttribute( 'stroke-dashoffset', length );
 
-			mankini.utils.animateProperty(
-				path.attributes.getNamedItem('stroke-dashoffset'),
-				'nodeValue',
-				length,
-				1,
-				dur * 1000,
-				begin * 1000
-			);
+			mankini.utils.animateProperty( path.attributes.getNamedItem('stroke-dashoffset'), 'nodeValue', {
+				from: length,
+				to: 1,
+				duration: dur * 1000,
+				delay: begin * 1000
+			});
 
 			begin += dur + gap;
 		});
