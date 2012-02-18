@@ -131,6 +131,10 @@
 		return this;
 	};
 
+	BuilderProto.slideClass = function(className) {
+		return this.slide().addClass( className );
+	};
+
 	BuilderProto.newCode = function(filePath, lang, className) {
 		var builder = this;
 		return this.action(function( animate, $slide ) {
@@ -144,6 +148,10 @@
 		return this.action(function(animate) {
 			builder._code.showLines(animate, from, to);
 		});
+	};
+
+	BuilderProto.slideHeading = function(text) {
+		return this.slide().stateHeading( text );
 	};
 
 	BuilderProto.stateHeading = function(text) {

@@ -2,8 +2,7 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
-		.slide()
-			.stateHeading('Hello everyone!')
+		.slideHeading('Hello everyone!')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
 				.newCode('example.js').showCode()
@@ -11,7 +10,7 @@
 				.arrow(1, 'tmp-arrow')
 				.notes("Some", "More", "Notes")
 			.transition('cubeSpin')
-		.slide()
+		.slideClass("Test")
 			.stateBullets("Hi")
 				.notes("Yey", "Notes")
 			.stateBullets("Will this work?")
