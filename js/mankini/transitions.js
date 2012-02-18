@@ -21,6 +21,7 @@
 				complete: function() {
 					newSlide.$container[0].style.cssText = '';
 					presentation.$container[0].style.cssText = '';
+					oldSlide.$container.remove();
 				}
 			});
 		};
@@ -51,6 +52,7 @@
 				complete: function() {
 					newSlide.$container[0].style.cssText = '';
 					presentation.$container[0].style.cssText = '';
+					oldSlide.$container.remove();
 				}
 			});
 		},
