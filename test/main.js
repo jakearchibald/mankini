@@ -3,6 +3,7 @@
 
 	presentation.builder
 		.slide()
+			.stateHeading('Hello everyone!')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
 				.newCode('example.js').showCode()

@@ -1,0 +1,11 @@
+.mankini-heading {
+	opacity: 0;
+}
+
+.mankini-heading.animate {
+	@include transition(opacity, .5s, $ease-in-out-quad);
+}
+
+.mankini-heading.on {
+	opacity: 1;
+}

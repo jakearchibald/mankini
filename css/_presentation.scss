@@ -10,5 +10,5 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	-webkit-transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }

@@ -49,6 +49,7 @@
 		// Clear retained instances
 		this._slide.on('show', function() {
 			builder._code =
+				builder._heading =
 				builder._bullets = undefined;
 		});
 
@@ -142,6 +143,22 @@
 		var builder = this;
 		return this.action(function(animate) {
 			builder._code.showLines(animate, from, to);
+		});
+	};
+
+	BuilderProto.stateHeading = function(text) {
+		return this.state( text ).heading( text );
+	};
+
+	BuilderProto.heading = function(text) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			if ( !builder._heading ) {
+				builder._heading = new ui.Heading();
+				builder._heading.$container.appendTo( $slide );
+			}
+			builder._heading.text( animate, text );
 		});
 	};
 

@@ -179,6 +179,14 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 	        transform: $type;
 }
 
+@mixin transform-style($type) {
+	-webkit-transform-style: $type;
+	   -moz-transform-style: $type;
+	    -ms-transform-style: $type;
+	     -o-transform-style: $type;
+	        transform-style: $type;
+}
+
 /********************************************
  ***************** Includes *****************
  ********************************************/
@@ -188,3 +196,4 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 @import 'notes';
 @import 'bullets';
 @import 'arrows';
+@import 'heading';

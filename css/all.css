@@ -179,7 +179,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform-style: preserve-3d; }
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
 
 /* line 1, _slide.scss */
 .slide {
@@ -195,29 +199,31 @@ body {
 .notes-page body {
   background: #000;
   color: #fff;
-  font: normal 60px/1.4 sans-serif; }
+  font: normal 60px/1.4 sans-serif;
+  width: auto;
+  height: 100%; }
 
-/* line 12, _notes.scss */
+/* line 14, _notes.scss */
 .slide-notes li,
 .slide-next,
 .notes-page time {
   padding: 5px 20px; }
 
-/* line 16, _notes.scss */
+/* line 18, _notes.scss */
 .slide-notes li {
   display: list-item; }
-  /* line 19, _notes.scss */
+  /* line 21, _notes.scss */
   .slide-notes li:nth-child(even) {
     background: #111111; }
 
-/* line 24, _notes.scss */
+/* line 26, _notes.scss */
 .slide-next {
   float: right;
   background: #333333;
   margin: 0 0 10px;
   max-width: 33%; }
 
-/* line 31, _notes.scss */
+/* line 33, _notes.scss */
 .notes-page time {
   position: absolute;
   bottom: 0;
@@ -274,3 +280,19 @@ body {
   position: absolute;
   top: 0;
   left: 50%; }
+
+/* line 1, _heading.scss */
+.mankini-heading {
+  opacity: 0; }
+
+/* line 5, _heading.scss */
+.mankini-heading.animate {
+  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+
+/* line 9, _heading.scss */
+.mankini-heading.on {
+  opacity: 1; }

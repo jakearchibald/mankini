@@ -9,13 +9,18 @@ mankini.utils = {};
 
 	function animateToClass( animate, $items, className ) {
 		className = className || 'on';
+		var deferreds = [];
 
 		$items.each(function() {
-			var $item = $( this );
+			var $item = $( this ),
+				deferred = $.Deferred();
+
+			deferreds.push( deferred );
 
 			function complete() {
 				$item.removeClass('animate');
 				$item.off( transitionend, complete );
+				deferred.resolve();
 			}
 
 			if ( animate ) {
@@ -29,6 +34,8 @@ mankini.utils = {};
 				$item.addClass( className );
 			}
 		});
+
+		return $.when.apply($, deferreds);
 	}
 
 	function animateProperty(obj, propertyName, opts) {

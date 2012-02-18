@@ -14,6 +14,7 @@
 		'mankini/slide/Bullets.js',
 		'mankini/slide/Arrow.js',
 		'mankini/slide/Code.js',
+		'mankini/slide/Heading.js',
 		'mankini/Builder.js'
 	];
 
@@ -23,10 +24,6 @@
 	})();
 
 	scripts.forEach(function(src) {
-		/*var script = document.createElement('script');
-		script.defer = true;
-		script.src = scriptRoot + src;
-		document.body.appendChild(script);*/
 		document.write('<script src="' + scriptRoot + src + '" defer></script>');
 	});
 
