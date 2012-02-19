@@ -2,14 +2,9 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
-		.slide()
-			.state("Test")
-				.action(function(animate, $slide) {
-					var sectionTitle = new mankini.slide.SectionTitle();
-					sectionTitle.$container.appendTo($slide);
-					sectionTitle.text(animate, "Support", "Which bits do browsers support?");
-				})
+		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fadeBlack')
+		.slideSectionTitle('Again', 'With the testing')
 		.slideHeading('Hello everyone!')
 			.state('Code')
 				.newCode('example.css').showCode(0, 3)

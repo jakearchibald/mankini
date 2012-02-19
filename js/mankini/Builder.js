@@ -170,5 +170,19 @@
 		});
 	};
 
+	BuilderProto.sectionTitle = function(main, sub) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			var sectionTitle = new ui.SectionTitle();
+			sectionTitle.$container.appendTo( $slide );
+			sectionTitle.text( animate, main, sub );
+		});
+	};
+
+	BuilderProto.slideSectionTitle = function(main, sub) {
+		return this.slide().state( main + ' - ' + sub ).sectionTitle( main, sub );
+	};
+
 	mankini.Builder = Builder;
 })();
