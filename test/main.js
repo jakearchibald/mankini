@@ -2,10 +2,12 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
+		.slideHeading('Hello everyone!')
+			.stateBullets("This is a point I'm trying to make")
+			.stateBullets("Here's another")
 		.slide()
 			.stateBullets("Hello", "World")
 			.transition('fade')
-		.slideHeading('Hello everyone!')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
 				.newCode('example.js').showCode()
@@ -37,6 +39,8 @@
 					// For transitions and transforms
 					// should image be a jq object? Probably, yes
 				})
+
+		// Browser iframe for demos
 	
 	*/
 

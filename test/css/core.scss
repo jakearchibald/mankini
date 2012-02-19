@@ -1,0 +1,7 @@
+@import '../../css/utils';
+
+.heading-arrow {
+	@include transform( rotate(-90deg) );
+	top: 70px;
+	left: 430px;
+}

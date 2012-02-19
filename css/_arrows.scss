@@ -1,4 +1,7 @@
 .mankini-arrow1 {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 112px;
 	height: 204px;
 	@include transform-origin(0, 0);
@@ -15,10 +18,4 @@
 	stroke-width: 7;
 	stroke-linecap: round;
 	stroke-linejoin: round;
-}
-
-.tmp-arrow {
-	position: absolute;
-	top: 0;
-	left: 50%;
 }
