@@ -1,6 +1,6 @@
 (function() {
 	function Bullets() {
-		this.$container = $('<ul/>');
+		this.$container = $('<ul class="mankini-bullets" />');
 		this._fadedTo = 0;
 	}
 

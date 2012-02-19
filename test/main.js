@@ -5,6 +5,7 @@
 		.slideHeading('Hello everyone!')
 			.stateBullets("This is a point I'm trying to make")
 			.stateBullets("Here's another")
+			.transition('cubeSpin')
 		.slide()
 			.stateBullets("Hello", "World")
 			.transition('fade')

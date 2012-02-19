@@ -10,6 +10,24 @@
 	font-weight: bold;
 }
 
+@font-face {
+	font-family: cabin;
+	src: url(fonts/CabinCondensed-Regular.ttf);
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: cabin;
+	src: url(fonts/CabinCondensed-Bold.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: voltaire;
+	src: url(fonts/Voltaire-Regular.ttf);
+	font-weight: normal;
+}
+
 html {
 	background: #000;
 	overflow: hidden;

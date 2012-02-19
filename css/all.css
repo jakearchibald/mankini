@@ -8,115 +8,130 @@
   src: url(fonts/Share-Bold.ttf);
   font-weight: bold; }
 
-/* line 13, all.scss */
+@font-face {
+  font-family: cabin;
+  src: url(fonts/CabinCondensed-Regular.ttf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: cabin;
+  src: url(fonts/CabinCondensed-Bold.ttf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: voltaire;
+  src: url(fonts/Voltaire-Regular.ttf);
+  font-weight: normal; }
+
+/* line 31, all.scss */
 html {
   background: #000;
   overflow: hidden; }
 
-/* line 18, all.scss */
+/* line 36, all.scss */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%; }
 
-/* line 25, all.scss */
+/* line 43, all.scss */
 body {
   -webkit-perspective: 823; }
 
 /* Reset */
-/* line 30, all.scss */
+/* line 48, all.scss */
 ul, ol, li, form, dl, dt, dd {
   padding: 0;
   margin: 0;
   display: block; }
 
-/* line 35, all.scss */
+/* line 53, all.scss */
 ul, ol {
   list-style: none; }
 
-/* line 39, all.scss */
+/* line 57, all.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 42, all.scss */
+/* line 60, all.scss */
 img {
   -ms-interpolation-mode: bicubic; }
 
 /* Text/Fonts */
-/* line 44, all.scss */
+/* line 62, all.scss */
 body, select, input, textarea {
   color: #000; }
 
-/* line 47, all.scss */
+/* line 65, all.scss */
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small; }
 
-/* line 51, all.scss */
+/* line 69, all.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif; }
 
-/* line 52, all.scss */
+/* line 70, all.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative; }
 
-/* line 53, all.scss */
+/* line 71, all.scss */
 sup {
   top: -0.5em; }
 
-/* line 54, all.scss */
+/* line 72, all.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 55, all.scss */
+/* line 73, all.scss */
 p {
   line-height: 1.4; }
 
 /* Links */
-/* line 59, all.scss */
+/* line 77, all.scss */
 a img {
   border: 0; }
 
-/* line 63, all.scss */
+/* line 81, all.scss */
 a:link, a:visited {
   text-decoration: none;
   color: #289de9; }
 
-/* line 68, all.scss */
+/* line 86, all.scss */
 a:hover, a:active {
   text-decoration: underline; }
 
 /* Forms */
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-/* line 73, all.scss */
+/* line 91, all.scss */
 select, input, textarea, button {
   font: 99% sans-serif;
   margin: 0; }
 
-/* line 75, all.scss */
+/* line 93, all.scss */
 input, select {
   vertical-align: middle;
   _vertical-align: text-bottom; }
 
-/* line 80, all.scss */
+/* line 98, all.scss */
 input[type="radio"] {
   vertical-align: text-bottom; }
 
-/* line 81, all.scss */
+/* line 99, all.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
   *vertical-align: baseline; }
 
-/* line 83, all.scss */
+/* line 101, all.scss */
 textarea, input {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
-/* line 88, all.scss */
+/* line 106, all.scss */
 button.custom {
   padding: 0;
   margin: 0;
@@ -128,16 +143,16 @@ button.custom {
   font-size: 1em;
   width: auto; }
 
-/* line 99, all.scss */
+/* line 117, all.scss */
 button.custom::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 103, all.scss */
+/* line 121, all.scss */
 legend {
   *margin-left: -7px; }
 
-/* line 105, all.scss */
+/* line 123, all.scss */
 label, input[type="button"], input[type="submit"], input[type="image"], button {
   cursor: pointer; }
 
@@ -243,25 +258,35 @@ body {
   text-align: right;
   background: #333333; }
 
-/* line 1, _bullets.scss */
+/* line 4, _bullets.scss */
 .mankini-bullet {
-  opacity: 0; }
-
-/* line 5, _bullets.scss */
-.mankini-bullet.animate {
-  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
-
-/* line 9, _bullets.scss */
-.mankini-bullet.on {
-  opacity: 1; }
-
-/* line 13, _bullets.scss */
-.mankini-bullet.previous {
-  opacity: 0.5; }
+  opacity: 0;
+  color: #AB540D;
+  font-family: voltaire, sans-serif;
+  font-size: 40px;
+  margin: 12px 44px;
+  margin-left: 75px;
+  position: relative; }
+  /* line 13, _bullets.scss */
+  .mankini-bullet::before {
+    content: '➤';
+    position: absolute;
+    left: -37px;
+    top: 7px;
+    font-size: 24px; }
+  /* line 21, _bullets.scss */
+  .mankini-bullet.animate {
+    -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+  /* line 25, _bullets.scss */
+  .mankini-bullet.on {
+    opacity: 1; }
+  /* line 29, _bullets.scss */
+  .mankini-bullet.previous {
+    opacity: 0.5; }
 
 /* line 1, _arrows.scss */
 .mankini-arrow1 {
@@ -293,20 +318,21 @@ body {
 .mankini-heading {
   height: 103px;
   background: url(imgs/heading/bg.png);
-  position: relative; }
+  position: relative;
+  margin: 0 0 22px; }
 
-/* line 7, _heading.scss */
+/* line 8, _heading.scss */
 .mankini-heading .mask {
   height: 100%;
   -webkit-mask-image: url(imgs/heading/mask.png); }
 
-/* line 12, _heading.scss */
+/* line 13, _heading.scss */
 .mankini-heading h1 {
   font-family: share, sans-serif;
   margin: 0;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 57px;
   position: absolute;
   left: 0;
@@ -322,7 +348,7 @@ body {
   -o-transform: rotate(-2.6deg) translate(-180px, 0);
   transform: rotate(-2.6deg) translate(-180px, 0); }
 
-/* line 27, _heading.scss */
+/* line 28, _heading.scss */
 .mankini-heading.animate h1 {
   -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -moz-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -330,7 +356,7 @@ body {
   -o-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
 
-/* line 31, _heading.scss */
+/* line 32, _heading.scss */
 .mankini-heading.on h1 {
   -webkit-transform: rotate(-2.6deg) translate(18px, 0);
   -moz-transform: rotate(-2.6deg) translate(18px, 0);

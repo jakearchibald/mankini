@@ -1,15 +1,32 @@
+.mankini-bullets {
+}
+
 .mankini-bullet {
 	opacity: 0;
-}
+	color: #AB540D;
+	font-family: voltaire, sans-serif;
+	font-size: 40px;
+	margin: 12px 44px;
+	margin-left: 75px;
+	position: relative;
 
-.mankini-bullet.animate {
-	@include transition(opacity, .5s, $ease-in-out-quad);
-}
+	&::before {
+		content: '➤';
+		position: absolute;
+		left: -37px;
+		top: 7px;
+		font-size: 24px;
+	}
 
-.mankini-bullet.on {
-	opacity: 1;
-}
+	&.animate {
+		@include transition(opacity, .5s, $ease-in-out-quad);
+	}
 
-.mankini-bullet.previous {
-	opacity: 0.5;
+	&.on {
+		opacity: 1;
+	}
+
+	&.previous {
+		opacity: 0.5;
+	}
 }
