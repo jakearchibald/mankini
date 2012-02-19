@@ -1,0 +1,52 @@
+.mankini-section-title {
+	height: 100%;
+	background: url(imgs/section-title/bg.png) no-repeat;
+
+	& .titles {
+		@include transform-origin(0,0);
+		@include transform( rotate(9deg) );
+		height: 100%;
+		position: relative;
+	}
+
+	& h1 {
+		margin: 0;
+		position: absolute;
+		bottom: 419px;
+		left: 139px;
+		font-family: share, sans-serif;
+		font-size: 148px;
+		color: #fff;
+		text-transform: uppercase;
+		text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+
+		@include transform( translate(300px,0) );
+
+		&.animate {
+			@include transition(all, 1s, $ease-out-quint);
+		}
+
+		&.on {
+			@include transform( none );
+		}
+	}
+
+	& h2 {
+		margin: 0;
+		position: absolute;
+		top: 345px;
+		left: 143px;
+		font-family: voltaire, sans-serif;
+		font-size: 29px;
+
+		@include transform( translate(-300px,0) );
+
+		&.animate {
+			@include transition(all, 1s, $ease-out-quint);
+		}
+
+		&.on {
+			@include transform( none );
+		}
+	}
+}

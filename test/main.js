@@ -2,6 +2,14 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
+		.slide()
+			.state("Test")
+				.action(function(animate, $slide) {
+					var sectionTitle = new mankini.slide.SectionTitle();
+					sectionTitle.$container.appendTo($slide);
+					sectionTitle.text(animate, "Support", "Which bits do browsers support?");
+				})
+			.transition('fadeBlack')
 		.slideHeading('Hello everyone!')
 			.state('Code')
 				.newCode('example.css').showCode(0, 3)
@@ -10,25 +18,11 @@
 			.state('Hi')
 				.showCode()
 			.transition('cubeSpin')
-		.slide()
+		.slideHeading("Another slide!")
 			.stateBullets("Hello", "World")
 			.transition('fade')
-			.stateBullets("Hello", "World")
-				.notes("Some", "Notes")
-			.stateBullets("Foo", "Bar")
-				.notes("Some", "More", "Notes")
-			.transition('cubeSpin')
-		.slideClass("Test")
-			.stateBullets("Hi")
-				.notes("Yey", "Notes")
-			.stateBullets("Will this work?")
-				.notes("And no more")
-			.transition('slideFromRight')
-		.slide()
-			.stateBullets("I'm from the right!")
-			.transition('slideFromLeft')
-		.slide()
-			.stateBullets("I'm from the left!")
+		.slideHeading("One more")
+		
 	/* TODOs
 		.slideTitle(mainTitle, subTitle)
 		.slideSectionTitle(mainTitle, subTitle)
@@ -44,7 +38,7 @@
 				})
 
 		// Browser iframe for demos
-	
+		// Lanyrd logo
 	*/
 
 	
