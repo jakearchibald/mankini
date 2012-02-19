@@ -4,7 +4,7 @@
 	presentation.builder
 		.slide()
 			.stateBullets("Hello", "World")
-			.transition('fadeBlack')
+			.transition('fade')
 		.slideHeading('Hello everyone!')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")

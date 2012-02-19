@@ -82,6 +82,22 @@
 			});
 
 		},
+		fade: function(presentation, oldSlide, newSlide) {
+			newSlide.init(true);
+
+			presentation.$container.prepend( newSlide.$container );
+			
+			oldSlide.$container.transition({
+				opacity: 0
+			}, {
+				duration: 600,
+				easing: 'easeInOutQuad',
+				complete: function() {
+					oldSlide.$container.remove();
+				}
+			});
+
+		},
 		slideFromRight: slideFrom(true),
 		slideFromLeft:  slideFrom(false)
 	};
