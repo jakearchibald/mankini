@@ -1,5 +1,13 @@
 mankini.utils = {};
 
+$.fn.fullHeight = function() {
+	var height = this.height(),
+		autoHeight = this.height('auto').height();
+		
+	this.height(height);
+	return autoHeight;
+};
+
 (function() {
 	function requestAnimationFrame(func) {
 		(window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)(func);

@@ -1,4 +1,5 @@
 .mankini-bullets {
+	padding: 0 0 10px;
 }
 
 .mankini-bullet {
@@ -19,7 +20,7 @@
 	}
 
 	&.animate {
-		@include transition(opacity, .5s, $ease-in-out-quad);
+		@include transition(all, .5s, $ease-in-out-quad);
 	}
 
 	&.on {

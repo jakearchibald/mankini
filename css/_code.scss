@@ -1,7 +1,18 @@
 .mankini-code {
 	background: url(imgs/paper.png);
 	width: 933px;
-	margin: 0 auto;
-	padding: 20px;
+	margin: 0 auto 20px;
 	box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+	font-weight: bold;
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+
+	& code {
+		display: block;
+		padding: 18px 20px 15px;
+		font-family: consolas, monotype;
+		font-size: 20px;
+		line-height: 1.3;
+	}
 }

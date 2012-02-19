@@ -28,6 +28,12 @@
 	font-weight: normal;
 }
 
+@font-face {
+	font-family: consolas;
+	src: url(fonts/consolab.ttf);
+	font-weight: bold;
+}
+
 html {
 	background: #000;
 	overflow: hidden;
@@ -156,6 +162,7 @@ body {
  ***************** Includes *****************
  ********************************************/
 
+@import 'prettify.css';
 @import 'utils';
 @import 'presentation'; 
 @import 'slide'; 

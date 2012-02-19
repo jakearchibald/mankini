@@ -3,10 +3,10 @@
  ********************************************/
 /* line 3, core.scss */
 .heading-arrow {
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  top: 70px;
-  left: 430px; }
+  -webkit-transform: rotate(-152deg) scale(0.8);
+  -moz-transform: rotate(-152deg) scale(0.8);
+  -ms-transform: rotate(-152deg) scale(0.8);
+  -o-transform: rotate(-152deg) scale(0.8);
+  transform: rotate(-152deg) scale(0.8);
+  top: 207px;
+  left: 366px; }

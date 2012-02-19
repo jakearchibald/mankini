@@ -3,6 +3,8 @@
 		'jquery-1.7.1.js',
 		'jquery.transition.js',
 		'MicroEvent.js',
+		'prettify/prettify.js',
+		'prettify/lang-css.js',
 		'mankini/base.js',
 		'mankini/utils.js',
 		'mankini/Presentation.js',
