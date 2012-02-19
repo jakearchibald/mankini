@@ -265,7 +265,7 @@ body {
   font-family: voltaire, sans-serif;
   font-size: 40px;
   margin: 12px 44px;
-  margin-left: 75px;
+  margin-left: 83px;
   position: relative; }
   /* line 13, _bullets.scss */
   .mankini-bullet::before {
@@ -374,3 +374,11 @@ body {
   position: absolute;
   left: 0;
   top: 0; }
+
+/* line 1, _code.scss */
+.mankini-code {
+  background: url(imgs/paper.png);
+  width: 933px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); }

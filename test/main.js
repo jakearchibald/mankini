@@ -3,15 +3,15 @@
 
 	presentation.builder
 		.slideHeading('Hello everyone!')
+			.state('Code example1')
+				.newCode('example.js').showCode()
 			.stateBullets("This is a point I'm trying to make")
-			.stateBullets("Here's another")
 			.transition('cubeSpin')
 		.slide()
 			.stateBullets("Hello", "World")
 			.transition('fade')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")
-				.newCode('example.js').showCode()
 			.stateBullets("Foo", "Bar")
 				.arrow(1, 'tmp-arrow')
 				.notes("Some", "More", "Notes")
