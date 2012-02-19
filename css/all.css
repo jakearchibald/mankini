@@ -1,112 +1,122 @@
-/* line 1, all.scss */
+@font-face {
+  font-family: share;
+  src: url(fonts/Share-Regular.ttf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: share;
+  src: url(fonts/Share-Bold.ttf);
+  font-weight: bold; }
+
+/* line 13, all.scss */
 html {
   background: #000;
   overflow: hidden; }
 
-/* line 6, all.scss */
+/* line 18, all.scss */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%; }
 
-/* line 13, all.scss */
+/* line 25, all.scss */
 body {
   -webkit-perspective: 823; }
 
 /* Reset */
-/* line 18, all.scss */
+/* line 30, all.scss */
 ul, ol, li, form, dl, dt, dd {
   padding: 0;
   margin: 0;
   display: block; }
 
-/* line 23, all.scss */
+/* line 35, all.scss */
 ul, ol {
   list-style: none; }
 
-/* line 27, all.scss */
+/* line 39, all.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 30, all.scss */
+/* line 42, all.scss */
 img {
   -ms-interpolation-mode: bicubic; }
 
 /* Text/Fonts */
-/* line 32, all.scss */
+/* line 44, all.scss */
 body, select, input, textarea {
   color: #000; }
 
-/* line 35, all.scss */
+/* line 47, all.scss */
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small; }
 
-/* line 39, all.scss */
+/* line 51, all.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif; }
 
-/* line 40, all.scss */
+/* line 52, all.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative; }
 
-/* line 41, all.scss */
+/* line 53, all.scss */
 sup {
   top: -0.5em; }
 
-/* line 42, all.scss */
+/* line 54, all.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 43, all.scss */
+/* line 55, all.scss */
 p {
   line-height: 1.4; }
 
 /* Links */
-/* line 47, all.scss */
+/* line 59, all.scss */
 a img {
   border: 0; }
 
-/* line 51, all.scss */
+/* line 63, all.scss */
 a:link, a:visited {
   text-decoration: none;
   color: #289de9; }
 
-/* line 56, all.scss */
+/* line 68, all.scss */
 a:hover, a:active {
   text-decoration: underline; }
 
 /* Forms */
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-/* line 61, all.scss */
+/* line 73, all.scss */
 select, input, textarea, button {
   font: 99% sans-serif;
   margin: 0; }
 
-/* line 63, all.scss */
+/* line 75, all.scss */
 input, select {
   vertical-align: middle;
   _vertical-align: text-bottom; }
 
-/* line 68, all.scss */
+/* line 80, all.scss */
 input[type="radio"] {
   vertical-align: text-bottom; }
 
-/* line 69, all.scss */
+/* line 81, all.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
   *vertical-align: baseline; }
 
-/* line 71, all.scss */
+/* line 83, all.scss */
 textarea, input {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
-/* line 76, all.scss */
+/* line 88, all.scss */
 button.custom {
   padding: 0;
   margin: 0;
@@ -118,16 +128,16 @@ button.custom {
   font-size: 1em;
   width: auto; }
 
-/* line 87, all.scss */
+/* line 99, all.scss */
 button.custom::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 91, all.scss */
+/* line 103, all.scss */
 legend {
   *margin-left: -7px; }
 
-/* line 93, all.scss */
+/* line 105, all.scss */
 label, input[type="button"], input[type="submit"], input[type="image"], button {
   cursor: pointer; }
 
@@ -192,6 +202,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
   background: url("imgs/slide/bg.jpg");
   background-size: 100% 100%; }
 
@@ -283,16 +294,60 @@ body {
 
 /* line 1, _heading.scss */
 .mankini-heading {
-  opacity: 0; }
+  height: 103px;
+  background: url(imgs/heading/bg.png);
+  position: relative; }
 
-/* line 5, _heading.scss */
-.mankini-heading.animate {
-  -webkit-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -moz-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -ms-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  -o-transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+/* line 7, _heading.scss */
+.mankini-heading .mask {
+  height: 100%;
+  -webkit-mask-image: url(imgs/heading/mask.png); }
 
-/* line 9, _heading.scss */
-.mankini-heading.on {
-  opacity: 1; }
+/* line 12, _heading.scss */
+.mankini-heading h1 {
+  font-family: share, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 57px;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(-2.6deg) translate(-180px, 0);
+  -moz-transform: rotate(-2.6deg) translate(-180px, 0);
+  -ms-transform: rotate(-2.6deg) translate(-180px, 0);
+  -o-transform: rotate(-2.6deg) translate(-180px, 0);
+  transform: rotate(-2.6deg) translate(-180px, 0); }
+
+/* line 27, _heading.scss */
+.mankini-heading.animate h1 {
+  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -moz-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -ms-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -o-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+
+/* line 31, _heading.scss */
+.mankini-heading.on h1 {
+  -webkit-transform: rotate(-2.6deg) translate(18px, 0);
+  -moz-transform: rotate(-2.6deg) translate(18px, 0);
+  -ms-transform: rotate(-2.6deg) translate(18px, 0);
+  -o-transform: rotate(-2.6deg) translate(18px, 0);
+  transform: rotate(-2.6deg) translate(18px, 0); }
+
+/* line 1, _transitions.scss */
+.mankini-black-fader {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0; }

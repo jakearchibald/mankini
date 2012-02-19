@@ -1,7 +1,7 @@
 (function() {
 	function Heading() {
-		this.$container = $('<header class="mankini-heading"/>');
-		this._$h1 = $('<h1/>').appendTo( this.$container );
+		this.$container = $('<header class="mankini-heading"><div class="mask"><h1></h1></div></header>');
+		this._$h1 = this.$container.find('h1');
 		this._currentText = '';
 	}
 

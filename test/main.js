@@ -2,6 +2,9 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
+		.slide()
+			.stateBullets("Hello", "World")
+			.transition('fadeBlack')
 		.slideHeading('Hello everyone!')
 			.stateBullets("Hello", "World")
 				.notes("Some", "Notes")

@@ -1,3 +1,15 @@
+@font-face {
+	font-family: share;
+	src: url(fonts/Share-Regular.ttf);
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: share;
+	src: url(fonts/Share-Bold.ttf);
+	font-weight: bold;
+}
+
 html {
 	background: #000;
 	overflow: hidden;
@@ -197,3 +209,4 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 @import 'bullets';
 @import 'arrows';
 @import 'heading';
+@import 'transitions';

@@ -56,6 +56,32 @@
 				}
 			});
 		},
+		fadeBlack: function(presentation, oldSlide, newSlide) {
+			var $div = $('<div class="mankini-black-fader" />').appendTo( presentation.$container );
+
+			$div.transition({
+				opacity: 1
+			}, {
+				duration: 600,
+				easing: 'easeInOutQuad',
+				complete: function() {
+					oldSlide.$container.remove();
+					presentation.$container.append( newSlide.$container );
+					newSlide.init( true );
+					
+					$div.transition({
+						opacity: 0
+					}, {
+						duration: 600,
+						easing: 'easeInOutQuad',
+						complete: function() {
+							$div.remove();
+						}
+					});
+				}
+			});
+
+		},
 		slideFromRight: slideFrom(true),
 		slideFromLeft:  slideFrom(false)
 	};
