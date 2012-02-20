@@ -15,8 +15,8 @@
 		this._y = 0;
 
 		document.addEventListener('mousemove', function(event) {
-			pointer._x = event.pageX;
-			pointer._y = event.pageY;
+			pointer._x = event.clientX;
+			pointer._y = event.clientY;
 			if (pointer._active) {
 				pointer._position();
 			}
@@ -66,8 +66,8 @@
 			try {
 				$iframe[0].contentDocument.addEventListener('mousemove', function(event) {
 					var offset = $iframe.offset();
-					pointer._x = event.pageX + offset.left;
-					pointer._y = event.pageY + offset.top;
+					pointer._x = event.clientX + offset.left;
+					pointer._y = event.clientY + offset.top;
 					if (pointer._active) {
 						pointer._position();
 					}

@@ -5,7 +5,7 @@
 		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fade')
 		.slideHeading('Iframe test')
-				.webView('http://localhost/sprite-cow/www/')
+				.webView('http://localhost/')
 			.transition('cubeSpin')
 		.slideSectionTitle('Again', 'With the testing')
 			.transition('fade')
