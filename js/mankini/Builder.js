@@ -8,6 +8,9 @@
 	function Builder(presentation) {
 		this._presentation = presentation;
 		this._notes = new mankini.Notes();
+		this._pointer = new mankini.Pointer();
+		this._pointer.$container.appendTo( document.body );
+
 		this._initControls();
 		this._stateNames = [];
 	}
@@ -16,15 +19,16 @@
 
 	BuilderProto._initControls = function() {
 		var notes = this._notes,
-			presentation = this._presentation;
+			presentation = this._presentation,
+			builder = this;
 		
 		presentation.$container.click(function(event) {
 			presentation.next( true );
 			event.preventDefault();
 		});
 
-		$(document).keydown(function(event) {
-			switch(event.which) {
+		document.addEventListener('keydown', function(event) {
+			switch(event.keyCode) {
 				case 37: // left
 					presentation.prev();
 					event.preventDefault();
@@ -37,8 +41,12 @@
 					notes.startTime();
 					event.preventDefault();
 					break;
+				case 80: // p
+					builder._pointer.toggle();
+					event.preventDefault();
+					break;
 			}
-		});
+		}, false);
 	};
 
 	BuilderProto.slide = function() {
@@ -192,6 +200,7 @@
 			if ( !builder._webView ) {
 				builder._webView = new ui.WebView(className);
 				builder._webView.$container.appendTo( $slide );
+				builder._pointer.proxyIframe( builder._webView._$iframe );
 			}
 			builder._webView.url( animate, url );
 		});

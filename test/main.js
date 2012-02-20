@@ -2,11 +2,11 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
-		.slideHeading('Iframe test')
-				.webView('http://lanyrd.dev:8000/')
-			.transition('cubeSpin')
 		.slideSectionTitle('Testing', 'Hope this works properly')
-			.transition('fadeBlack')
+			.transition('fade')
+		.slideHeading('Iframe test')
+				.webView('http://localhost/sprite-cow/www/')
+			.transition('cubeSpin')
 		.slideSectionTitle('Again', 'With the testing')
 			.transition('fade')
 		.slideHeading('Hello everyone!')

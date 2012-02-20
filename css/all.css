@@ -204,13 +204,16 @@ body {
   overflow: hidden; }
 
 /* line 7, _presentation.scss */
+* {
+  cursor: none !important; }
+
+/* line 11, _presentation.scss */
 .mankini-presentation {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  cursor: none;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -485,16 +488,15 @@ body {
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   height: 0;
-  opacity: 0;
-  cursor: auto; }
-  /* line 9, _web-view.scss */
+  opacity: 0; }
+  /* line 8, _web-view.scss */
   .mankini-web-view iframe {
     width: 100%;
     height: 565px;
     border: 0;
     display: block; }
 
-/* line 17, _web-view.scss */
+/* line 16, _web-view.scss */
 .mankini-toolbar {
   overflow: hidden;
   padding: 5px 6px 0;
@@ -507,27 +509,51 @@ body {
   background-image: -moz-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: -o-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: linear-gradient(top, #d0d0d0, #a7a7a7); }
-  /* line 28, _web-view.scss */
+  /* line 27, _web-view.scss */
   .mankini-toolbar [role='button'] {
     float: left;
     margin: 0 5px 5px 0;
     border: 1px solid #888;
     border-radius: 4px;
-    cursor: pointer;
     background-image: -webkit-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -moz-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -o-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: linear-gradient(top, #fefefe, #b8b8b8); }
-    /* line 37, _web-view.scss */
+    /* line 35, _web-view.scss */
     .mankini-toolbar [role='button'].active {
       background: #707070;
       box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.6);
       color: #fff; }
-    /* line 43, _web-view.scss */
+    /* line 41, _web-view.scss */
     .mankini-toolbar [role='button'].no-label div {
       width: 26px;
       padding: 4px 0;
       text-indent: -5000px; }
-    /* line 49, _web-view.scss */
+    /* line 47, _web-view.scss */
     .mankini-toolbar [role='button'] div {
       padding: 4px 10px; }
+
+/* line 1, _pointer.scss */
+.mankini-pointer {
+  position: fixed;
+  pointer-events: none; }
+  /* line 5, _pointer.scss */
+  .mankini-pointer .cursor {
+    width: 171px;
+    height: 211px;
+    position: absolute;
+    top: -3px;
+    left: -64px;
+    background: url(imgs/pointer.png);
+    z-index: 2; }
+  /* line 15, _pointer.scss */
+  .mankini-pointer .click-hit {
+    width: 80px;
+    height: 80px;
+    background: #f00;
+    border-radius: 50px;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    z-index: 1;
+    opacity: 0; }

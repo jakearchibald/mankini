@@ -1,0 +1,26 @@
+.mankini-pointer {
+	position: fixed;
+	pointer-events: none;
+
+	& .cursor {
+		width: 171px;
+		height: 211px;
+		position: absolute;
+		top: -3px;
+		left: -64px;
+		background: url(imgs/pointer.png);
+		z-index: 2;
+	}
+
+	& .click-hit {
+		width: 80px;
+		height: 80px;
+		background: #f00;
+		border-radius: 50px;
+		position: absolute;
+		top: -40px;
+		left: -40px;
+		z-index: 1;
+		opacity: 0;
+	}
+}
