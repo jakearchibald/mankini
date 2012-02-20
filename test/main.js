@@ -7,10 +7,7 @@
 					window.webView = new mankini.slide.WebView('test-frame').url( animate, 'http://lanyrd.dev:8000/' );
 					webView.$container.appendTo( $slide );
 				})
-			.state('Refresh')
-				.action(function(animate, $slide) {
-					webView.refresh();
-				})
+			.transition('cubeSpin')
 		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fadeBlack')
 		.slideSectionTitle('Again', 'With the testing')
@@ -31,6 +28,7 @@
 	/* TODOs
 		.slideTitle(mainTitle, subTitle)
 			.state(name)
+				.newContainer( $container ) // now things will be inserted into this rather than $slide - useful for columns
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )
@@ -42,6 +40,7 @@
 
 		// Browser iframe for demos
 		// Lanyrd logo
+		// Cursor hide & show (make sure it shows over iframes)
 	*/
 
 	

@@ -1,6 +1,14 @@
 (function() {
 	function WebView(className) {
-		this.$container = $('<div class="mankini-web-view"><iframe src="about:blank"></iframe></div>').addClass( className || '' );
+		this.$container = $('' +
+			'<div class="mankini-web-view">' +
+				'<div class="mankini-toolbar">' +
+					'<div role="button"><div>Back</div></div>' +
+					'<div role="button"><div>Refresh</div></div>' +
+				'</div>' +
+				'<iframe src="about:blank"></iframe>' +
+			'</div>' +
+		'').addClass( className || '' );
 		this._$iframe = this.$container.find('iframe');
 	}
 

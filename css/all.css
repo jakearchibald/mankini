@@ -488,6 +488,44 @@ body {
   /* line 8, _web-view.scss */
   .mankini-web-view iframe {
     width: 100%;
-    height: 600px;
+    height: 565px;
     border: 0;
     display: block; }
+
+/* line 16, _web-view.scss */
+.mankini-toolbar {
+  overflow: hidden;
+  padding: 5px 6px 0;
+  position: relative;
+  border-style: solid;
+  border-width: 1px 0;
+  border-color: #e2e2e2 #000 #888;
+  border-radius: 5px 5px 0 0;
+  background-image: -webkit-linear-gradient(top, #d0d0d0, #a7a7a7);
+  background-image: -moz-linear-gradient(top, #d0d0d0, #a7a7a7);
+  background-image: -o-linear-gradient(top, #d0d0d0, #a7a7a7);
+  background-image: linear-gradient(top, #d0d0d0, #a7a7a7); }
+  /* line 27, _web-view.scss */
+  .mankini-toolbar [role='button'] {
+    float: left;
+    margin: 0 5px 5px 0;
+    border: 1px solid #888;
+    border-radius: 4px;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #fefefe, #b8b8b8);
+    background-image: -moz-linear-gradient(top, #fefefe, #b8b8b8);
+    background-image: -o-linear-gradient(top, #fefefe, #b8b8b8);
+    background-image: linear-gradient(top, #fefefe, #b8b8b8); }
+    /* line 36, _web-view.scss */
+    .mankini-toolbar [role='button'].active {
+      background: #707070;
+      box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.6);
+      color: #fff; }
+    /* line 42, _web-view.scss */
+    .mankini-toolbar [role='button'].no-label div {
+      width: 26px;
+      padding: 4px 0;
+      text-indent: -5000px; }
+    /* line 48, _web-view.scss */
+    .mankini-toolbar [role='button'] div {
+      padding: 4px 10px; }
