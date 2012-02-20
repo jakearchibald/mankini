@@ -50,6 +50,7 @@
 		this._slide.on('show', function() {
 			builder._code =
 				builder._heading =
+				builder._webView =
 				builder._bullets = undefined;
 		});
 
@@ -182,6 +183,34 @@
 
 	BuilderProto.slideSectionTitle = function(main, sub) {
 		return this.slide().state( main + ' - ' + sub ).sectionTitle( main, sub );
+	};
+
+	BuilderProto.webView = function(url, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			if ( !builder._webView ) {
+				builder._webView = new ui.WebView(className);
+				builder._webView.$container.appendTo( $slide );
+			}
+			builder._webView.url( animate, url );
+		});
+	};
+
+	BuilderProto.webViewBack = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._webView.back();
+		});
+	};
+
+	BuilderProto.webViewRefresh = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._webView.refresh();
+		});
 	};
 
 	mankini.Builder = Builder;

@@ -1,15 +1,30 @@
 (function() {
 	function WebView(className) {
+		var webView = this;
+
 		this.$container = $('' +
 			'<div class="mankini-web-view">' +
 				'<div class="mankini-toolbar">' +
-					'<div role="button"><div>Back</div></div>' +
-					'<div role="button"><div>Refresh</div></div>' +
+					'<div role="button" class="back"><div>Back</div></div>' +
+					'<div role="button" class="refresh"><div>Refresh</div></div>' +
 				'</div>' +
 				'<iframe src="about:blank"></iframe>' +
 			'</div>' +
-		'').addClass( className || '' );
+		'').addClass( className || '' ).on('click', function(event) {
+			event.stopPropagation();
+		});
+
 		this._$iframe = this.$container.find('iframe');
+
+		this.$container.find('.back').on('click', function(event) {
+			webView.back();
+			event.preventDefault();
+		});
+
+		this.$container.find('.refresh').on('click', function(event) {
+			webView.refresh();
+			event.preventDefault();
+		});
 	}
 
 	var WebViewProto = WebView.prototype;

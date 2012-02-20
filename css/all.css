@@ -210,6 +210,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: none;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -484,15 +485,16 @@ body {
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   height: 0;
-  opacity: 0; }
-  /* line 8, _web-view.scss */
+  opacity: 0;
+  cursor: auto; }
+  /* line 9, _web-view.scss */
   .mankini-web-view iframe {
     width: 100%;
     height: 565px;
     border: 0;
     display: block; }
 
-/* line 16, _web-view.scss */
+/* line 17, _web-view.scss */
 .mankini-toolbar {
   overflow: hidden;
   padding: 5px 6px 0;
@@ -505,7 +507,7 @@ body {
   background-image: -moz-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: -o-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: linear-gradient(top, #d0d0d0, #a7a7a7); }
-  /* line 27, _web-view.scss */
+  /* line 28, _web-view.scss */
   .mankini-toolbar [role='button'] {
     float: left;
     margin: 0 5px 5px 0;
@@ -516,16 +518,16 @@ body {
     background-image: -moz-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -o-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: linear-gradient(top, #fefefe, #b8b8b8); }
-    /* line 36, _web-view.scss */
+    /* line 37, _web-view.scss */
     .mankini-toolbar [role='button'].active {
       background: #707070;
       box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.6);
       color: #fff; }
-    /* line 42, _web-view.scss */
+    /* line 43, _web-view.scss */
     .mankini-toolbar [role='button'].no-label div {
       width: 26px;
       padding: 4px 0;
       text-indent: -5000px; }
-    /* line 48, _web-view.scss */
+    /* line 49, _web-view.scss */
     .mankini-toolbar [role='button'] div {
       padding: 4px 10px; }

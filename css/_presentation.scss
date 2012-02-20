@@ -10,5 +10,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+	cursor: none;
+
 	@include transform-style(preserve-3d);
 }

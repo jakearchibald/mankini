@@ -3,10 +3,7 @@
 
 	presentation.builder
 		.slideHeading('Iframe test')
-				.action(function(animate, $slide) {
-					window.webView = new mankini.slide.WebView('test-frame').url( animate, 'http://lanyrd.dev:8000/' );
-					webView.$container.appendTo( $slide );
-				})
+				.webView('http://lanyrd.dev:8000/')
 			.transition('cubeSpin')
 		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fadeBlack')
