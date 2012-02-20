@@ -32,13 +32,25 @@
 	var PointerProto = Pointer.prototype;
 
 	PointerProto.show = function() {
-		this.$container.show();
+		this.$container.show().vendorCss({
+			opacity: 0
+		}).transition({
+			opacity: 1
+		}, {
+			duration: 200,
+			easing: 'easeOutQuad'
+		});
 		this._active = true;
 		this._position();
 	};
 
 	PointerProto.hide = function() {
-		this.$container.hide();
+		this.$container.transition({
+			opacity: 0
+		}, {
+			duration: 200,
+			easing: 'easeInQuad'
+		});
 		this._active = false;
 	};
 
@@ -61,7 +73,6 @@
 
 	PointerProto.proxyIframe = function( $iframe ) {
 		var pointer = this;
-
 		$iframe.on('load', function() {
 			try {
 				$iframe[0].contentDocument.addEventListener('mousemove', function(event) {
