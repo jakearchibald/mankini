@@ -18,6 +18,7 @@
 		'mankini/slide/Code.js',
 		'mankini/slide/Heading.js',
 		'mankini/slide/SectionTitle.js',
+		'mankini/slide/WebView.js',
 		'mankini/Builder.js'
 	];
 

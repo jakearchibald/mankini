@@ -388,14 +388,13 @@ body {
 /* line 1, _code.scss */
 .mankini-code {
   background: url(imgs/paper.png);
-  width: 933px;
-  margin: 0 auto 20px;
+  margin: 0 46px 20px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   overflow: hidden;
   height: 0;
   opacity: 0; }
-  /* line 11, _code.scss */
+  /* line 10, _code.scss */
   .mankini-code code {
     display: block;
     padding: 18px 20px 15px;
@@ -478,3 +477,17 @@ body {
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
+
+/* line 1, _web-view.scss */
+.mankini-web-view {
+  margin: 0 46px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 0;
+  opacity: 0; }
+  /* line 8, _web-view.scss */
+  .mankini-web-view iframe {
+    width: 100%;
+    height: 600px;
+    border: 0;
+    display: block; }

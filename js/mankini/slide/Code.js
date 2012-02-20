@@ -65,6 +65,12 @@
 					easing: 'easeOutQuad'
 				});
 			}
+			else {
+				code.$container.css({
+					height: 'auto',
+					opacity: 1
+				});
+			}
 		});
 		return this;
 	};

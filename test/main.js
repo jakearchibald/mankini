@@ -2,9 +2,19 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
+		.slideHeading('Iframe test')
+				.action(function(animate, $slide) {
+					window.webView = new mankini.slide.WebView('test-frame').url( animate, 'http://lanyrd.dev:8000/' );
+					webView.$container.appendTo( $slide );
+				})
+			.state('Refresh')
+				.action(function(animate, $slide) {
+					webView.refresh();
+				})
 		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fadeBlack')
 		.slideSectionTitle('Again', 'With the testing')
+			.transition('fade')
 		.slideHeading('Hello everyone!')
 			.state('Code')
 				.newCode('example.css').showCode(0, 3)
@@ -20,8 +30,6 @@
 		
 	/* TODOs
 		.slideTitle(mainTitle, subTitle)
-		.slideSectionTitle(mainTitle, subTitle)
-		.slideHeading("This is a heading")
 			.state(name)
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
