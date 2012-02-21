@@ -14,6 +14,11 @@
 		return slide;
 	};
 
+	PresentationProto.reset = function() {
+		this._slides = [];
+		this._slideIndex = 0;
+	};
+
 	PresentationProto.start = function() {
 		var slide = this._slides[0];
 		this.$container.append( slide.$container );

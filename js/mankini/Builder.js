@@ -236,5 +236,10 @@
 		});
 	};
 
+	BuilderProto.startHere = function() {
+		this._presentation.reset();
+		return this;
+	};
+
 	mankini.Builder = Builder;
 })();
