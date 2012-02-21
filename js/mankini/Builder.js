@@ -49,10 +49,14 @@
 		}, false);
 	};
 
-	BuilderProto.slide = function() {
+	BuilderProto.slide = function(className) {
 		var builder = this;
 
 		this._slide = this._presentation.newSlide();
+
+		if (className) {
+			this._slide.$container.addClass(className);
+		}
 		
 		// Clear retained instances
 		this._slide.on('show', function() {
@@ -133,11 +137,6 @@
 			$slide.append( arrow.$container );
 			arrow.draw( animate );
 		});
-	};
-
-	BuilderProto.addClass = function(className) {
-		this._slide.$container.addClass(className);
-		return this;
 	};
 
 	BuilderProto.slideClass = function(className) {

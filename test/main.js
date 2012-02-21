@@ -28,13 +28,8 @@
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )
-				.image( url, classNames ) // should cache the img obj
-				.imageAction(function(animate, imageElm, loadedDeferred) {
-					// For transitions and transforms
-					// should image be a jq object? Probably, yes
-				})
 
-		// Browser iframe for demos
+		// Browser iframe for demos - need button logos
 		// Lanyrd logo
 	*/
 
