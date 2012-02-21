@@ -274,31 +274,20 @@ body {
 
 /* line 5, _bullets.scss */
 .mankini-bullet {
-  opacity: 0;
   color: #AB540D;
   font-family: voltaire, sans-serif;
   font-size: 40px;
   margin: 12px 44px;
   margin-left: 83px;
   position: relative; }
-  /* line 14, _bullets.scss */
+  /* line 13, _bullets.scss */
   .mankini-bullet::before {
     content: '➤';
     position: absolute;
     left: -37px;
     top: 7px;
     font-size: 24px; }
-  /* line 22, _bullets.scss */
-  .mankini-bullet.animate {
-    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
-  /* line 26, _bullets.scss */
-  .mankini-bullet.on {
-    opacity: 1; }
-  /* line 30, _bullets.scss */
+  /* line 21, _bullets.scss */
   .mankini-bullet.previous {
     opacity: 0.5; }
 
@@ -558,3 +547,20 @@ body {
     left: -40px;
     z-index: 1;
     opacity: 0; }
+
+/* line 2, _basic-transitions.scss */
+.mankini-bullet,
+.mankini-image {
+  opacity: 0; }
+  /* line 5, _basic-transitions.scss */
+  .mankini-bullet.animate,
+  .mankini-image.animate {
+    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+  /* line 9, _basic-transitions.scss */
+  .mankini-bullet.on,
+  .mankini-image.on {
+    opacity: 1; }

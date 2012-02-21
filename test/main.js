@@ -25,7 +25,6 @@
 	/* TODOs
 		.slideTitle(mainTitle, subTitle)
 			.state(name)
-				.newContainer( $container ) // now things will be inserted into this rather than $slide - useful for columns
 				.video( url, classNames )
 				.videoPlay( pauseAtOptional )
 				.videoSeek( time )
@@ -37,7 +36,6 @@
 
 		// Browser iframe for demos
 		// Lanyrd logo
-		// Cursor hide & show (make sure it shows over iframes)
 	*/
 
 	

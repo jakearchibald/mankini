@@ -1,12 +1,3 @@
 /********************************************
  ************* Global functions *************
  ********************************************/
-/* line 3, core.scss */
-.heading-arrow {
-  -webkit-transform: rotate(-152deg) scale(0.8);
-  -moz-transform: rotate(-152deg) scale(0.8);
-  -ms-transform: rotate(-152deg) scale(0.8);
-  -o-transform: rotate(-152deg) scale(0.8);
-  transform: rotate(-152deg) scale(0.8);
-  top: 207px;
-  left: 366px; }

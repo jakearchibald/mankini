@@ -1,0 +1,12 @@
+.mankini-bullet,
+.mankini-image {
+	opacity: 0;
+
+	&.animate {
+		@include transition(all, .5s, $ease-in-out-quad);
+	}
+
+	&.on {
+		opacity: 1;
+	}
+}

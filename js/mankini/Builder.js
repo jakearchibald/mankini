@@ -222,5 +222,19 @@
 		});
 	};
 
+	BuilderProto.image = function(url, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			var $img = $('<img class="mankini-image">').addClass( className ).appendTo( $slide );
+			
+			$img.on( 'load', function() {
+				mankini.utils.animateToClass( animate, $img );
+			});
+
+			$img.prop( 'src', url );
+		});
+	};
+
 	mankini.Builder = Builder;
 })();
