@@ -240,5 +240,8 @@
 		return this;
 	};
 
+	BuilderProto.title = function(title, contact, className) {
+	};
+
 	mankini.Builder = Builder;
 })();

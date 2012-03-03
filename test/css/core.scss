@@ -1,1 +1,7 @@
 @import '../../css/utils';
+
+.test-arrow {
+	top: 271px;
+	left: 340px;
+	@include transform( rotate(36deg) );
+}
