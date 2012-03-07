@@ -2,6 +2,20 @@
 	var presentation = new mankini.Presentation( document.body );
 
 	presentation.builder
+		.slide()
+			.state("SVG Test")
+				.action(function(animate, $slide) {
+					$slide.addClass('paper-test');
+					$container = $('<div/>').appendTo( $slide ).css({
+						position: 'absolute',
+						top: 0,
+						left: 0
+					});
+
+					$.ajax('/2012appcachedouche/image%20originals/appcache-diagram-optim.svg').done(function(result) {
+						$( result.documentElement ).appendTo( $container );
+					});
+				})
 		.slideSectionTitle('Testing', 'Hope this works properly')
 			.transition('fade')
 		.slideHeading('Iframe test')

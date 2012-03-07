@@ -10,3 +10,8 @@
   -ms-transform: rotate(36deg);
   -o-transform: rotate(36deg);
   transform: rotate(36deg); }
+
+/* line 9, core.scss */
+.paper-test {
+  background: url(../../css/imgs/paper.png);
+  background-size: 100% 100%; }

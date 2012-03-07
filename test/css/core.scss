@@ -5,3 +5,8 @@
 	left: 340px;
 	@include transform( rotate(36deg) );
 }
+
+.paper-test {
+	background: url(../../css/imgs/paper.png);
+	background-size: 100% 100%;
+}
