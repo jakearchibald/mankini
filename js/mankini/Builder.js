@@ -21,14 +21,12 @@
 		var notes = this._notes,
 			presentation = this._presentation,
 			builder = this;
-		
-		presentation.$container.click(function(event) {
-			presentation.next( true );
-			event.preventDefault();
-		});
 
 		document.addEventListener('keydown', function(event) {
+			console.log(event.keyCode);
 			switch(event.keyCode) {
+				case 32: // space
+					presentation.next( true );
 				case 37: // left
 					presentation.prev();
 					event.preventDefault();
