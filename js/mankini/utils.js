@@ -46,43 +46,48 @@ $.fn.fullHeight = function() {
 		return $.when.apply($, deferreds);
 	}
 
-	function animateProperty(obj, propertyName, opts) {
-		opts = $.extend({
-			from: obj[propertyName],
-			to: obj[propertyName],
+	function animatePaths($paths, opts) {
+		var begin = 0,
+			anim;
+
+		$.extend({
 			duration: 1000,
-			delay: 0,
-			easing: function(pos) { return pos; }
+			gap: 0,
+			easing: 'easeInOutQuad'
 		}, opts);
-		
-		var from = opts.from,
-			delta = opts.to - from,
-			duration = opts.duration,
-			easing = opts.easing,
-			start;
-		
-		obj[propertyName] = from;
 
-		function run(now) {
-			var pos = (now.valueOf() - start) / duration;
-			if (pos > 1) {
-				pos = 1;
-			}
+		$paths.each(function() {
+			var path = this,
+				length = path.getTotalLength();
+
+			anim = new Anim(opts.duration / 1000, {
+				easing: opts.easing
+			});
 			
-			obj[propertyName] = from + (easing(pos) * delta);
+			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
+			path.setAttribute( 'stroke-dashoffset', length );
 
-			if (pos != 1) {
-				requestAnimationFrame( run );
+			anim.target( path.attributes.getNamedItem('stroke-dashoffset') ).prop('nodeValue', {
+				from: length,
+				to: 1
+			});
+
+			if ( begin ) {
+				setTimeout(function() {
+					anim.start();
+				}, begin);
 			}
-		}
+			else {
+				anim.start();
+			}
 
-		setTimeout(function() {
-			start = new Date().valueOf();
-			run(start);
-		}, opts.delay);
+			begin += opts.duration + opts.gap;
+		});
+
+		return anim;
 	}
 
 	mankini.utils.animateToClass = animateToClass;
 	mankini.utils.requestAnimationFrame = requestAnimationFrame;
-	mankini.utils.animateProperty = animateProperty;
+	mankini.utils.animatePaths = animatePaths;
 })();

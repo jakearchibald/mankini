@@ -27,31 +27,14 @@
 
 	ArrowProto.draw = function(animate) {
 		var arrow = this;
+
 		if (!animate) {
 			return;
 		}
 
-		var $paths = arrow.$container.find('path'),
-			// Some values here cause chrome to misbehave :(
-			dur = 0.25,
-			gap = 0.1,
-			begin = 0;
-
-		$paths.each(function() {
-			var path = this,
-				length = path.getTotalLength();
-			
-			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
-			path.setAttribute( 'stroke-dashoffset', length );
-
-			mankini.utils.animateProperty( path.attributes.getNamedItem('stroke-dashoffset'), 'nodeValue', {
-				from: length,
-				to: 1,
-				duration: dur * 1000,
-				delay: begin * 1000
-			});
-
-			begin += dur + gap;
+		mankini.utils.animatePaths( arrow.$container.find('path'), {
+			duration: 250,
+			gap: 100
 		});
 	};
 
