@@ -27,6 +27,8 @@
 			switch(event.keyCode) {
 				case 32: // space
 					presentation.next( true );
+					event.preventDefault();
+					break;
 				case 37: // left
 					presentation.prev();
 					event.preventDefault();
