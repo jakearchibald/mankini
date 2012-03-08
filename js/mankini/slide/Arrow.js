@@ -32,7 +32,7 @@
 			return;
 		}
 
-		mankini.utils.animatePaths( arrow.$container.find('path'), {
+		return mankini.utils.animatePaths( arrow.$container.find('path'), {
 			duration: 250,
 			gap: 100
 		});

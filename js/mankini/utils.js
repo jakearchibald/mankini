@@ -84,7 +84,18 @@ $.fn.fullHeight = function() {
 			begin += opts.duration + opts.gap;
 		});
 
-		return anim;
+		var deferred = $.Deferred();
+
+		if ( anim ) {
+			deferred.resolve();
+		}
+		else {
+			anim.on('complete', function() {
+				deferred.resolve();
+			});
+		}
+
+		return deferred;
 	}
 
 	mankini.utils.animateToClass = animateToClass;
