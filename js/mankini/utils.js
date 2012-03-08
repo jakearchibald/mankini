@@ -46,9 +46,13 @@ $.fn.fullHeight = function() {
 		return $.when.apply($, deferreds);
 	}
 
-	function animatePaths($paths, opts) {
+	function animatePaths(paths, opts) {
 		var begin = 0,
 			anim;
+
+		if (paths.toArray) {
+			paths = paths.toArray();
+		}
 
 		$.extend({
 			duration: 1000,
@@ -56,9 +60,10 @@ $.fn.fullHeight = function() {
 			easing: 'easeInOutQuad'
 		}, opts);
 
-		$paths.each(function() {
-			var path = this,
-				length = path.getTotalLength();
+		paths.forEach(function(path) {
+			$(path).css('display', 'block');
+
+			var length = path.getTotalLength();
 
 			anim = new Anim(opts.duration / 1000, {
 				easing: opts.easing
