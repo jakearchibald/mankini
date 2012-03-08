@@ -95,7 +95,7 @@
 		func = anim._evalFunc(functionStr, targets);
 		
 		// remove old listener & add new one
-		anim.detach('frame', anim._propFunc).on('frame', func);
+		anim.off('frame', anim._propFunc).on('frame', func);
 		// retain new func so we can remove it later
 		anim._propFunc = func;
 		func = functionStr = undefined;
@@ -107,7 +107,6 @@
 		
 		// default conf
 		conf = $.extend({
-			from: getFromVals(target[propName], conf),
 			round: false
 		}, conf);
 		

@@ -23,7 +23,6 @@
 			builder = this;
 
 		document.addEventListener('keydown', function(event) {
-			console.log(event.keyCode);
 			switch(event.keyCode) {
 				case 32: // space
 					presentation.next( true );

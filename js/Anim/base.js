@@ -76,7 +76,7 @@
 		activeAnimsLen = 0,
 		animInterval;
 
-	function Anim() {
+	function Anim(duration, opts) {
 		opts = $.extend({
 			destroyOnComplete: true
 			// other options have falsey defaults
@@ -172,8 +172,9 @@
 				anim.value = anim.easing(1);
 				// render final frame
 				anim.trigger('frame');
+				anim.trigger('complete');
 				// fire 'frame' and 'complete' and see if we're going to loop (preventing default)
-				if ( anim.fire('complete').defaultPrevented() || anim.loop ) {
+				if ( anim.loop ) {
 					// loop the animation
 					anim._syncTime = dateNum;
 				}
@@ -189,7 +190,7 @@
 			else {
 				// set up the value and render a frame
 				anim.value = anim.easing( anim.position / anim.duration );
-				anim.fire('frame');
+				anim.trigger('frame');
 			}
 		}
 
