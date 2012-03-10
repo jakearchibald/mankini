@@ -230,6 +230,9 @@ body {
   z-index: 1;
   background: url("imgs/slide/bg.jpg");
   background-size: 100% 100%; }
+  /* line 11, _slide.scss */
+  .slide.white {
+    background: #fff; }
 
 /* line 4, _notes.scss */
 .notes-page body {

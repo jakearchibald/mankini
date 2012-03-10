@@ -7,4 +7,8 @@
 	z-index: 1;
 	background: url('imgs/slide/bg.jpg');
 	background-size: 100% 100%;
+
+	&.white {
+		background: #fff;
+	}
 }
