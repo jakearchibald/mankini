@@ -22,6 +22,7 @@
 		'mankini/slide/Heading.js',
 		'mankini/slide/SectionTitle.js',
 		'mankini/slide/WebView.js',
+		'mankini/slide/Title.js',
 		'mankini/Builder.js'
 	];
 

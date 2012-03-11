@@ -177,6 +177,20 @@
 		});
 	};
 
+	BuilderProto.title = function(main) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			var title = new ui.Title();
+			title.$container.appendTo( $slide );
+			title.text( main );
+		});
+	};
+
+	BuilderProto.slideTitle = function(main) {
+		return this.slide().state( main ).title( main );
+	};
+
 	BuilderProto.sectionTitle = function(main, sub) {
 		var builder = this;
 
@@ -237,9 +251,6 @@
 	BuilderProto.startHere = function() {
 		this._presentation.reset();
 		return this;
-	};
-
-	BuilderProto.title = function(title, contact, className) {
 	};
 
 	mankini.Builder = Builder;

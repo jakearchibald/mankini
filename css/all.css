@@ -567,3 +567,21 @@ body {
   .mankini-bullet.on,
   .mankini-image.on {
     opacity: 1; }
+
+/* line 1, _title.scss */
+.mankini-title {
+  height: 100%;
+  background: url(imgs/title/bg.jpg) no-repeat; }
+  /* line 5, _title.scss */
+  .mankini-title h1 {
+    margin: 0;
+    position: absolute;
+    bottom: 254px;
+    right: 29px;
+    font-family: share, sans-serif;
+    font-size: 127px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    text-align: right;
+    line-height: 1; }
