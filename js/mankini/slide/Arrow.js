@@ -28,11 +28,7 @@
 	ArrowProto.draw = function(animate) {
 		var arrow = this;
 
-		if (!animate) {
-			return;
-		}
-
-		return mankini.utils.animatePaths( arrow.$container.find('path'), {
+		return mankini.utils.animatePaths( animate, arrow.$container.find('path'), {
 			duration: 250,
 			gap: 100
 		});

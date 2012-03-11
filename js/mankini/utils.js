@@ -46,7 +46,24 @@ $.fn.fullHeight = function() {
 		return $.when.apply($, deferreds);
 	}
 
-	function animatePaths(paths, opts) {
+	function transition(animate, $items, props, opts) {
+		if (animate) {
+			$items.transition(props, opts);
+		}
+		else {
+			if (opts && !opts.easing) {
+				opts.easing = 'easeInOutQuad';
+			}
+
+			$items.vendorCss(props);
+			
+			if ( opts && opts.complete ) {
+				opts.complete();
+			}
+		}
+	}
+
+	function animatePaths(animate, paths, opts) {
 		var begin = 0,
 			anim;
 
@@ -63,6 +80,10 @@ $.fn.fullHeight = function() {
 		paths.forEach(function(path, i) {
 			$(path).css('display', '');
 
+			if ( !animate ) {
+				return;
+			}
+
 			var length = path.getTotalLength(),
 				duration = $.isArray(opts.duration) ? opts.duration[i] : opts.duration,
 				easing = $.isArray(opts.easing) ? opts.easing[i] : opts.easing,
@@ -70,14 +91,16 @@ $.fn.fullHeight = function() {
 				gap = $.isArray(opts.gap) ? opts.gap[i] : opts.gap,
 				direction = reverse ? -1 : 1;
 
-			anim = new Anim(duration / 1000, {
+			var thisAnim = new Anim(duration / 1000, {
 				easing: easing
 			});
+
+			anim = thisAnim;
 			
 			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
 			path.setAttribute( 'stroke-dashoffset', direction * length );
 
-			anim.target( path.attributes.getNamedItem('stroke-dashoffset') ).prop('nodeValue', {
+			thisAnim.target( path.attributes.getNamedItem('stroke-dashoffset') ).prop('nodeValue', {
 				from: direction * length,
 				to: 0
 			}).on('complete', function() {
@@ -87,11 +110,11 @@ $.fn.fullHeight = function() {
 
 			if ( begin ) {
 				setTimeout(function() {
-					anim.start();
+					thisAnim.start();
 				}, begin);
 			}
 			else {
-				anim.start();
+				thisAnim.start();
 			}
 
 			begin += duration + gap;
@@ -114,4 +137,5 @@ $.fn.fullHeight = function() {
 	mankini.utils.animateToClass = animateToClass;
 	mankini.utils.requestAnimationFrame = requestAnimationFrame;
 	mankini.utils.animatePaths = animatePaths;
+	mankini.utils.transition = transition;
 })();
