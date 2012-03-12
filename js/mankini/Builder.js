@@ -62,6 +62,7 @@
 			builder._code =
 				builder._heading =
 				builder._webView =
+				builder._supported =
 				builder._bullets = undefined;
 		});
 
@@ -234,23 +235,42 @@
 		});
 	};
 
-	BuilderProto.image = function(url, className) {
+	BuilderProto.supported = function(supportItems, className) {
 		var builder = this;
 
 		return this.action(function( animate, $slide ) {
-			var $img = $('<img class="mankini-image">').addClass( className ).appendTo( $slide );
-			
-			$img.on( 'load', function() {
-				mankini.utils.animateToClass( animate, $img );
+			builder._supported = new ui.Supported(className);
+
+			supportItems.forEach(function(item) {
+				builder._supported.add( item[0], item[1], item[2] );
 			});
 
-			$img.prop( 'src', url );
+			builder._supported.$container.appendTo( $slide );
+			builder._supported.show( animate );
+		});
+	};
+
+	BuilderProto.supportedNext = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._supported.showNext( animate );
 		});
 	};
 
 	BuilderProto.startHere = function() {
 		this._presentation.reset();
 		return this;
+	};
+
+	BuilderProto.image = function(src, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			var image = new ui.Image(src, className);
+			$slide.append( image.$container );
+			image.show(animate);
+		});
 	};
 
 	mankini.Builder = Builder;

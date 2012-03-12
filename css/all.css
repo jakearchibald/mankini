@@ -238,22 +238,22 @@ body {
 .notes-page body {
   background: #000;
   color: #fff;
-  font: normal 60px/1.4 sans-serif;
+  font: normal 38px/1.3 sans-serif;
   width: auto;
   height: 100%; }
 
-/* line 14, _notes.scss */
-.slide-notes li,
+/* line 13, _notes.scss */
 .slide-next,
 .notes-page time {
-  padding: 5px 20px; }
+  padding: 13px 20px; }
 
-/* line 18, _notes.scss */
+/* line 17, _notes.scss */
 .slide-notes li {
-  display: list-item; }
+  display: list-item;
+  padding: 22px 20px; }
   /* line 21, _notes.scss */
   .slide-notes li:nth-child(even) {
-    background: #111111; }
+    background: #222222; }
 
 /* line 26, _notes.scss */
 .slide-next {
@@ -585,3 +585,33 @@ body {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     text-align: right;
     line-height: 1; }
+
+/* line 1, _image.scss */
+.mankini-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+  /* line 8, _image.scss */
+  .mankini-image.animate {
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+  /* line 12, _image.scss */
+  .mankini-image.on {
+    opacity: 1; }
+  /* line 16, _image.scss */
+  .mankini-image img {
+    display: block;
+    margin: 0 auto; }
+
+/* line 22, _image.scss */
+.mankini-image-inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 1024px;
+  height: 768px; }
