@@ -1,0 +1,62 @@
+.mankini-supported {
+	text-align: center;
+	opacity: 0;
+
+	& .supported-item {
+		display: inline-block;
+		position: relative;
+		margin: 0 20px;
+		height: 146px;
+		vertical-align: top;
+
+		&.animate {
+			& img {
+				@include transition(-webkit-filter, 0.4s, $ease-in-out-quad);
+			}
+			& .version {
+				@include transition(all, 0.4s, $ease-out-quad);
+			}
+		}
+
+		&.on .version {
+			opacity: 1;
+			@include transform( scale(1) );
+		}
+
+		&.on:not(.no-support) img {
+			-webkit-filter: grayscale(0);
+		}
+	}
+
+	& .version {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: #fff;
+		border-radius: 91px;
+		border: 3px solid #000;
+		border-radius: 100px;
+		padding: 9px 0;
+		font-size: 23px;
+		font-family: share;
+		font-weight: bold;
+		opacity: 0;
+
+		@include transform( scale(0.1) );
+	}
+
+	& img {
+		width: 142px;
+		-webkit-filter: grayscale(1);
+		margin: 0 auto;
+		display: block;
+	}
+
+	&.animate {
+		@include transition(opacity, 0.5s, $ease-out-quad);
+	}
+
+	&.on {
+		opacity: 1;
+	}
+}

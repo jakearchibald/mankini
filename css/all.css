@@ -615,3 +615,75 @@ body {
   vertical-align: middle;
   width: 1024px;
   height: 768px; }
+
+/* line 1, _supported.scss */
+.mankini-supported {
+  text-align: center;
+  opacity: 0; }
+  /* line 5, _supported.scss */
+  .mankini-supported .supported-item {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    height: 146px;
+    vertical-align: top; }
+    /* line 13, _supported.scss */
+    .mankini-supported .supported-item.animate img {
+      -webkit-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+      -moz-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+      -ms-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+      -o-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+      transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+    /* line 16, _supported.scss */
+    .mankini-supported .supported-item.animate .version {
+      -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      -ms-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    /* line 21, _supported.scss */
+    .mankini-supported .supported-item.on .version {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
+    /* line 26, _supported.scss */
+    .mankini-supported .supported-item.on:not(.no-support) img {
+      -webkit-filter: grayscale(0); }
+  /* line 31, _supported.scss */
+  .mankini-supported .version {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 91px;
+    border: 3px solid #000;
+    border-radius: 100px;
+    padding: 9px 0;
+    font-size: 23px;
+    font-family: share;
+    font-weight: bold;
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+    transform: scale(0.1); }
+  /* line 48, _supported.scss */
+  .mankini-supported img {
+    width: 142px;
+    -webkit-filter: grayscale(1);
+    margin: 0 auto;
+    display: block; }
+  /* line 55, _supported.scss */
+  .mankini-supported.animate {
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+  /* line 59, _supported.scss */
+  .mankini-supported.on {
+    opacity: 1; }

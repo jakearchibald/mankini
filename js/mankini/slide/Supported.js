@@ -16,6 +16,8 @@
 			$('<div class="version"/>').text( version ).appendTo( $supportedItem );
 		}
 
+		$supportedItem.addClass( /([^\/]+)\.[^\.]+$/.exec(imgSrc)[1] );
+
 		if ( noSupport ) {
 			$supportedItem.addClass('no-support');
 		}
