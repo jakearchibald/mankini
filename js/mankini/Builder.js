@@ -58,15 +58,17 @@
 		}
 		
 		// Clear retained instances
-		this._slide.on('show', function() {
-			builder._code =
-				builder._heading =
-				builder._webView =
-				builder._supported =
-				builder._bullets = undefined;
-		});
+		this._slide.on( 'show', $.proxy(this.clearRetainedInstances, this) );
 
 		return this;
+	};
+
+	BuilderProto.clearRetainedInstances = function() {
+		this._code =
+			this._heading =
+			this._webView =
+			this._supported =
+			this._bullets = undefined;
 	};
 
 	BuilderProto.transition = function(type) {

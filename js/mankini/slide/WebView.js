@@ -7,7 +7,6 @@
 				'<div class="mankini-toolbar">' +
 					'<div role="button" class="back"><div>Back</div></div>' +
 					'<div role="button" class="refresh"><div>Refresh</div></div>' +
-					'<div role="button" class="server"><div>Server</div></div>' +
 				'</div>' +
 				'<iframe src="about:blank"></iframe>' +
 			'</div>' +
@@ -24,16 +23,6 @@
 
 		this.$container.find('.refresh').on('click', function(event) {
 			webView.refresh();
-			event.preventDefault();
-		});
-
-		this.$container.find('.server').on('click', function(event) {
-			$.ajax('http://localhost:3000/apache-stop.json', {
-				dataType: 'json',
-				type: 'post'
-			}).done(function(data) {
-				console.log(data);
-			});
 			event.preventDefault();
 		});
 	}

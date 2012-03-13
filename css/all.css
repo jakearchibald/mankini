@@ -524,7 +524,7 @@ body {
       text-indent: -5000px; }
     /* line 48, _web-view.scss */
     .mankini-toolbar [role='button'] div {
-      padding: 4px 10px; }
+      padding: 4px 10px 4px 26px; }
 
 /* line 1, _pointer.scss */
 .mankini-pointer {
