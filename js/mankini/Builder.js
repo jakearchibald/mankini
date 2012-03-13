@@ -139,8 +139,9 @@
 		});
 	};
 
-	BuilderProto.slideClass = function(className) {
-		return this.slide().addClass( className );
+	BuilderProto.addSlideClass = function(className) {
+		this._slide.$container.addClass(className);
+		return this;
 	};
 
 	BuilderProto.newCode = function(filePath, lang, className) {
