@@ -16,7 +16,7 @@
 			}).transition({
 				transform: 'translate3d(' + presentationEnd + ',0,0)'
 			}, {
-				duration: 1000,
+				duration: 800,
 				easing: 'easeInOutQuad',
 				complete: function() {
 					newSlide.$container[0].style.cssText = '';

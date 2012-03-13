@@ -6,8 +6,11 @@
 		return str.match(/^.*$/mg);
 	}
 
-	function convertTabs(str) {
-		return str.replace( /\t/g, tabReplace );
+	function tabsAndEscape(str) {
+		return str.replace( /\t/g, tabReplace )
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;');
 	}
 
 	function Code(className) {
@@ -30,7 +33,7 @@
 		this._codeLoader = $.ajax( filePath, {
 			dataType: 'text'
 		}).done(function(text) {
-			code._codeLines = splitLines( convertTabs(text) );
+			code._codeLines = splitLines( tabsAndEscape(text) );
 		});
 
 		this._lang = lang;
@@ -48,13 +51,21 @@
 		var code = this;
 
 		this._codeLoader.done(function() {
-			var codeSlice = code._codeLines.slice(from, to).join('\n');
+			from = from || 1;
+			to = to || code._codeLines.length;
+			var codeSlice = code._codeLines.slice(from - 1, to ).join('\n');
 			
 			if (animate) {
 				code.$container.height( code.$container[0].offsetHeight );
 			}
 
-			code._$code.html( prettyPrintOne(codeSlice, code._lang) );
+			if ( code._lang == 'plain' ) {
+				code._$code.html( codeSlice );
+			}
+			else {
+				code._$code.html( prettyPrintOne(codeSlice, code._lang) );
+			}
+
 
 			if (animate) {
 				code.$container.transition({

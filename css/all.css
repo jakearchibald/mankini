@@ -651,7 +651,7 @@ body {
       transform: scale(1); }
     /* line 26, _supported.scss */
     .mankini-supported .supported-item.on:not(.no-support) img {
-      -webkit-filter: grayscale(0); }
+      -webkit-filter: grayscale(0) blur(0); }
   /* line 31, _supported.scss */
   .mankini-supported .version {
     position: absolute;
@@ -674,7 +674,7 @@ body {
   /* line 48, _supported.scss */
   .mankini-supported img {
     width: 142px;
-    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(1) blur(2px);
     margin: 0 auto;
     display: block; }
   /* line 55, _supported.scss */

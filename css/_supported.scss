@@ -24,7 +24,7 @@
 		}
 
 		&.on:not(.no-support) img {
-			-webkit-filter: grayscale(0);
+			-webkit-filter: grayscale(0) blur(0);
 		}
 	}
 
@@ -47,7 +47,7 @@
 
 	& img {
 		width: 142px;
-		-webkit-filter: grayscale(1);
+		-webkit-filter: grayscale(1) blur(2px);
 		margin: 0 auto;
 		display: block;
 	}
