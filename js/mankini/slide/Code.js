@@ -15,7 +15,7 @@
 
 	function Code(className) {
 		this._$code = $('<code/>');
-		this.$container = $('<pre class="mankini-code"/>').append( this._$code );
+		this.$container = $('<pre class="mankini-code"/>').append( this._$code ).addClass( className || '' );
 		this._lang = '';
 		this._codeLines = [];
 		this._codeLoader = null;

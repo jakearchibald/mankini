@@ -68,6 +68,7 @@
 			this._heading =
 			this._webView =
 			this._supported =
+			this._arrow =
 			this._bullets = undefined;
 	};
 
@@ -134,10 +135,20 @@
 	};
 
 	BuilderProto.arrow = function(arrowType, className) {
+		var builder = this;
+
 		return this.action(function(animate, $slide) {
-			var arrow = new ui.Arrow(arrowType, className);
-			$slide.append( arrow.$container );
-			arrow.draw( animate );
+			builder._arrow = new ui.Arrow(arrowType, className);
+			$slide.append( builder._arrow.$container );
+			builder._arrow.draw( animate );
+		});
+	};
+
+	BuilderProto.arrowHide = function(arrowType, className) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._arrow.hide( animate );
 		});
 	};
 

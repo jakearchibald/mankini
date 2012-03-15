@@ -306,19 +306,27 @@ body {
   -ms-transform-origin: 0 0;
   -o-transform-origin: 0 0;
   transform-origin: 0 0; }
-
-/* line 10, _arrows.scss */
-.mankini-arrow1 svg {
-  position: relative;
-  left: -93px; }
-
-/* line 15, _arrows.scss */
-.mankini-arrow1 path {
-  stroke: #f00;
-  fill: none;
-  stroke-width: 7;
-  stroke-linecap: round;
-  stroke-linejoin: round; }
+  /* line 9, _arrows.scss */
+  .mankini-arrow1.animate {
+    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+  /* line 13, _arrows.scss */
+  .mankini-arrow1.off {
+    opacity: 0; }
+  /* line 17, _arrows.scss */
+  .mankini-arrow1 svg {
+    position: relative;
+    left: -93px; }
+  /* line 22, _arrows.scss */
+  .mankini-arrow1 path {
+    stroke: #f00;
+    fill: none;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round; }
 
 /* line 1, _heading.scss */
 .mankini-heading {

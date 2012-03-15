@@ -34,5 +34,9 @@
 		});
 	};
 
+	ArrowProto.hide = function(animate) {
+		return mankini.utils.animateToClass( animate, this.$container, 'off' );
+	};
+
 	mankini.slide.Arrow = Arrow;
 })();
