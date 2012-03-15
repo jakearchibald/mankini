@@ -394,7 +394,7 @@ body {
   .mankini-code code {
     display: block;
     padding: 18px 20px 15px;
-    font-family: consolas, monotype;
+    font-family: consolas, monospace;
     font-size: 20px;
     line-height: 1.3; }
 

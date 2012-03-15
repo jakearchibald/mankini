@@ -56,6 +56,26 @@
 				}
 			});
 		},
+		zoomSpin: function(presentation, oldSlide, newSlide) {
+			presentation.$container.append( newSlide.$container );
+			newSlide.init( true );
+
+			newSlide.$container.vendorCss({
+				transform: 'rotate(25deg) scale(1.5)',
+				backfaceVisibility: 'hidden',
+				opacity: 0
+			}).transition({
+				transform: '',
+				opacity: 1
+			}, {
+				duration: 500,
+				easing: 'easeOutQuad',
+				complete: function() {
+					newSlide.$container[0].style.cssText = '';
+					oldSlide.$container.remove();
+				}
+			});
+		},
 		fadeBlack: function(presentation, oldSlide, newSlide) {
 			var $div = $('<div class="mankini-black-fader" />').appendTo( presentation.$container );
 
