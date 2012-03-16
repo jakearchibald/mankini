@@ -25,6 +25,7 @@
 		'mankini/slide/Title.js',
 		'mankini/slide/Image.js',
 		'mankini/slide/Supported.js',
+		'mankini/slide/SubHeading.js',
 		'mankini/Builder.js'
 	];
 

@@ -52,7 +52,7 @@
 
 		this._codeLoader.done(function() {
 			from = from || 1;
-			to = to || code._codeLines.length;
+			to = to || from || code._codeLines.length;
 			var codeSlice = code._codeLines.slice(from - 1, to ).join('\n');
 			
 			if (animate) {

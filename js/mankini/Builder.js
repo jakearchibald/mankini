@@ -287,5 +287,17 @@
 		});
 	};
 
+	BuilderProto.subHeading = function(text, className) {
+		return this.action(function( animate, $slide ) {
+			var subHeading = new ui.SubHeading( className );
+			$slide.append( subHeading.$container );
+			subHeading.text( animate, text );
+		});
+	};
+
+	BuilderProto.stateSubHeading = function(text, className) {
+		return this.state( text ).subHeading( text, className );
+	};
+
 	mankini.Builder = Builder;
 })();

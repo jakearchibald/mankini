@@ -1,0 +1,21 @@
+.mankini-sub-heading {
+	margin: 0 45px 8px;
+	overflow: hidden;
+
+	& h2 {
+		color: #AB540D;
+		font-family: voltaire, sans-serif;
+		margin: 0;
+		font-size: 30px;
+		@include transform( translate(0, 100%) );
+	}
+
+
+	&.animate h2 {
+		@include transition(all, 0.4s, $ease-out-quad);
+	}
+
+	&.on h2 {
+		@include transform(none);
+	}
+}
