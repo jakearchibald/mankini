@@ -5,10 +5,11 @@
 .mankini-bullet {
 	color: #AB540D;
 	font-family: voltaire, sans-serif;
-	font-size: 40px;
-	margin: 12px 44px;
+	font-size: 35px;
+	margin: 28px 44px;
 	margin-left: 83px;
 	position: relative;
+	opacity: 0;
 
 	&::before {
 		content: '➤';
@@ -20,5 +21,13 @@
 
 	&.previous {
 		opacity: 0.5;
+	}
+
+	&.animate {
+		@include transition(all, .5s, $ease-in-out-quad);
+	}
+
+	&.on {
+		opacity: 1;
 	}
 }

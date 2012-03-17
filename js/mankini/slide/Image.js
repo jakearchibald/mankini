@@ -32,5 +32,9 @@
 		});
 	};
 
+	ImageProto.hide = function(animate) {
+		mankini.utils.animateToClass( animate, this.$container, 'off' );
+	};
+
 	mankini.slide.Image = Image;
 })();

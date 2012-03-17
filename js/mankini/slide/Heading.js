@@ -1,6 +1,6 @@
 (function() {
-	function Heading() {
-		this.$container = $('<header class="mankini-heading"><div class="mask"><h1></h1></div></header>');
+	function Heading(className) {
+		this.$container = $('<header class="mankini-heading"><div class="mask"><h1></h1></div></header>').addClass( className || '' );
 		this._$h1 = this.$container.find('h1');
 		this._currentText = '';
 	}

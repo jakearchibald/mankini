@@ -69,6 +69,7 @@
 			this._webView =
 			this._supported =
 			this._arrow =
+			this._image =
 			this._bullets = undefined;
 	};
 
@@ -172,20 +173,20 @@
 		});
 	};
 
-	BuilderProto.slideHeading = function(text) {
-		return this.slide().stateHeading( text );
+	BuilderProto.slideHeading = function(text, className) {
+		return this.slide().stateHeading( text, className );
 	};
 
-	BuilderProto.stateHeading = function(text) {
-		return this.state( text ).heading( text );
+	BuilderProto.stateHeading = function(text, className) {
+		return this.state( text ).heading( text, className );
 	};
 
-	BuilderProto.heading = function(text) {
+	BuilderProto.heading = function(text, className) {
 		var builder = this;
 
 		return this.action(function( animate, $slide ) {
 			if ( !builder._heading ) {
-				builder._heading = new ui.Heading();
+				builder._heading = new ui.Heading( className );
 				builder._heading.$container.appendTo( $slide );
 			}
 			builder._heading.text( animate, text );
@@ -281,9 +282,17 @@
 		var builder = this;
 
 		return this.action(function( animate, $slide ) {
-			var image = new ui.Image(src, className);
-			$slide.append( image.$container );
-			image.show(animate);
+			builder._image = new ui.Image(src, className);
+			$slide.append( builder._image.$container );
+			builder._image.show(animate);
+		});
+	};
+
+	BuilderProto.imageHide = function(src, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._image.hide( animate );
 		});
 	};
 

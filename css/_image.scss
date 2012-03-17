@@ -5,17 +5,22 @@
 	bottom: 0;
 	right: 0;
 
-	&.animate {
-		@include transition(opacity, 0.5s, $ease-out-quad);
-	}
-
-	&.on {
-		opacity: 1;
-	}
-
 	& img {
 		display: block;
 		margin: 0 auto;
+		opacity: 0;
+	}
+
+	&.animate img {
+		@include transition(opacity, 0.5s, $ease-out-quad);
+	}
+
+	&.on img {
+		opacity: 1;
+	}
+
+	&.off img {
+		opacity: 0;
 	}
 }
 
