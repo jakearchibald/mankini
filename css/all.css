@@ -202,13 +202,17 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: 1024px;
   height: 768px;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
-/* line 8, _presentation.scss */
+/* line 12, _presentation.scss */
 * {
   cursor: none !important; }
 
-/* line 12, _presentation.scss */
+/* line 16, _presentation.scss */
 .mankini-presentation {
   width: 100%;
   height: 100%;

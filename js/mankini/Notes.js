@@ -4,7 +4,7 @@
 
 		if ( inPage ) {
 			this._ready = $.ajax(scriptRoot + '../html/notes.html').done(function(response) {
-				$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page');
+				$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page notes-page');
 				notes._getElements( document );
 			});
 		}
