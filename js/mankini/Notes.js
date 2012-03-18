@@ -1,23 +1,35 @@
 (function() {
-	function Notes() {
+	function Notes( inPage ) {
 		var notes = this;
-		var win = window.open(
-			scriptRoot + '../html/notes.html', 'notes',
-			'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
-		);
 
-		this._ready = $.Deferred();
+		if ( inPage ) {
+			this._ready = $.ajax(scriptRoot + '../html/notes.html').done(function(response) {
+				$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page');
+				notes._getElements( document );
+			});
+		}
+		else {
+			var win = window.open(
+				scriptRoot + '../html/notes.html', 'notes',
+				'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
+			);
+			this._ready = $.Deferred();
 
-		$(win).on('load', function() {
-			var doc = this.document;
-			notes._$notes = $('.slide-notes', doc);
-			notes._$next  = $('.slide-next', doc);
-			notes._time   = $('time', doc)[0];
-			notes._ready.resolve();
-		});
+
+			$(win).on('load', function() {
+				notes._getElements( this.document );
+				notes._ready.resolve();
+			});
+		}
 	}
 
 	var NotesProto = Notes.prototype;
+
+	NotesProto._getElements = function( doc ) {
+		this._$notes = $('.slide-notes', doc);
+		this._$next  = $('.slide-next', doc);
+		this._time   = $('time', doc)[0];
+	};
 
 	NotesProto.setNotes = function(strs) {
 		var notes = this;
@@ -56,12 +68,15 @@
 			time.textContent = '00:00:00';
 
 			notes._interval = setInterval(function() {
-				var duration = new Date( new Date() - startTime );
+				var duration = new Date() - startTime;
+				var hours   = Math.floor(duration / (1000 * 60 * 60));
+				var minutes = Math.floor(duration / (1000 * 60)) - hours * 60;
+				var seconds = Math.floor(duration / 1000) - hours * 60 - minutes * 60;
 				var i = 3;
 				var timeParts = [
-					duration.getHours(),
-					duration.getMinutes(),
-					duration.getSeconds()
+					hours,
+					minutes,
+					seconds
 				];
 
 				while (i--) {

@@ -1,12 +1,21 @@
 $minor-bg: #222;
 $overlay-bg: #333;
 
-.notes-page body {
+.notes-page body,
+.mankini-notes-in-page {
 	background: #000;
 	color: #fff;
 	font: normal 38px/1.3 sans-serif;
 	width: auto;
 	height: 100%;
+}
+
+.mankini-notes-in-page {
+	position: absolute;
+	top: 0;
+	left: 1024px;
+	right: 0;
+	font: normal 18px/1.3 sans-serif;
 }
 
 .slide-next,

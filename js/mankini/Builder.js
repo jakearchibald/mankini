@@ -7,7 +7,7 @@
 
 	function Builder(presentation) {
 		this._presentation = presentation;
-		this._notes = new mankini.Notes();
+		this._notes = new mankini.Notes( true );
 		this._pointer = new mankini.Pointer();
 		this._pointer.$container.appendTo( document.body );
 
@@ -293,6 +293,22 @@
 
 		return this.action(function( animate, $slide ) {
 			builder._image.hide( animate );
+		});
+	};
+
+	BuilderProto.pointerShow = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._pointer.show();
+		});
+	};
+
+	BuilderProto.pointerHide = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._pointer.hide();
 		});
 	};
 
