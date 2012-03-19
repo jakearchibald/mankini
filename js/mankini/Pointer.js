@@ -32,6 +32,8 @@
 	var PointerProto = Pointer.prototype;
 
 	PointerProto.show = function() {
+		if (this._active) { return; }
+		
 		this.$container.show().vendorCss({
 			opacity: 0
 		}).transition({
@@ -45,6 +47,8 @@
 	};
 
 	PointerProto.hide = function() {
+		if (!this._active) { return; }
+
 		this.$container.transition({
 			opacity: 0
 		}, {

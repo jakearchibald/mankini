@@ -27,6 +27,7 @@
 
 	SlideProto.init = function(animate) {
 		this.$container.empty();
+		this.$container[0].style.cssText = '';
 		this.trigger('show');
 		this._stateIndex = 0;
 		this._states[0].go( animate );
