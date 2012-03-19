@@ -26,6 +26,15 @@
 		&.on:not(.no-support) img {
 			-webkit-filter: grayscale(0) blur(0);
 		}
+
+		&.deactivated .version {
+			opacity: 0;
+			@include transform( scale(0.1) );
+		}
+
+		&.deactivated:not(.no-support) img {
+			-webkit-filter: grayscale(1) blur(2px);
+		}
 	}
 
 	& .version {

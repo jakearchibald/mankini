@@ -19,9 +19,6 @@
 		font-size: 24px;
 	}
 
-	&.previous {
-		opacity: 0.5;
-	}
 
 	&.animate {
 		@include transition(all, .5s, $ease-in-out-quad);
@@ -29,5 +26,9 @@
 
 	&.on {
 		opacity: 1;
+	}
+	
+	&.previous {
+		opacity: 0.5;
 	}
 }

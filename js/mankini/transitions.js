@@ -43,6 +43,7 @@
 			
 			presentation.$container.vendorCss({
 				transform: 'translate3d(0,0,0) rotateY(0deg) translate3d(0,0,0)',
+				transformStyle: 'preserve-3d',
 				backfaceVisibility: 'hidden'
 			}).transition({
 				transform: 'translate3d(-50%,0,0) rotateY(-90deg) translate3d(-50%,0,0)'
@@ -56,19 +57,19 @@
 				}
 			});
 		},
-		zoomSpin: function(presentation, oldSlide, newSlide) {
+		zoom: function(presentation, oldSlide, newSlide) {
 			presentation.$container.append( newSlide.$container );
 			newSlide.init( true );
 
 			newSlide.$container.vendorCss({
-				transform: 'rotate(25deg) scale(1.5)',
+				transform: 'scale(15)',
 				backfaceVisibility: 'hidden',
 				opacity: 0
 			}).transition({
 				transform: '',
 				opacity: 1
 			}, {
-				duration: 500,
+				duration: 300,
 				easing: 'easeOutQuad',
 				complete: function() {
 					newSlide.$container[0].style.cssText = '';

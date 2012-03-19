@@ -47,6 +47,14 @@
 
 		& div {
 			padding: 4px 10px 4px 26px;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
 		}
+	}
+	& .back div {
+		background-image: url(imgs/web-view/back.png);
+	}
+	& .refresh div {
+		background-image: url(imgs/web-view/reload.png);
 	}
 }

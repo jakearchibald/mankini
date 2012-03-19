@@ -5,8 +5,8 @@
 		this.$container = $('' +
 			'<div class="mankini-web-view">' +
 				'<div class="mankini-toolbar">' +
-					'<div role="button" class="back"><div>Back</div></div>' +
-					'<div role="button" class="refresh"><div>Refresh</div></div>' +
+					'<div role="button" class="back no-label"><div>Back</div></div>' +
+					'<div role="button" class="refresh no-label"><div>Refresh</div></div>' +
 				'</div>' +
 				'<iframe src="about:blank"></iframe>' +
 			'</div>' +
@@ -15,6 +15,7 @@
 		});
 
 		this._$iframe = this.$container.find('iframe');
+		this._shown = false;
 
 		this.$container.find('.back').on('click', function(event) {
 			webView.back();
@@ -32,22 +33,25 @@
 	WebViewProto.url = function(animate, str) {
 		var webView = this;
 
-		if (animate) {
-			this._$iframe.one('load', function() {
-				webView.$container.transition({
-					height: webView.$container.fullHeight(),
-					opacity: 1
-				}, {
-					duration: 300,
-					easing: 'easeOutQuad'
+		if ( !this._shown ) {
+			if (animate) {
+				this._$iframe.one('load', function() {
+					webView.$container.transition({
+						height: webView.$container.fullHeight(),
+						opacity: 1
+					}, {
+						duration: 300,
+						easing: 'easeOutQuad'
+					});
 				});
-			});
-		}
-		else {
-			webView.$container.css({
-				height: 'auto',
-				opacity: 1
-			});
+			}
+			else {
+				webView.$container.css({
+					height: 'auto',
+					opacity: 1
+				});
+			}
+			this._shown = true;
 		}
 		this._$iframe[0].src = str;
 

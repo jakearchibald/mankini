@@ -2,7 +2,7 @@
 	function Supported(className) {
 		this.$container = $('<div class="mankini-supported"/>').addClass( className || '' );
 		this._index = 0;
-		this._items = [];
+		this._$items = $();
 	}
 
 	var SupportedProto = Supported.prototype;
@@ -22,18 +22,24 @@
 			$supportedItem.addClass('no-support');
 		}
 
-		this._items.push( $supportedItem );
+		this._$items.push( $supportedItem[0] );
 		$supportedItem.appendTo( this.$container );
 
 		return this;
 	};
 
 	SupportedProto.showNext = function( animate ) {
-		mankini.utils.animateToClass( animate, this._items[ this._index++ ] );
+		mankini.utils.animateToClass( animate, this._$items.eq( this._index++ ) );
 	};
 
 	SupportedProto.show = function( animate ) {
 		mankini.utils.animateToClass( animate, this.$container );
+	};
+
+	SupportedProto.deactivate = function( animate, item ) {
+		var $toDeactivate = this._$items.filter( '.' + item );
+
+		mankini.utils.animateToClass( animate, $toDeactivate, 'deactivated' );
 	};
 
 	mankini.slide.Supported = Supported;
