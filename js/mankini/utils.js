@@ -15,8 +15,9 @@ $.fn.fullHeight = function() {
 
 	var transitionend = 'transitionend webkitTransitionEnd oTransitionEnd';
 
-	function animateToClass( animate, $items, className ) {
+	function animateToClass( animate, $items, className, animateClassName ) {
 		className = className || 'on';
+		animateClassName = animateClassName || 'animate';
 		var deferreds = [];
 
 		$items.each(function() {
@@ -26,13 +27,13 @@ $.fn.fullHeight = function() {
 			deferreds.push( deferred );
 
 			function complete() {
-				$item.removeClass('animate');
+				$item.removeClass( animateClassName );
 				$item.off( transitionend, complete );
 				deferred.resolve();
 			}
 
 			if ( animate ) {
-				$item.on( transitionend, complete ).addClass('animate');
+				$item.on( transitionend, complete ).addClass( animateClassName );
 
 				requestAnimationFrame(function() {
 					$item.addClass( className );

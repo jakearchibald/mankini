@@ -7,7 +7,7 @@
 
 	function Builder(presentation) {
 		this._presentation = presentation;
-		this._notes = new mankini.Notes( 0 );
+		this._notes = new mankini.Notes( 1 );
 		this._pointer = new mankini.Pointer();
 		this._pointer.$container.appendTo( document.body );
 
@@ -300,7 +300,7 @@
 		var builder = this;
 
 		return this.action(function( animate, $slide ) {
-			builder._image.hide( animate );
+			builder._image.hide( animate, className );
 		});
 	};
 

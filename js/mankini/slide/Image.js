@@ -32,8 +32,8 @@
 		});
 	};
 
-	ImageProto.hide = function(animate) {
-		mankini.utils.animateToClass( animate, this.$container, 'off' );
+	ImageProto.hide = function(animate, animateClass) {
+		mankini.utils.animateToClass( animate, this.$container, 'off', animateClass );
 	};
 
 	mankini.slide.Image = Image;
