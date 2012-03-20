@@ -266,7 +266,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 .slide-next {
   float: right;
   background: #333333;
-  margin: 0 0 10px;
+  margin: 0 0 10px 10px;
   max-width: 33%; }
 
 /* line 42, _notes.scss */
