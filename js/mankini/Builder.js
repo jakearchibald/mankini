@@ -10,6 +10,7 @@
 		this._notes = new mankini.Notes( 1 );
 		this._pointer = new mankini.Pointer();
 		this._pointer.$container.appendTo( document.body );
+		this._$authorInfo = $('.author');
 
 		this._initControls();
 		this._stateNames = [];
@@ -71,6 +72,8 @@
 			this._arrow =
 			this._image =
 			this._bullets = undefined;
+
+		this._authorShow();
 	};
 
 	BuilderProto.transition = function(type) {
@@ -123,6 +126,26 @@
 				builder._bullets.$container.appendTo( $slide );
 			}
 			builder._bullets.add( animate, bulletStrings, className );
+		});
+	};
+
+	BuilderProto.authorHide = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._$authorInfo.addClass('hide');
+		});
+	};
+
+	BuilderProto._authorShow = function(animate) {
+		this._$authorInfo.removeClass('hide');
+	};
+
+	BuilderProto.authorShow = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._authorShow( animate );
 		});
 	};
 
