@@ -1,9 +1,10 @@
 (function() {
-	function Notes( inPage ) {
+	function Notes( presentation, inPage ) {
 		var notes = this,
 			win = window;
 
 		this._ready = $.Deferred();
+		this._presentation = presentation;
 		
 		function done() {
 			notes._getElements( win.document );
@@ -34,9 +35,15 @@
 	var NotesProto = Notes.prototype;
 
 	NotesProto._getElements = function( doc ) {
+		var notes = this;
 		this._$notes = $('.slide-notes', doc);
 		this._$next  = $('.slide-next', doc);
+		this._$container = $('.mankini-notes', doc);
 		this._time   = $('time', doc)[0];
+		this._$index = $('.index', doc).on('click', 'li', function(event) {
+			notes._presentation.goTo( $(this).data('slideNum') );
+			event.preventDefault();
+		});
 	};
 
 	NotesProto.setNotes = function(strs) {
@@ -64,6 +71,16 @@
 
 		return this;
 	};
+
+	NotesProto.addIndexItem = function(slideNum, stateName) {
+		var notes = this;
+
+		this._ready.done(function() {
+			notes._$index.append( $('<li/>').text(stateName).data('slideNum', slideNum) )
+		});
+
+		return this;
+	}
 
 	NotesProto.startTime = function() {
 		var notes = this;
@@ -96,6 +113,10 @@
 		});
 
 		return this;
+	};
+
+	NotesProto.toggleIndex = function() {
+		this._$container.toggleClass('showIndex');
 	};
 
 	mankini.Notes = Notes;

@@ -47,3 +47,29 @@ $overlay-bg: #333;
 	text-align: right;
 	background: $overlay-bg;
 }
+
+.mankini-notes {
+	&.showIndex {
+		& > * {
+			display: none;
+		} 
+		& .index {
+			display: block;
+		}
+	}
+	& .index {
+		display: none;
+		@include column-count(4);
+		font-size: 18px;
+
+		& li {
+			padding: 0 8px;
+			margin: 8px 0;
+			cursor: pointer !important;
+
+			&:hover {
+				color: #ff0;
+			}
+		}
+	}
+}

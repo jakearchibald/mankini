@@ -19,10 +19,16 @@
 		this._slideIndex = 0;
 	};
 
-	PresentationProto.start = function() {
-		var slide = this._slides[0];
+	PresentationProto.start = function( startAt ) {
+		this._slideIndex = startAt || 0;
+		var slide = this._slides[ this._slideIndex ];
 		this.$container.append( slide.$container );
 		slide.init( true );
+	};
+
+	PresentationProto.goTo = function( num ) {
+		this._slides[ this._slideIndex ].$container.remove();
+		this.start( num );
 	};
 
 	PresentationProto.next = function( animate ) {

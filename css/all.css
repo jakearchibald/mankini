@@ -283,6 +283,30 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   text-align: right;
   background: #333333; }
 
+/* line 53, _notes.scss */
+.mankini-notes.showIndex > * {
+  display: none; }
+/* line 56, _notes.scss */
+.mankini-notes.showIndex .index {
+  display: block; }
+/* line 60, _notes.scss */
+.mankini-notes .index {
+  display: none;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -ms-column-count: 4;
+  -o-column-count: 4;
+  column-count: 4;
+  font-size: 18px; }
+  /* line 65, _notes.scss */
+  .mankini-notes .index li {
+    padding: 0 8px;
+    margin: 8px 0;
+    cursor: pointer !important; }
+    /* line 70, _notes.scss */
+    .mankini-notes .index li:hover {
+      color: #ff0; }
+
 /* line 1, _bullets.scss */
 .mankini-bullets {
   padding: 0 0 10px; }

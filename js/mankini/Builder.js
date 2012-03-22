@@ -7,10 +7,12 @@
 
 	function Builder(presentation) {
 		this._presentation = presentation;
-		this._notes = new mankini.Notes( 0 );
+		this._notes = new mankini.Notes( presentation, 0 );
 		this._pointer = new mankini.Pointer();
 		this._pointer.$container.appendTo( document.body );
 		this._$authorInfo = $('.author');
+		this._slideNum = 0;
+		this._startAt = 0;
 
 		this._initControls();
 		this._stateNames = [];
@@ -39,6 +41,10 @@
 					break;
 				case 84: // t
 					notes.startTime();
+					event.preventDefault();
+					break;
+				case 83: // t
+					notes.toggleIndex();
 					event.preventDefault();
 					break;
 				case 80: // p
@@ -89,6 +95,11 @@
 			stateNameIndex = stateNames.length,
 			notes = this._notes;
 		
+		if ( !this._slide._states.length ) {
+			this._notes.addIndexItem( this._slideNum, stateName );
+			this._slideNum++;
+		}
+
 		stateNames[ stateNameIndex ] = stateName;
 		this._state = this._slide.newState();
 
@@ -305,7 +316,12 @@
 	};
 
 	BuilderProto.startHere = function() {
-		this._presentation.reset();
+		this._startAt = this._slideNum;
+		return this;
+	};
+
+	BuilderProto.start = function() {
+		this._presentation.start( this._startAt );
 		return this;
 	};
 
