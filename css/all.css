@@ -246,35 +246,27 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: auto;
   height: 100%; }
 
-/* line 13, _notes.scss */
-.mankini-notes-in-page {
-  position: absolute;
-  top: 0;
-  left: 1024px;
-  right: 0;
-  font: normal 18px/1.3 sans-serif; }
-
-/* line 22, _notes.scss */
+/* line 14, _notes.scss */
 .slide-next,
 .notes-page time {
   padding: 13px 20px; }
 
-/* line 26, _notes.scss */
+/* line 18, _notes.scss */
 .slide-notes li {
   display: list-item;
   padding: 22px 20px; }
-  /* line 30, _notes.scss */
+  /* line 22, _notes.scss */
   .slide-notes li:nth-child(even) {
     background: #222222; }
 
-/* line 35, _notes.scss */
+/* line 27, _notes.scss */
 .slide-next {
   float: right;
   background: #333333;
   margin: 0 0 10px 10px;
   max-width: 33%; }
 
-/* line 42, _notes.scss */
+/* line 34, _notes.scss */
 .notes-page time {
   position: absolute;
   bottom: 0;
@@ -283,13 +275,13 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   text-align: right;
   background: #333333; }
 
-/* line 53, _notes.scss */
+/* line 45, _notes.scss */
 .mankini-notes.showIndex > * {
   display: none; }
-/* line 56, _notes.scss */
+/* line 48, _notes.scss */
 .mankini-notes.showIndex .index {
   display: block; }
-/* line 60, _notes.scss */
+/* line 52, _notes.scss */
 .mankini-notes .index {
   display: none;
   -webkit-column-count: 4;
@@ -298,14 +290,33 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   -o-column-count: 4;
   column-count: 4;
   font-size: 18px; }
-  /* line 65, _notes.scss */
+  /* line 57, _notes.scss */
   .mankini-notes .index li {
     padding: 0 8px;
     margin: 8px 0;
     cursor: pointer !important; }
-    /* line 70, _notes.scss */
+    /* line 62, _notes.scss */
     .mankini-notes .index li:hover {
       color: #ff0; }
+
+/* line 69, _notes.scss */
+.mankini-notes-in-page {
+  position: absolute;
+  top: 0;
+  left: 1024px;
+  right: 0;
+  font: normal 18px/1.3 sans-serif; }
+  /* line 76, _notes.scss */
+  .mankini-notes-in-page .index {
+    font-size: 15px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3; }
+    /* line 80, _notes.scss */
+    .mankini-notes-in-page .index li {
+      margin: 13px 0; }
 
 /* line 1, _bullets.scss */
 .mankini-bullets {
