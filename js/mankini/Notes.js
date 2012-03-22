@@ -1,25 +1,33 @@
 (function() {
 	function Notes( inPage ) {
-		var notes = this;
+		var notes = this,
+			win = window;
+
+		this._ready = $.Deferred();
+		
+		function done() {
+			notes._getElements( win.document );
+			notes._ready.resolve();
+		}
 
 		if ( inPage ) {
-			this._ready = $.ajax(scriptRoot + '../html/notes.html').done(function(response) {
+			$.ajax(scriptRoot + '../html/notes.html').done(function(response) {
 				$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page notes-page');
-				notes._getElements( document );
+				done();
 			});
 		}
 		else {
-			var win = window.open(
+			win = window.open(
 				scriptRoot + '../html/notes.html', 'notes',
 				'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
 			);
-			this._ready = $.Deferred();
 
-
-			$(win).on('load', function() {
-				notes._getElements( this.document );
-				notes._ready.resolve();
-			});
+			if ( win.document.body.innerHTML ) {
+				setTimeout(done, 500);
+			}
+			else {
+				$(win).on('load', done);
+			}
 		}
 	}
 
