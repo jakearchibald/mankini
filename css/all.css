@@ -289,11 +289,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   -ms-column-count: 4;
   -o-column-count: 4;
   column-count: 4;
-  font-size: 18px; }
+  font-size: 20px; }
   /* line 57, _notes.scss */
   .mankini-notes .index li {
-    padding: 0 8px;
-    margin: 8px 0;
+    padding: 0 10px;
+    margin: 10px 0;
     cursor: pointer !important; }
     /* line 62, _notes.scss */
     .mankini-notes .index li:hover {
