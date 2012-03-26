@@ -1,8 +1,9 @@
 (function() {
-	function Presentation( container ) {
+	function Presentation( container, authoring ) {
 		this.$container = $('<div class="mankini-presentation"/>').appendTo( container );
 		this._slides = [];
 		this._slideIndex = 0;
+		this.authoring = authoring;
 		this.builder = new mankini.Builder( this );
 	}
 
