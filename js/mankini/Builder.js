@@ -56,6 +56,14 @@
 		}, false);
 	};
 
+	BuilderProto.startTimer = function() {
+		var builder = this;
+
+		return builder.action(function() {
+			builder._notes.startTime();
+		});
+	};
+
 	BuilderProto.slide = function(className) {
 		var builder = this;
 
