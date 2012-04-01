@@ -6,19 +6,22 @@
 	color: #AB540D;
 	font-family: voltaire, sans-serif;
 	font-size: 35px;
-	margin: 28px 44px;
-	margin-left: 83px;
+	margin: 0.8em 1.28em;
+	margin-left: 2.39em;
 	position: relative;
 	opacity: 0;
 
 	&::before {
 		content: '➤';
 		position: absolute;
-		left: -37px;
-		top: 7px;
-		font-size: 24px;
+		left: -1.58em;
+		top: 0.3em;
+		font-size: 0.68em;
 	}
 
+	@media screen and (min-width: 1025px) {
+		font-size: 55px;
+	}
 
 	&.animate {
 		@include transition(all, .5s, $ease-in-out-quad);

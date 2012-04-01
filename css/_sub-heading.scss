@@ -1,15 +1,20 @@
 .mankini-sub-heading {
-	margin: 0 45px 8px;
+	margin: 0 1.5em 0.3em;
 	overflow: hidden;
+	font-size: 30px;
+
+	@media screen and (min-width: 1025px) {
+		font-size: 50px;
+	}
 
 	& h2 {
 		color: #AB540D;
 		font-family: voltaire, sans-serif;
 		margin: 0;
-		font-size: 30px;
+		font-size: 1em;
 		@include transform( translate(0, 100%) );
-	}
 
+	}
 
 	&.animate h2 {
 		@include transition(all, 0.4s, $ease-out-quad);

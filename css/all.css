@@ -335,28 +335,32 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   color: #AB540D;
   font-family: voltaire, sans-serif;
   font-size: 35px;
-  margin: 28px 44px;
-  margin-left: 83px;
+  margin: 0.8em 1.28em;
+  margin-left: 2.39em;
   position: relative;
   opacity: 0; }
   /* line 14, _bullets.scss */
   .mankini-bullet::before {
     content: '➤';
     position: absolute;
-    left: -37px;
-    top: 7px;
-    font-size: 24px; }
-  /* line 23, _bullets.scss */
+    left: -1.58em;
+    top: 0.3em;
+    font-size: 0.68em; }
+  @media screen and (min-width: 1025px) {
+    /* line 5, _bullets.scss */
+    .mankini-bullet {
+      font-size: 55px; } }
+  /* line 26, _bullets.scss */
   .mankini-bullet.animate {
     -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
-  /* line 27, _bullets.scss */
+  /* line 30, _bullets.scss */
   .mankini-bullet.on {
     opacity: 1; }
-  /* line 31, _bullets.scss */
+  /* line 34, _bullets.scss */
   .mankini-bullet.previous {
     opacity: 0.5; }
 
@@ -443,16 +447,17 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     /* line 1, _heading.scss */
     .mankini-heading {
       height: 182px;
-      background-image: url(imgs/heading/bg@hd.jpg); }
-      /* line 41, _heading.scss */
+      background-image: url(imgs/heading/bg@hd.jpg);
+      margin: 0 0 33px; }
+      /* line 42, _heading.scss */
       .mankini-heading .mask {
         -webkit-mask-image: url(imgs/heading/mask@hd.png);
         -webkit-mask-repeat: no-repeat; }
-      /* line 46, _heading.scss */
+      /* line 47, _heading.scss */
       .mankini-heading h1 {
         text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         font-size: 92px;
-        left: 12px;
+        left: 21px;
         bottom: -12px;
         -webkit-transform: rotate(-2.6deg) translate(-360px, 0);
         -moz-transform: rotate(-2.6deg) translate(-360px, 0);
@@ -474,19 +479,23 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /* line 1, _code.scss */
 .mankini-code {
   background: url(imgs/paper.png);
-  margin: 0 46px 20px;
+  margin: 0 2.3em 1em;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   overflow: hidden;
   height: 0;
-  opacity: 0; }
-  /* line 10, _code.scss */
+  opacity: 0;
+  font-size: 20px; }
+  /* line 11, _code.scss */
   .mankini-code code {
     display: block;
-    padding: 18px 20px 15px;
+    padding: 0.9em 1em 0.75em;
     font-family: consolas, monospace;
-    font-size: 20px;
     line-height: 1.3; }
+  @media screen and (min-width: 1025px) {
+    /* line 1, _code.scss */
+    .mankini-code {
+      font-size: 33px; } }
 
 /* line 1, _section-title.scss */
 .mankini-section-title {
@@ -864,27 +873,32 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 
 /* line 1, _sub-heading.scss */
 .mankini-sub-heading {
-  margin: 0 45px 8px;
-  overflow: hidden; }
-  /* line 5, _sub-heading.scss */
+  margin: 0 1.5em 0.3em;
+  overflow: hidden;
+  font-size: 30px; }
+  @media screen and (min-width: 1025px) {
+    /* line 1, _sub-heading.scss */
+    .mankini-sub-heading {
+      font-size: 50px; } }
+  /* line 10, _sub-heading.scss */
   .mankini-sub-heading h2 {
     color: #AB540D;
     font-family: voltaire, sans-serif;
     margin: 0;
-    font-size: 30px;
+    font-size: 1em;
     -webkit-transform: translate(0, 100%);
     -moz-transform: translate(0, 100%);
     -ms-transform: translate(0, 100%);
     -o-transform: translate(0, 100%);
     transform: translate(0, 100%); }
-  /* line 14, _sub-heading.scss */
+  /* line 19, _sub-heading.scss */
   .mankini-sub-heading.animate h2 {
     -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -ms-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
-  /* line 18, _sub-heading.scss */
+  /* line 23, _sub-heading.scss */
   .mankini-sub-heading.on h2 {
     -webkit-transform: none;
     -moz-transform: none;

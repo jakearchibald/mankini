@@ -80,7 +80,6 @@
 			scale = /matrix\(([^,]+)/.exec( $iframe.vendorCss('transform') );
 
 		scale = scale ? Number( scale[1] ) : 1;
-		console.log( $iframe.vendorCss('transform'), scale );
 
 		$iframe.on('load', function() {
 			try {
