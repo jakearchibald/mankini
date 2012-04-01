@@ -8,6 +8,10 @@
 	-ms-user-select: none;
 	user-select: none;
 	-webkit-perspective: 823;
+
+	@media screen and (min-width: 1025px) {
+		-webkit-perspective: 1200;
+	}
 }
 
 * {
