@@ -76,13 +76,18 @@
 	};
 
 	PointerProto.proxyIframe = function( $iframe ) {
-		var pointer = this;
+		var pointer = this,
+			scale = /matrix\(([^,]+)/.exec( $iframe.vendorCss('transform') );
+
+		scale = scale ? Number( scale[1] ) : 1;
+		console.log( $iframe.vendorCss('transform'), scale );
+
 		$iframe.on('load', function() {
 			try {
 				$iframe[0].contentDocument.addEventListener('mousemove', function(event) {
 					var offset = $iframe.offset();
-					pointer._x = event.clientX + offset.left;
-					pointer._y = event.clientY + offset.top;
+					pointer._x = (event.clientX * scale) + offset.left;
+					pointer._y = (event.clientY * scale) + offset.top;
 					if (pointer._active) {
 						pointer._position();
 					}

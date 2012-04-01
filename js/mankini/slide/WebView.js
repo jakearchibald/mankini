@@ -8,7 +8,9 @@
 					'<div role="button" class="back no-label"><div>Back</div></div>' +
 					'<div role="button" class="refresh no-label"><div>Refresh</div></div>' +
 				'</div>' +
-				'<iframe src="about:blank"></iframe>' +
+				'<div class="iframe-container">' +
+					'<iframe src="about:blank"></iframe>' +
+				'</div>' +
 			'</div>' +
 		'').addClass( className || '' ).on('click', function(event) {
 			event.stopPropagation();

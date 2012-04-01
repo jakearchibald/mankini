@@ -5,19 +5,32 @@
 	height: 0;
 	opacity: 0;
 
+	& .iframe-container {
+		height: 553px;
+	}
+
 	& iframe {
 		width: 100%;
-		height: 553px;
-		border: 0;
-		background: #fff;
+		height: 100%;
 		display: block;
+		background: #fff;
+		border: 0;
 	}
 
 	@media screen and (min-width: 1025px) {
 		margin: 0 346px 20px;
+
 		box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3);
-		& iframe {
+
+		& .iframe-container {
 			height: 697px;
+		}
+
+		& iframe {
+			width: 71.4285714%;
+			height: 71.4285714%;
+			@include transform-origin(0, 0);
+			@include transform( scale(1.4) );
 		}
 	}
 }
