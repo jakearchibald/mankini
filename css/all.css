@@ -237,14 +237,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   background: url("imgs/slide/bg.jpg");
   background-size: 100% 100%;
   overflow: hidden; }
-  /* line 12, _slide.scss */
+  @media screen and (min-width: 1025px) {
+    /* line 1, _slide.scss */
+    .slide {
+      background-image: url("imgs/slide/bg@hd.jpg"); } }
+  /* line 16, _slide.scss */
   .slide.white {
     background: #fff; }
 
-@media screen and (min-width: 1025px) {
-  /* line 18, _slide.scss */
-  .slide {
-    background-image: url("imgs/slide/bg@hd.jpg"); } }
 /* line 5, _notes.scss */
 .notes-page body,
 .mankini-notes-in-page {
@@ -400,11 +400,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   background: url(imgs/heading/bg.png);
   position: relative;
   margin: 0 0 22px; }
-  /* line 7, _heading.scss */
+  /* line 8, _heading.scss */
   .mankini-heading .mask {
     height: 100%;
     -webkit-mask-image: url(imgs/heading/mask.png); }
-  /* line 12, _heading.scss */
+  /* line 14, _heading.scss */
   .mankini-heading h1 {
     font-family: share, sans-serif;
     margin: 0;
@@ -425,20 +425,40 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     -ms-transform: rotate(-2.6deg) translate(-180px, 0);
     -o-transform: rotate(-2.6deg) translate(-180px, 0);
     transform: rotate(-2.6deg) translate(-180px, 0); }
-  /* line 27, _heading.scss */
+  /* line 29, _heading.scss */
   .mankini-heading.animate h1 {
     -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -moz-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -ms-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -o-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
-  /* line 31, _heading.scss */
+  /* line 33, _heading.scss */
   .mankini-heading.on h1 {
     -webkit-transform: rotate(-2.6deg) translate(18px, 0);
     -moz-transform: rotate(-2.6deg) translate(18px, 0);
     -ms-transform: rotate(-2.6deg) translate(18px, 0);
     -o-transform: rotate(-2.6deg) translate(18px, 0);
     transform: rotate(-2.6deg) translate(18px, 0); }
+  @media screen and (min-width: 1025px) {
+    /* line 1, _heading.scss */
+    .mankini-heading {
+      height: 182px;
+      background-image: url(imgs/heading/bg@hd.jpg); }
+      /* line 41, _heading.scss */
+      .mankini-heading .mask {
+        -webkit-mask-image: url(imgs/heading/mask@hd.png);
+        -webkit-mask-repeat: no-repeat; }
+      /* line 46, _heading.scss */
+      .mankini-heading h1 {
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        font-size: 92px;
+        left: 12px;
+        bottom: -12px;
+        -webkit-transform: rotate(-2.6deg) translate(-360px, 0);
+        -moz-transform: rotate(-2.6deg) translate(-360px, 0);
+        -ms-transform: rotate(-2.6deg) translate(-360px, 0);
+        -o-transform: rotate(-2.6deg) translate(-360px, 0);
+        transform: rotate(-2.6deg) translate(-360px, 0); } }
 
 /* line 1, _transitions.scss */
 .mankini-black-fader {
@@ -583,51 +603,71 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     border: 0;
     background: #fff;
     display: block; }
+  @media screen and (min-width: 1025px) {
+    /* line 1, _web-view.scss */
+    .mankini-web-view {
+      margin: 0 346px 20px;
+      box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3); }
+      /* line 19, _web-view.scss */
+      .mankini-web-view iframe {
+        height: 697px; } }
 
-/* line 17, _web-view.scss */
+/* line 25, _web-view.scss */
 .mankini-toolbar {
   overflow: hidden;
-  padding: 5px 6px 0;
+  padding: 0.4em 0.5em 0;
   position: relative;
   border-style: solid;
   border-width: 1px 0;
   border-color: #e2e2e2 #000 #888;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0.6em 0.6em 0 0;
   background-image: -webkit-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: -moz-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: -o-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: linear-gradient(top, #d0d0d0, #a7a7a7); }
-  /* line 28, _web-view.scss */
+  /* line 36, _web-view.scss */
   .mankini-toolbar [role='button'] {
     float: left;
-    margin: 0 5px 5px 0;
+    margin: 0 0.4em 0.4em 0;
     border: 1px solid #888;
-    border-radius: 4px;
+    border-radius: 0.35em;
     background-image: -webkit-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -moz-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -o-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: linear-gradient(top, #fefefe, #b8b8b8); }
-    /* line 36, _web-view.scss */
+    /* line 44, _web-view.scss */
     .mankini-toolbar [role='button'].active {
       background: #707070;
       box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.6);
       color: #fff; }
-    /* line 42, _web-view.scss */
+    /* line 50, _web-view.scss */
     .mankini-toolbar [role='button'].no-label div {
-      width: 26px;
-      padding: 4px 0;
+      width: 2.1em;
+      padding: 0.38em 0;
       text-indent: -5000px; }
-    /* line 48, _web-view.scss */
+    /* line 56, _web-view.scss */
     .mankini-toolbar [role='button'] div {
-      padding: 4px 10px 4px 26px;
+      padding: 0.38em 0.64em 0.38em 2em;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
-  /* line 54, _web-view.scss */
+  /* line 62, _web-view.scss */
   .mankini-toolbar .back div {
     background-image: url(imgs/web-view/back.png); }
-  /* line 57, _web-view.scss */
+  /* line 65, _web-view.scss */
   .mankini-toolbar .refresh div {
     background-image: url(imgs/web-view/reload.png); }
+  @media screen and (min-width: 1025px) {
+    /* line 25, _web-view.scss */
+    .mankini-toolbar {
+      border-width: 2px 0;
+      font-size: 25px; }
+      /* line 73, _web-view.scss */
+      .mankini-toolbar [role='button'] {
+        float: left;
+        border-width: 2px; }
+        /* line 77, _web-view.scss */
+        .mankini-toolbar [role='button'] div {
+          background-size: 30px; } }
 
 /* line 1, _pointer.scss */
 .mankini-pointer {

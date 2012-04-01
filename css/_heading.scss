@@ -4,10 +4,12 @@
 	position: relative;
 	margin: 0 0 22px;
 
+
 	& .mask {
 		height: 100%;
 		-webkit-mask-image: url(imgs/heading/mask.png);
 	}
+
 
 	& h1 {
 		font-family: share, sans-serif;
@@ -30,5 +32,24 @@
 
 	&.on h1 {
 		@include transform( rotate(-2.6deg) translate(18px,0) );
+	}
+
+	@media screen and (min-width: 1025px) {
+		height: 182px;
+		background-image: url(imgs/heading/bg@hd.jpg);
+
+		& .mask {
+			-webkit-mask-image: url(imgs/heading/mask@hd.png);
+			-webkit-mask-repeat: no-repeat;
+		}
+
+		& h1 {
+			text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+			font-size: 92px;
+			left: 12px;
+			bottom: -12px;
+
+			@include transform( rotate(-2.6deg) translate(-360px,0) );
+		}
 	}
 }

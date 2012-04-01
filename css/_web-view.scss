@@ -12,24 +12,32 @@
 		background: #fff;
 		display: block;
 	}
+
+	@media screen and (min-width: 1025px) {
+		margin: 0 346px 20px;
+		box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3);
+		& iframe {
+			height: 697px;
+		}
+	}
 }
 
 .mankini-toolbar {
 	overflow: hidden;
-	padding: 5px 6px 0;
+	padding: 0.4em 0.5em 0;
 	position: relative;
 	border-style: solid;
 	border-width: 1px 0;
 	border-color: #e2e2e2 #000 #888;
-	border-radius: 5px 5px 0 0;
+	border-radius: 0.6em 0.6em 0 0;
 
 	@include linear-gradient(top, #d0d0d0, #a7a7a7);
 
 	& [role='button'] {
 		float: left;
-		margin: 0 5px 5px 0;
+		margin: 0 0.4em 0.4em 0;
 		border: 1px solid #888;
-		border-radius: 4px;
+		border-radius: 0.35em;
 
 		@include linear-gradient(top, #fefefe, #b8b8b8);
 
@@ -40,13 +48,13 @@
 		}
 
 		&.no-label div {
-			width: 26px;
-			padding: 4px 0;
+			width: 2.1em;
+			padding: 0.38em 0;
 			text-indent: -5000px;
 		}
 
 		& div {
-			padding: 4px 10px 4px 26px;
+			padding: 0.38em 0.64em 0.38em 2em;
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
 		}
@@ -56,5 +64,19 @@
 	}
 	& .refresh div {
 		background-image: url(imgs/web-view/reload.png);
+	}
+
+	@media screen and (min-width: 1025px) {
+		border-width: 2px 0;
+		font-size: 25px;
+
+		& [role='button'] {
+			float: left;
+			border-width: 2px;
+
+			& div {
+				background-size: 30px;
+			}
+		}
 	}
 }
