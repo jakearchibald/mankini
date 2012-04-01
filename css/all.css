@@ -36,7 +36,8 @@
 
 /* line 43, all.scss */
 html {
-  background: #000; }
+  background: #000;
+  overflow: hidden; }
 
 /* line 48, all.scss */
 html, body {
@@ -462,7 +463,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
         text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         font-size: 92px;
         left: 21px;
-        bottom: -12px;
+        bottom: -13px;
         -webkit-transform: rotate(-2.6deg) translate(-360px, 0);
         -moz-transform: rotate(-2.6deg) translate(-360px, 0);
         -ms-transform: rotate(-2.6deg) translate(-360px, 0);

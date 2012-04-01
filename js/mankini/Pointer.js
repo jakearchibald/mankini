@@ -76,12 +76,12 @@
 	};
 
 	PointerProto.proxyIframe = function( $iframe ) {
-		var pointer = this,
-			scale = /matrix\(([^,]+)/.exec( $iframe.vendorCss('transform') );
-
-		scale = scale ? Number( scale[1] ) : 1;
+		var pointer = this;
 
 		$iframe.on('load', function() {
+			var scale = /matrix\(([^,]+)/.exec( $iframe.vendorCss('transform') );
+			scale = scale ? Number( scale[1] ) : 1;
+
 			try {
 				$iframe[0].contentDocument.addEventListener('mousemove', function(event) {
 					var offset = $iframe.offset();
