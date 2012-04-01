@@ -50,3 +50,25 @@
 		}
 	}
 }
+
+@media screen and (min-width: 1025px) {
+	.mankini-section-title {
+		background-image: url(imgs/section-title/bg@hd.jpg);
+
+		& h1 {
+			bottom: 641px;
+			left: 260px;
+			font-size: 228px;
+			text-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+			@include transform( translate(600px,0) );
+		}
+
+		& h2 {
+			top: 443px;
+			left: 273px;
+			font-size: 50px;
+			@include transform( translate(-600px,0) );
+		}
+	}
+
+}

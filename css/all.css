@@ -544,6 +544,31 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       -o-transform: none;
       transform: none; }
 
+@media screen and (min-width: 1025px) {
+  /* line 55, _section-title.scss */
+  .mankini-section-title {
+    background-image: url(imgs/section-title/bg@hd.jpg); }
+    /* line 58, _section-title.scss */
+    .mankini-section-title h1 {
+      bottom: 641px;
+      left: 260px;
+      font-size: 228px;
+      text-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+      -webkit-transform: translate(600px, 0);
+      -moz-transform: translate(600px, 0);
+      -ms-transform: translate(600px, 0);
+      -o-transform: translate(600px, 0);
+      transform: translate(600px, 0); }
+    /* line 66, _section-title.scss */
+    .mankini-section-title h2 {
+      top: 443px;
+      left: 273px;
+      font-size: 50px;
+      -webkit-transform: translate(-600px, 0);
+      -moz-transform: translate(-600px, 0);
+      -ms-transform: translate(-600px, 0);
+      -o-transform: translate(-600px, 0);
+      transform: translate(-600px, 0); } }
 /* line 1, _web-view.scss */
 .mankini-web-view {
   margin: 0 46px 20px;
