@@ -792,28 +792,31 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 .mankini-supported {
   text-align: center;
   opacity: 0; }
-  /* line 5, _supported.scss */
+  @media screen and (min-width: 1025px) {
+    /* line 1, _supported.scss */
+    .mankini-supported {
+      font-size: 24px; } }
+  /* line 9, _supported.scss */
   .mankini-supported .supported-item {
     display: inline-block;
     position: relative;
-    margin: 0 20px;
-    height: 146px;
+    margin: 0 2.2em;
     vertical-align: top; }
-    /* line 13, _supported.scss */
+    /* line 17, _supported.scss */
     .mankini-supported .supported-item.animate img {
       -webkit-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
       -moz-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
       -ms-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
       -o-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
       transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
-    /* line 16, _supported.scss */
+    /* line 20, _supported.scss */
     .mankini-supported .supported-item.animate .version {
       -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
       -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
       -ms-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
       -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
-    /* line 21, _supported.scss */
+    /* line 25, _supported.scss */
     .mankini-supported .supported-item.on .version {
       opacity: 1;
       -webkit-transform: scale(1);
@@ -821,10 +824,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    /* line 26, _supported.scss */
+    /* line 30, _supported.scss */
     .mankini-supported .supported-item.on:not(.no-support) img {
       -webkit-filter: grayscale(0) blur(0); }
-    /* line 30, _supported.scss */
+    /* line 34, _supported.scss */
     .mankini-supported .supported-item.deactivated .version {
       opacity: 0;
       -webkit-transform: scale(0.1);
@@ -832,20 +835,20 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       -ms-transform: scale(0.1);
       -o-transform: scale(0.1);
       transform: scale(0.1); }
-    /* line 35, _supported.scss */
+    /* line 39, _supported.scss */
     .mankini-supported .supported-item.deactivated:not(.no-support) img {
-      -webkit-filter: grayscale(1) blur(2px); }
-  /* line 40, _supported.scss */
+      -webkit-filter: grayscale(1) blur(0.2em); }
+  /* line 44, _supported.scss */
   .mankini-supported .version {
     position: absolute;
     top: 0;
     right: 0;
     background: #fff;
-    border-radius: 91px;
-    border: 3px solid #000;
+    border-radius: 2em;
+    border: 0.15em solid #000;
     border-radius: 100px;
-    padding: 9px 0;
-    font-size: 23px;
+    padding: 0.4em 0;
+    font-size: 1.76em;
     font-family: share;
     font-weight: bold;
     opacity: 0;
@@ -854,20 +857,20 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     -ms-transform: scale(0.1);
     -o-transform: scale(0.1);
     transform: scale(0.1); }
-  /* line 57, _supported.scss */
+  /* line 61, _supported.scss */
   .mankini-supported img {
     width: 142px;
-    -webkit-filter: grayscale(1) blur(2px);
+    -webkit-filter: grayscale(1) blur(0.2em);
     margin: 0 auto;
     display: block; }
-  /* line 64, _supported.scss */
+  /* line 68, _supported.scss */
   .mankini-supported.animate {
     -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
-  /* line 68, _supported.scss */
+  /* line 72, _supported.scss */
   .mankini-supported.on {
     opacity: 1; }
 

@@ -2,12 +2,16 @@
 	text-align: center;
 	opacity: 0;
 
+	@media screen and (min-width: 1025px) {
+		font-size: 24px;
+	}
+
 	& .supported-item {
 		display: inline-block;
 		position: relative;
-		margin: 0 20px;
-		height: 146px;
+		margin: 0 2.2em;
 		vertical-align: top;
+
 
 		&.animate {
 			& img {
@@ -33,7 +37,7 @@
 		}
 
 		&.deactivated:not(.no-support) img {
-			-webkit-filter: grayscale(1) blur(2px);
+			-webkit-filter: grayscale(1) blur(0.2em);
 		}
 	}
 
@@ -42,11 +46,11 @@
 		top: 0;
 		right: 0;
 		background: #fff;
-		border-radius: 91px;
-		border: 3px solid #000;
+		border-radius: 2em;
+		border: 0.15em solid #000;
 		border-radius: 100px;
-		padding: 9px 0;
-		font-size: 23px;
+		padding: 0.4em 0;
+		font-size: 1.76em;
 		font-family: share;
 		font-weight: bold;
 		opacity: 0;
@@ -56,7 +60,7 @@
 
 	& img {
 		width: 142px;
-		-webkit-filter: grayscale(1) blur(2px);
+		-webkit-filter: grayscale(1) blur(0.2em);
 		margin: 0 auto;
 		display: block;
 	}
