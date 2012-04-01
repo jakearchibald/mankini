@@ -716,6 +716,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   vertical-align: middle;
   width: 1024px;
   height: 768px; }
+  @media screen and (min-width: 1025px) {
+    /* line 27, _image.scss */
+    .mankini-image-inner {
+      width: 1920px;
+      height: 1080px; } }
 
 /* line 1, _supported.scss */
 .mankini-supported {
