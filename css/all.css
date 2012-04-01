@@ -36,8 +36,7 @@
 
 /* line 43, all.scss */
 html {
-  background: #000;
-  overflow: hidden; }
+  background: #000; }
 
 /* line 48, all.scss */
 html, body {
@@ -222,6 +221,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   top: 0;
   left: 0; }
 
+@media screen and (min-width: 1025px) {
+  /* line 28, _presentation.scss */
+  .presentation {
+    width: 1920px;
+    height: 1080px; } }
 /* line 1, _slide.scss */
 .slide {
   width: 100%;
@@ -237,6 +241,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   .slide.white {
     background: #fff; }
 
+@media screen and (min-width: 1025px) {
+  /* line 18, _slide.scss */
+  .slide {
+    background-image: url("imgs/slide/bg@hd.jpg"); } }
 /* line 5, _notes.scss */
 .notes-page body,
 .mankini-notes-in-page {
@@ -639,6 +647,17 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     text-align: right;
     line-height: 1; }
 
+@media screen and (min-width: 1025px) {
+  /* line 21, _title.scss */
+  .mankini-title {
+    background-image: url("imgs/title/bg@hd.jpg"); }
+    /* line 24, _title.scss */
+    .mankini-title h1 {
+      bottom: 416px;
+      right: 35px;
+      text-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+      font-size: 164px;
+      width: 1822px; } }
 /* line 1, _image.scss */
 .mankini-image {
   position: absolute;

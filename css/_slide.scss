@@ -13,3 +13,9 @@
 		background: #fff;
 	}
 }
+
+@media screen and (min-width: 1025px) {
+	.slide {
+		background-image: url('imgs/slide/bg@hd.jpg');
+	}
+}

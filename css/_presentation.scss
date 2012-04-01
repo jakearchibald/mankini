@@ -23,3 +23,10 @@
 
 	//@include transform-style(preserve-3d);
 }
+
+@media screen and (min-width: 1025px) {
+	.presentation {
+		width: 1920px;
+		height: 1080px;
+	}
+}
