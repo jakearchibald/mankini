@@ -330,6 +330,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     /* line 80, _notes.scss */
     .mankini-notes-in-page .index li {
       margin: 13px 0; }
+  @media screen and (min-width: 1025px) {
+    /* line 69, _notes.scss */
+    .mankini-notes-in-page {
+      left: 1072px; } }
 
 /* line 1, _bullets.scss */
 .mankini-bullets {
