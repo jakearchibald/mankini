@@ -2,6 +2,11 @@
  ************* Global functions *************
  ********************************************/
 /* line 3, core.scss */
+body {
+  width: 1024px;
+  margin: 0 auto; }
+
+/* line 8, core.scss */
 .test-arrow {
   top: 271px;
   left: 340px;
@@ -10,8 +15,3 @@
   -ms-transform: rotate(36deg);
   -o-transform: rotate(36deg);
   transform: rotate(36deg); }
-
-/* line 9, core.scss */
-.paper-test {
-  background: url(../../css/imgs/paper.png);
-  background-size: 100% 100%; }
