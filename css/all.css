@@ -746,13 +746,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     text-transform: uppercase;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     text-align: right;
-    line-height: 1; }
+    line-height: 1;
+    width: 867px; }
 
 @media screen and (min-width: 1025px) {
-  /* line 21, _title.scss */
+  /* line 22, _title.scss */
   .mankini-title {
     background-image: url("imgs/title/bg@hd.jpg"); }
-    /* line 24, _title.scss */
+    /* line 25, _title.scss */
     .mankini-title h1 {
       bottom: 416px;
       right: 35px;
