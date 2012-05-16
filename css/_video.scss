@@ -1,0 +1,38 @@
+.mankini-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	& video {
+		display: block;
+		margin: 0 auto;
+		opacity: 0;
+	}
+
+	&.animate video {
+		@include transition(opacity, 0.5s, $ease-out-quad);
+	}
+
+	&.on video {
+		opacity: 1;
+	}
+
+	&.off video {
+		opacity: 0;
+	}
+}
+
+.mankini-video-inner {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 1024px;
+	height: 768px;
+
+	@media screen and (min-width: 1900px) {
+		width: 1920px;
+		height: 1080px;
+	}
+}

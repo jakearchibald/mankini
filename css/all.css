@@ -799,6 +799,45 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       width: 1920px;
       height: 1080px; } }
 
+/* line 1, _video.scss */
+.mankini-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+  /* line 8, _video.scss */
+  .mankini-video video {
+    display: block;
+    margin: 0 auto;
+    opacity: 0; }
+  /* line 14, _video.scss */
+  .mankini-video.animate video {
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+  /* line 18, _video.scss */
+  .mankini-video.on video {
+    opacity: 1; }
+  /* line 22, _video.scss */
+  .mankini-video.off video {
+    opacity: 0; }
+
+/* line 27, _video.scss */
+.mankini-video-inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 1024px;
+  height: 768px; }
+  @media screen and (min-width: 1900px) {
+    /* line 27, _video.scss */
+    .mankini-video-inner {
+      width: 1920px;
+      height: 1080px; } }
+
 /* line 1, _supported.scss */
 .mankini-supported {
   text-align: center;

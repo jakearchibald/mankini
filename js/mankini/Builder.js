@@ -86,6 +86,7 @@
 			this._supported =
 			this._arrow =
 			this._image =
+			this._video =
 			this._bullets = undefined;
 
 		this._authorShow();
@@ -348,6 +349,40 @@
 
 		return this.action(function( animate, $slide ) {
 			builder._image.hide( animate, className );
+		});
+	};
+
+	BuilderProto.video = function(src, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video = new ui.Video(src, className);
+			$slide.append( builder._video.$container );
+			builder._video.show(animate);
+		});
+	};
+
+	BuilderProto.videoHide = function(src, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video.hide( animate, className );
+		});
+	};
+
+	BuilderProto.videoSeekTo = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video.seekTo(time);
+		});
+	};
+
+	BuilderProto.videoPlay = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video.play(animate, time);
 		});
 	};
 
