@@ -209,7 +209,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   -ms-user-select: none;
   user-select: none;
   -webkit-perspective: 823; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _presentation.scss */
     .presentation {
       -webkit-perspective: 1200; } }
@@ -226,7 +226,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   top: 0;
   left: 0; }
 
-@media screen and (min-width: 1900px) {
+@media screen and (min-width: 1025px) {
   /* line 32, _presentation.scss */
   .presentation {
     width: 1920px;
@@ -242,7 +242,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   background: url("imgs/slide/bg.jpg");
   background-size: 100% 100%;
   overflow: hidden; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _slide.scss */
     .slide {
       background-image: url("imgs/slide/bg@hd.jpg"); } }
@@ -330,7 +330,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     /* line 80, _notes.scss */
     .mankini-notes-in-page .index li {
       margin: 13px 0; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 69, _notes.scss */
     .mankini-notes-in-page {
       left: 1072px; } }
@@ -355,7 +355,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     left: -1.58em;
     top: 0.3em;
     font-size: 0.68em; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 5, _bullets.scss */
     .mankini-bullet {
       font-size: 55px; } }
@@ -452,7 +452,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     -ms-transform: rotate(-2.6deg) translate(18px, 0);
     -o-transform: rotate(-2.6deg) translate(18px, 0);
     transform: rotate(-2.6deg) translate(18px, 0); }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _heading.scss */
     .mankini-heading {
       height: 182px;
@@ -501,7 +501,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     padding: 0.9em 1em 0.75em;
     font-family: consolas, monospace;
     line-height: 1.3; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _code.scss */
     .mankini-code {
       font-size: 33px;
@@ -583,7 +583,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       -o-transform: none;
       transform: none; }
 
-@media screen and (min-width: 1900px) {
+@media screen and (min-width: 1025px) {
   /* line 55, _section-title.scss */
   .mankini-section-title {
     background-image: url(imgs/section-title/bg@hd.jpg); }
@@ -625,7 +625,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     display: block;
     background: #fff;
     border: 0; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _web-view.scss */
     .mankini-web-view {
       margin: 0 346px 20px;
@@ -692,7 +692,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   /* line 78, _web-view.scss */
   .mankini-toolbar .refresh div {
     background-image: url(imgs/web-view/reload.png); }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 38, _web-view.scss */
     .mankini-toolbar {
       border-width: 2px 0;
@@ -749,7 +749,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     line-height: 1;
     width: 867px; }
 
-@media screen and (min-width: 1900px) {
+@media screen and (min-width: 1025px) {
   /* line 22, _title.scss */
   .mankini-title {
     background-image: url("imgs/title/bg@hd.jpg"); }
@@ -793,7 +793,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   vertical-align: middle;
   width: 1024px;
   height: 768px; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 27, _image.scss */
     .mankini-image-inner {
       width: 1920px;
@@ -832,7 +832,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   vertical-align: middle;
   width: 1024px;
   height: 768px; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 27, _video.scss */
     .mankini-video-inner {
       width: 1920px;
@@ -842,7 +842,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 .mankini-supported {
   text-align: center;
   opacity: 0; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _supported.scss */
     .mankini-supported {
       font-size: 24px; } }
@@ -929,7 +929,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   margin: 0 1.5em 0.3em;
   overflow: hidden;
   font-size: 30px; }
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1025px) {
     /* line 1, _sub-heading.scss */
     .mankini-sub-heading {
       font-size: 50px; } }

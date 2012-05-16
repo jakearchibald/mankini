@@ -34,7 +34,7 @@
 		@include transform( rotate(-2.6deg) translate(18px,0) );
 	}
 
-	@media screen and (min-width: 1900px) {
+	@media screen and (min-width: 1025px) {
 		height: 182px;
 		background-image: url(imgs/heading/bg@hd.jpg);
 		margin: 0 0 33px;

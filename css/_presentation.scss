@@ -9,7 +9,7 @@
 	user-select: none;
 	-webkit-perspective: 823;
 
-	@media screen and (min-width: 1900px) {
+	@media screen and (min-width: 1025px) {
 		-webkit-perspective: 1200;
 	}
 }
@@ -28,7 +28,7 @@
 	//@include transform-style(preserve-3d);
 }
 
-@media screen and (min-width: 1900px) {
+@media screen and (min-width: 1025px) {
 	.presentation {
 		width: 1920px;
 		height: 1080px;
