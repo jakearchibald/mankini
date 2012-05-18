@@ -60,7 +60,6 @@
 					video._playingListener = function() {
 						if (video._video.currentTime >= time) {
 							video.pause();
-							video.seekTo(time);
 						}
 					};
 					video._video.addEventListener('timeupdate', video._playingListener, false);
