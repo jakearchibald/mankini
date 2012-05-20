@@ -18,6 +18,7 @@ $.fn.fullHeight = function() {
 	function animateToClass( animate, $items, className, animateClassName ) {
 		className = className || 'on';
 		animateClassName = animateClassName || 'animate';
+		$items = $( $items );
 		var deferreds = [];
 
 		$items.each(function() {
