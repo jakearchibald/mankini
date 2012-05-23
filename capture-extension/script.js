@@ -8,8 +8,8 @@
 			var canvas = document.createElement('canvas'),
 				img = new Image();
 
-			canvas.width = 1024;
-			canvas.height = 768;
+			canvas.width = 1920;
+			canvas.height = 1080;
 
 			img.onload = function() {
 				var filePrefix = String(index++);
