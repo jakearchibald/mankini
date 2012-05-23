@@ -11,6 +11,7 @@
 		position: relative;
 		margin: 0 2.2em;
 		vertical-align: top;
+		-webkit-filter: grayscale(0) blur(0);
 
 
 		&.animate {
