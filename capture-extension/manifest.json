@@ -1,7 +1,7 @@
 {
 	"name": "Capture slides",
 	"version": "1.0",
-	"description": "Captures 1024*768 of the current tab",
+	"description": "Captures the current tab",
 	"browser_action": {
 		"default_icon": "icon19.png"
 	},

@@ -1,9 +1,10 @@
 (function() {
-	var index = 61;
+	var index = 0;
 
 	chrome.browserAction.onClicked.addListener(function(tab) {
 		chrome.tabs.captureVisibleTab(tab.windowId, {
-			format: 'png'
+			format: 'jpeg',
+			quality: 40
 		}, function(data) {
 			var canvas = document.createElement('canvas'),
 				img = new Image();
@@ -18,14 +19,13 @@
 				
 				var a = document.createElement('a');
 				a.href = canvas.toDataURL();
-				a.download = filePrefix + '.png';
+				a.download = filePrefix + '.jpg';
 				a.click();
 
 				// Are we leaking?
 				canvas = null;
 				img = null;
 			};
-
 			img.src = data;
 		});
 	});
