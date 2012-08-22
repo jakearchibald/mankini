@@ -9,10 +9,11 @@
 	user-select: none;
 	-webkit-perspective: 823;
 
-	@media screen and (min-width: 1900px) {
+	@include hd {
 		-webkit-perspective: 1200;
 	}
 }
+
 
 * {
 	cursor: none !important;
@@ -28,7 +29,16 @@
 	//@include transform-style(preserve-3d);
 }
 
-@media screen and (min-width: 1900px) {
+@if $debug-hd {
+	@include hd {
+		.mankini-presentation {
+			@include transform-origin(0, 0);
+			@include transform( scale(0.56) );
+		}
+	}
+}
+
+@include hd {
 	.presentation {
 		width: 1920px;
 		height: 1080px;

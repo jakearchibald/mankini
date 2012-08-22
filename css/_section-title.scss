@@ -51,7 +51,7 @@
 	}
 }
 
-@media screen and (min-width: 1900px) {
+@include hd {
 	.mankini-section-title {
 		background-image: url(imgs/section-title/bg@hd.jpg);
 

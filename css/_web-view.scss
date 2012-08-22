@@ -17,7 +17,7 @@
 		border: 0;
 	}
 
-	@media screen and (min-width: 1900px) {
+	@include hd {
 		margin: 0 346px 20px;
 
 		box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3);
@@ -79,7 +79,7 @@
 		background-image: url(imgs/web-view/reload.png);
 	}
 
-	@media screen and (min-width: 1900px) {
+	@include hd {
 		border-width: 2px 0;
 		font-size: 25px;
 

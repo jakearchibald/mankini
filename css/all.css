@@ -214,11 +214,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     .presentation {
       -webkit-perspective: 1200; } }
 
-/* line 17, _presentation.scss */
+/* line 18, _presentation.scss */
 * {
   cursor: none !important; }
 
-/* line 21, _presentation.scss */
+/* line 22, _presentation.scss */
 .mankini-presentation {
   width: 100%;
   height: 100%;
@@ -227,7 +227,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   left: 0; }
 
 @media screen and (min-width: 1900px) {
-  /* line 32, _presentation.scss */
+  /* line 42, _presentation.scss */
   .presentation {
     width: 1920px;
     height: 1080px; } }

@@ -3,7 +3,7 @@
 	overflow: hidden;
 	font-size: 30px;
 
-	@media screen and (min-width: 1900px) {
+	@include hd {
 		font-size: 50px;
 	}
 
