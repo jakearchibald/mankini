@@ -150,6 +150,13 @@
 		});
 	};
 
+	BuilderProto.addBulletsClass = function(className) {
+		var builder = this;
+		return this.action(function( animate, $slide ) {
+			builder._bullets.$container.addClass( className );
+		});
+	};
+
 	BuilderProto.authorHide = function() {
 		var builder = this;
 

@@ -300,8 +300,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   display: none;
   -webkit-column-count: 4;
   -moz-column-count: 4;
-  -ms-column-count: 4;
-  -o-column-count: 4;
   column-count: 4;
   font-size: 20px; }
   /* line 57, _notes.scss */
@@ -325,8 +323,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-size: 15px;
     -webkit-column-count: 3;
     -moz-column-count: 3;
-    -ms-column-count: 3;
-    -o-column-count: 3;
     column-count: 3; }
     /* line 80, _notes.scss */
     .mankini-notes-in-page .index li {

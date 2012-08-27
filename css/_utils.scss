@@ -27,51 +27,41 @@ $ease-in-out-expo:  cubic-bezier(1.000, 0.000, 0.000, 1.000);
 $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 
 @mixin linear-gradient($angle, $start, $end) {
- 	background-image: -webkit-linear-gradient($angle, $start, $end);
-	background-image:    -moz-linear-gradient($angle, $start, $end);
-	background-image:      -o-linear-gradient($angle, $start, $end);
-	background-image:         linear-gradient($angle, $start, $end);
+	@each $prefix in -webkit-, -moz-, -o-, '' {
+		background-image: #{$prefix}linear-gradient($angle, $start, $end);
+	}
 }
 
 @mixin transition($properties, $duration, $easing, $delay: 0s) {
-	-webkit-transition: $properties $duration $easing $delay;
-	   -moz-transition: $properties $duration $easing $delay;
-	    -ms-transition: $properties $duration $easing $delay;
-	     -o-transition: $properties $duration $easing $delay;
-	        transition: $properties $duration $easing $delay;
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}transition: $properties $duration $easing $delay;
+	}
 }
 
 @mixin transform-origin($top, $left) {
-	-webkit-transform-origin: $top $left;
-	   -moz-transform-origin: $top $left;
-	    -ms-transform-origin: $top $left;
-	     -o-transform-origin: $top $left;
-	        transform-origin: $top $left;
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}transform-origin: $top $left;
+	}
 }
 
 @mixin transform($type) {
-	-webkit-transform: $type;
-	   -moz-transform: $type;
-	    -ms-transform: $type;
-	     -o-transform: $type;
-	        transform: $type;
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}transform: $type;
+	}
 }
 
 @mixin transform-style($type) {
-	-webkit-transform-style: $type;
-	   -moz-transform-style: $type;
-	    -ms-transform-style: $type;
-	     -o-transform-style: $type;
-	        transform-style: $type;
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}transform-style: $type;
+	}
 }
 
 @mixin column-count($count) {
-	-webkit-column-count: $count;
-	   -moz-column-count: $count;
-	    -ms-column-count: $count;
-	     -o-column-count: $count;
-	        column-count: $count;
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}column-count: $count;
+	}
 }
+
 
 @mixin hd {
 	@if $debug-hd {
