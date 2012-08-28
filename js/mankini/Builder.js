@@ -134,6 +134,16 @@
 		return this.bulletsClass( bulletStrings );
 	};
 
+	BuilderProto.newBullets = function() {
+		var builder = this;
+
+		this.action(function() {
+			delete builder._bullets;
+		});
+
+		return this.bullets.apply(this, arguments);
+	};
+
 	BuilderProto.bulletsClass = function(bulletStrings, className) {
 		var builder = this;
 

@@ -41,7 +41,7 @@
 	};
 
 	CodeProto.fromString = function(code, lang) {
-		this._codeLines = splitLines( convertTabs(code) );
+		this._codeLines = splitLines( tabsAndEscape(code) );
 		this._lang = lang;
 		this._codeLoader = $.Deferred().resolve();
 		return this;
