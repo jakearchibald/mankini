@@ -80,7 +80,7 @@ $.fn.fullHeight = function() {
 		}, opts);
 
 		paths.forEach(function(path, i) {
-			$(path).css('display', '');
+			$(path).css('display', 'inline');
 
 			if ( !animate ) {
 				return;
