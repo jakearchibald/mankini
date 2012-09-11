@@ -49,13 +49,14 @@ $.fn.fullHeight = function() {
 	}
 
 	function transition(animate, $items, props, opts) {
+		if (opts && !opts.easing) {
+			opts.easing = 'easeInOutQuad';
+		}
+		
 		if (animate) {
 			$items.transitionStop(true).transition(props, opts);
 		}
 		else {
-			if (opts && !opts.easing) {
-				opts.easing = 'easeInOutQuad';
-			}
 
 			$items.transitionStop(true).vendorCss(props);
 			
