@@ -16,4 +16,11 @@
 	&.white {
 		background: #fff;
 	}
+
+	&.scrap-paper {
+		background: url('imgs/slide/scrap-paper.jpg');
+		@include hd {
+			background: url('imgs/slide/scrap-paper@hd.jpg');
+		}
+	}
 }

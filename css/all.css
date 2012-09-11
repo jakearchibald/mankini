@@ -250,6 +250,13 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   /* line 16, _slide.scss */
   .slide.white {
     background: #fff; }
+  /* line 20, _slide.scss */
+  .slide.scrap-paper {
+    background: url("imgs/slide/scrap-paper.jpg"); }
+    @media screen and (min-width: 1900px) {
+      /* line 20, _slide.scss */
+      .slide.scrap-paper {
+        background: url("imgs/slide/scrap-paper@hd.jpg"); } }
 
 /* line 5, _notes.scss */
 .notes-page body,
