@@ -7,6 +7,7 @@
 		'Anim/prop.js',
 		'prettify/prettify.js',
 		'prettify/lang-css.js',
+		'prettify/lang-scss.js',
 		'mankini/base.js',
 		'mankini/utils.js',
 		'mankini/Presentation.js',
