@@ -8,6 +8,7 @@
 		'prettify/prettify.js',
 		'prettify/lang-css.js',
 		'prettify/lang-scss.js',
+		'prettify/lang-sass.js',
 		'mankini/base.js',
 		'mankini/utils.js',
 		'mankini/Presentation.js',

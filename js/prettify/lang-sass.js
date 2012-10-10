@@ -18,12 +18,12 @@
 
 /**
  * @fileoverview
- * Registers a language handler for SCSS (sassy CSS).
+ * Registers a language handler for sass (sassy CSS).
  *
  *
  * To use, include prettify.js and this file in your HTML page.
  * Then put your code in an HTML tag like
- *      <pre class="prettyprint lang-scss"></pre>
+ *      <pre class="prettyprint lang-sass"></pre>
  *
  *
  * This language handler mostly based on CSS language handler
@@ -42,18 +42,14 @@ PR['registerLangHandler'](
             // Quoted strings.  <string1> and <string2>
             [PR['PR_STRING'], /^\"(?:[^\n\r\f\\\"]|\\(?:\r\n?|\n|\f)|\\[\s\S])*\"/, null],
             [PR['PR_STRING'], /^\'(?:[^\n\r\f\\\']|\\(?:\r\n?|\n|\f)|\\[\s\S])*\'/, null],
-            ['lang-scss-str', /^url\(([^\)\"\']*)\)/i],
-            [PR['PR_KEYWORD'], /^(?:url|rgba?|hsla?|\!important|@import|@page|@media|@charset|inherit|abs|adjust-color|adjust-hue|alpha|ceil|change-color|comparable|complement|darken|desaturate|fade-in|fade-out|floor|grayscale|hue|invert|join|length|lighten|lightness|mix|nth|opacity|percentage|quote|round|saturate|saturation|scale-color|transparentize|type-of|unit|unitless|unquote|!default)(?=[^\-\w]|$)/i, null],
+            ['lang-sass-str', /^url\(([^\)\"\']*)\)/i],
+            [PR['PR_KEYWORD'], /^(?:url|rgba?|hsla?|\!important|@import|@page|@media|@charset|inherit|abs|adjust-color|adjust-hue|alpha|blue|ceil|change-color|comparable|complement|darken|desaturate|fade-in|fade-out|floor|grayscale|green|hue|invert|join|length|lighten|lightness|mix|nth|opacity|percentage|quote|red|round|saturate|saturation|scale-color|transparentize|type-of|unit|unitless|unquote|!default)(?=[^\-\w]|$)/i, null],
             // A property name -- an identifier followed by a colon.
-            // ['lang-scss-kw', /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],
+            // ['lang-sass-kw', /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],
             // A C style block comment.  The <comment> production.
             [PR['PR_COMMENT'], /^\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\//],
             // A C style line comment.
             [PR['PR_COMMENT'], /^\/\/[^\r\n]*/, null],
-            // Escaping text spans
-            // [PR['PR_COMMENT'], /^(?:<!--|-->)/],
-            // A number possibly containing a suffix.
-            [PR['PR_LITERAL'], /^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],
             // A SASS MIXIN FILTER
             [PR['PR_TYPE'], /^(\@mixin [0-9a-zA-Z-]+)|(\@include [a-zA-Z0-9-]+)|(\+[0-9a-zA-Z-]+)|(@extend|@debug|@warn|@if|@else( if)?|@for|@each|@while|@function|@return|through|from)/],
             // A VARIABLE FILTER
@@ -62,6 +58,10 @@ PR['registerLangHandler'](
             [PR['PR_SOURCE'], /^((\.[a-zA-Z-][a-zA-Z0-9-]+)(:[0-9a-zA-Z-]+)?)|((\#[a-zA-Z-][a-zA-Z0-9-]+)(:[0-9a-zA-Z-]+)?)|(\%[a-zA-Z-][a-zA-Z0-9-]+)|((\&\.([a-zA-Z0-9-]+))|(\&:([a-zA-Z0-9-]+)))/],
             // A ATTRIBUTE FILTER
             [PR['PR_ATTRIB_VALUE'], /^[a-zA-Z-]*\:\s/],
+            // Escaping text spans
+            // [PR['PR_COMMENT'], /^(?:<!--|-->)/],
+            // A number possibly containing a suffix.
+            [PR['PR_LITERAL'], /^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],
             // A hex color
             [PR['PR_LITERAL'], /^#(?:[0-9a-f]{3}){1,2}/i],
             // Interpolation syntax: #{...}
@@ -70,13 +70,13 @@ PR['registerLangHandler'](
             [PR['PR_LITERAL'], /^&/],
             // An identifier
             [PR['PR_PLAIN'], /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i],
-            // An SCSS variable (for preventing keyword highlihting)
+            // An sass variable (for preventing keyword highlihting)
             [PR['PR_PLAIN'], /^\$?-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i],
             // A run of punctuation
             [PR['PR_PUNCTUATION'], /^[^\s\w\'\"#{}$]+/]
         ]
     ),
-    ['scss']
+    ['sass']
 );
 
 PR['registerLangHandler'](
@@ -86,7 +86,7 @@ PR['registerLangHandler'](
             [PR['PR_KEYWORD'], /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i]
         ]
     ),
-    ['scss-kw']
+    ['sass-kw']
 );
 
 PR['registerLangHandler'](
@@ -96,5 +96,5 @@ PR['registerLangHandler'](
             [PR['PR_STRING'], /^[^\)\"\']+/]
         ]
     ),
-    ['scss-str']
+    ['sass-str']
 );
