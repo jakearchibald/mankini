@@ -45,7 +45,7 @@ PR['registerLangHandler'](
             ['lang-scss-str', /^url\(([^\)\"\']*)\)/i],
             [PR['PR_KEYWORD'], /^(?:url|rgba?|hsla?|\!important|@import|@page|@media|@charset|inherit|abs|adjust-color|adjust-hue|alpha|ceil|change-color|comparable|complement|darken|desaturate|fade-in|fade-out|floor|grayscale|hue|invert|join|length|lighten|lightness|mix|nth|opacity|percentage|quote|round|saturate|saturation|scale-color|transparentize|type-of|unit|unitless|unquote|!default)(?=[^\-\w]|$)/i, null],
             // A property name -- an identifier followed by a colon.
-            // ['lang-scss-kw', /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],
+            ['lang-scss-kw', /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],
             // A C style block comment.  The <comment> production.
             [PR['PR_COMMENT'], /^\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\//],
             // A C style line comment.
