@@ -55,7 +55,7 @@ PR['registerLangHandler'](
             // A number possibly containing a suffix.
             [PR['PR_LITERAL'], /^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],
             // A SASS MIXIN FILTER
-            [PR['PR_TYPE'], /^(\@mixin [0-9a-zA-Z-]+)|(\@include [a-zA-Z0-9-]+)|(\+[0-9a-zA-Z-]+)|(@extend|@debug|@warn|@if|@else( if)?|@for|@each|@while|@function|@return|through|from)/],
+            [PR['PR_TYPE'], /^(\@mixin [0-9a-zA-Z-]+)|(\@include [a-zA-Z0-9-]+)|(\+[0-9a-zA-Z-]+)|(@extend|@debug|@warn|@if|@else( if)?|@for|@each|@while|@function|@return|@content|through|from)/],
             // A VARIABLE FILTER
             [PR['PR_DECLARATION'], /^\$[0-9a-zA-Z-]+/],
             // A SELECTOR FILTER
