@@ -1,5 +1,5 @@
 (function() {
-	function Image(src, className) {
+	function Image(src, className, outerClass) {
 		var image = this;
 
 		this.$container = $('' +
@@ -20,6 +20,8 @@
 
 		$( this._img ).appendTo( this.$container.find('.mankini-image-inner') )
 			.addClass( className || '' );
+
+		this.$container.addClass( outerClass || '' );
 		
 	}
 

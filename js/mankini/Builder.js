@@ -351,11 +351,11 @@
 		return this;
 	};
 
-	BuilderProto.image = function(src, className) {
+	BuilderProto.image = function(src, className, outerClass) {
 		var builder = this;
 
 		return this.action(function( animate, $slide ) {
-			builder._image = new ui.Image(src, className);
+			builder._image = new ui.Image(src, className, outerClass);
 			$slide.append( builder._image.$container );
 			builder._image.show(animate);
 		});
