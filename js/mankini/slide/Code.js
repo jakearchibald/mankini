@@ -66,10 +66,11 @@
 				code._$code.html( prettyPrintOne(codeSlice, code._lang) );
 			}
 
+			var fullHeight = code.$container.fullHeight();
 
-			if (animate) {
+			if (animate && code.$container.height() != fullHeight) {
 				code.$container.transition({
-					height: code.$container.fullHeight(),
+					height: fullHeight,
 					opacity: 1
 				}, {
 					duration: 300,
