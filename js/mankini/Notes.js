@@ -1,5 +1,5 @@
 (function() {
-	function Notes( presentation, inPage ) {
+	function Notes( presentation, inPage, workshopStyle ) {
 		var notes = this,
 			win = window;
 
@@ -8,6 +8,9 @@
 		
 		function done() {
 			notes._getElements( win.document );
+			if (!inPage) {
+				win.document.documentElement.className += ' notes-workshop';
+			}
 			notes._ready.resolve();
 		}
 

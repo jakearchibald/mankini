@@ -10,6 +10,15 @@ $overlay-bg: #333;
 	height: 100%;
 }
 
+.notes-workshop {
+	overflow: visible;
+
+	& body {
+		font-size: 23px;
+		line-height: 1.1;
+	}
+}
+
 .slide-next,
 .notes-page time {
 	padding: 13px 20px;
@@ -32,7 +41,7 @@ $overlay-bg: #333;
 }
 
 .notes-page time {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	right: 0;
 	width: 300px;
