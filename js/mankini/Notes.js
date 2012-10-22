@@ -99,7 +99,7 @@
 				var duration = new Date() - startTime;
 				var hours   = Math.floor(duration / (1000 * 60 * 60));
 				var minutes = Math.floor(duration / (1000 * 60)) - hours * 60;
-				var seconds = Math.floor(duration / 1000) - hours * 60 - minutes * 60;
+				var seconds = Math.floor(duration / 1000) - hours * 60 * 60 - minutes * 60;
 				var i = 3;
 				var timeParts = [
 					hours,
