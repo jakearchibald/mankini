@@ -227,10 +227,10 @@
 		});
 	};
 
-	BuilderProto.showCode = function(from, to) {
+	BuilderProto.showCode = function(from, to, fontSize) {
 		var builder = this;
 		return this.action(function(animate) {
-			builder._code.showLines(animate, from, to);
+			builder._code.showLines(animate, from, to, fontSize);
 		});
 	};
 

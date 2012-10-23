@@ -47,7 +47,7 @@
 		return this;
 	};
 
-	CodeProto.showLines = function(animate, from, to) {
+	CodeProto.showLines = function(animate, from, to, fontSize) {
 		var code = this;
 
 		this._codeLoader.done(function() {
@@ -57,6 +57,10 @@
 			
 			if (animate) {
 				code.$container.height( code.$container[0].offsetHeight );
+			}
+
+			if (fontSize) {
+				code.$container.css('font-size', fontSize);
 			}
 
 			if ( code._lang == 'plain' ) {
