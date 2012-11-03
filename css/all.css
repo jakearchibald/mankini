@@ -366,22 +366,23 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     position: absolute;
     left: -1.58em;
     top: 0.3em;
-    font-size: 0.68em; }
+    font-size: 0.68em;
+    -webkit-transform: translateZ(0); }
   @media screen and (min-width: 1900px) {
     /* line 5, _bullets.scss */
     .mankini-bullet {
       font-size: 55px; } }
-  /* line 26, _bullets.scss */
+  /* line 28, _bullets.scss */
   .mankini-bullet.animate {
     -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
-  /* line 30, _bullets.scss */
+  /* line 32, _bullets.scss */
   .mankini-bullet.on {
     opacity: 1; }
-  /* line 34, _bullets.scss */
+  /* line 36, _bullets.scss */
   .mankini-bullet.previous {
     opacity: 0.5; }
 

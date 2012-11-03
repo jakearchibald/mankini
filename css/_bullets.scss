@@ -17,6 +17,8 @@
 		left: -1.58em;
 		top: 0.3em;
 		font-size: 0.68em;
+		// urgh, tricking chromium into working
+		-webkit-transform: translateZ(0);
 	}
 
 	@include hd {
