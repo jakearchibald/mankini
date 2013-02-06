@@ -32,20 +32,20 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 	}
 }
 
-@mixin transition($properties, $duration, $easing, $delay: 0s) {
-	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-		#{$prefix}transition: $properties $duration $easing $delay;
+@mixin transition($spec...) {
+	@each $prefix in -webkit-, '' {
+		#{$prefix}transition: $spec;
 	}
 }
 
 @mixin transform-origin($top, $left) {
-	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+	@each $prefix in -webkit-, '' {
 		#{$prefix}transform-origin: $top $left;
 	}
 }
 
 @mixin transform($type) {
-	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+	@each $prefix in -webkit-, '' {
 		#{$prefix}transform: $type;
 	}
 }

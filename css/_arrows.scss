@@ -7,7 +7,7 @@
 	@include transform-origin(0, 0);
 
 	&.animate {
-		@include transition(all, .5s, $ease-in-out-quad);
+		@include transition(all .5s $ease-in-out-quad);
 	}
 
 	&.off {

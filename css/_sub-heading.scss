@@ -17,7 +17,7 @@
 	}
 
 	&.animate h2 {
-		@include transition(all, 0.4s, $ease-out-quad);
+		@include transition(all 0.4s $ease-out-quad);
 	}
 
 	&.on h2 {

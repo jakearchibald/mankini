@@ -374,11 +374,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       font-size: 55px; } }
   /* line 28, _bullets.scss */
   .mankini-bullet.animate {
-    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   /* line 32, _bullets.scss */
   .mankini-bullet.on {
     opacity: 1; }
@@ -394,17 +391,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: 112px;
   height: 204px;
   -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
   transform-origin: 0 0; }
   /* line 9, _arrows.scss */
   .mankini-arrow1.animate {
-    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -ms-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+    -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   /* line 13, _arrows.scss */
   .mankini-arrow1.off {
     opacity: 0; }
@@ -442,28 +433,16 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     left: 0;
     bottom: -8px;
     -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
     transform-origin: 0 0;
     -webkit-transform: rotate(-2.6deg) translate(-180px, 0);
-    -moz-transform: rotate(-2.6deg) translate(-180px, 0);
-    -ms-transform: rotate(-2.6deg) translate(-180px, 0);
-    -o-transform: rotate(-2.6deg) translate(-180px, 0);
     transform: rotate(-2.6deg) translate(-180px, 0); }
   /* line 29, _heading.scss */
   .mankini-heading.animate h1 {
-    -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -moz-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -ms-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -o-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   /* line 33, _heading.scss */
   .mankini-heading.on h1 {
     -webkit-transform: rotate(-2.6deg) translate(18px, 0);
-    -moz-transform: rotate(-2.6deg) translate(18px, 0);
-    -ms-transform: rotate(-2.6deg) translate(18px, 0);
-    -o-transform: rotate(-2.6deg) translate(18px, 0);
     transform: rotate(-2.6deg) translate(18px, 0); }
   @media screen and (min-width: 1900px) {
     /* line 1, _heading.scss */
@@ -482,9 +461,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
         left: 21px;
         bottom: -13px;
         -webkit-transform: rotate(-2.6deg) translate(-360px, 0);
-        -moz-transform: rotate(-2.6deg) translate(-360px, 0);
-        -ms-transform: rotate(-2.6deg) translate(-360px, 0);
-        -o-transform: rotate(-2.6deg) translate(-360px, 0);
         transform: rotate(-2.6deg) translate(-360px, 0); } }
 
 /* line 1, _transitions.scss */
@@ -527,14 +503,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   /* line 5, _section-title.scss */
   .mankini-section-title .titles {
     -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
     transform-origin: 0 0;
     -webkit-transform: rotate(9deg);
-    -moz-transform: rotate(9deg);
-    -ms-transform: rotate(9deg);
-    -o-transform: rotate(9deg);
     transform: rotate(9deg);
     height: 100%;
     position: relative; }
@@ -550,23 +520,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     text-transform: uppercase;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     -webkit-transform: translate(300px, 0);
-    -moz-transform: translate(300px, 0);
-    -ms-transform: translate(300px, 0);
-    -o-transform: translate(300px, 0);
     transform: translate(300px, 0); }
     /* line 25, _section-title.scss */
     .mankini-section-title h1.animate {
-      -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -moz-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -ms-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -o-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s; }
+      -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); }
     /* line 29, _section-title.scss */
     .mankini-section-title h1.on {
       -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
       transform: none; }
   /* line 34, _section-title.scss */
   .mankini-section-title h2 {
@@ -577,23 +538,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-family: voltaire, sans-serif;
     font-size: 29px;
     -webkit-transform: translate(-300px, 0);
-    -moz-transform: translate(-300px, 0);
-    -ms-transform: translate(-300px, 0);
-    -o-transform: translate(-300px, 0);
     transform: translate(-300px, 0); }
     /* line 44, _section-title.scss */
     .mankini-section-title h2.animate {
-      -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -moz-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -ms-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      -o-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0s; }
+      -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); }
     /* line 48, _section-title.scss */
     .mankini-section-title h2.on {
       -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
       transform: none; }
 
 @media screen and (min-width: 1900px) {
@@ -607,9 +559,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       font-size: 228px;
       text-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
       -webkit-transform: translate(600px, 0);
-      -moz-transform: translate(600px, 0);
-      -ms-transform: translate(600px, 0);
-      -o-transform: translate(600px, 0);
       transform: translate(600px, 0); }
     /* line 66, _section-title.scss */
     .mankini-section-title h2 {
@@ -617,9 +566,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       left: 273px;
       font-size: 50px;
       -webkit-transform: translate(-600px, 0);
-      -moz-transform: translate(-600px, 0);
-      -ms-transform: translate(-600px, 0);
-      -o-transform: translate(-600px, 0);
       transform: translate(-600px, 0); } }
 /* line 1, _web-view.scss */
 .mankini-web-view {
@@ -651,14 +597,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
         width: 71.4285714%;
         height: 71.4285714%;
         -webkit-transform-origin: 0 0;
-        -moz-transform-origin: 0 0;
-        -ms-transform-origin: 0 0;
-        -o-transform-origin: 0 0;
         transform-origin: 0 0;
         -webkit-transform: scale(1.4);
-        -moz-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-        -o-transform: scale(1.4);
         transform: scale(1.4); } }
 
 /* line 38, _web-view.scss */
@@ -787,11 +727,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     opacity: 0; }
   /* line 14, _image.scss */
   .mankini-image.animate img {
-    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   /* line 18, _image.scss */
   .mankini-image.on img {
     opacity: 1; }
@@ -826,11 +763,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     opacity: 0; }
   /* line 14, _video.scss */
   .mankini-video.animate video {
-    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   /* line 18, _video.scss */
   .mankini-video.on video {
     opacity: 1; }
@@ -868,25 +802,16 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     -webkit-filter: grayscale(0) blur(0); }
     /* line 18, _supported.scss */
     .mankini-supported .supported-item.animate img {
-      -webkit-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-      -moz-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-      -ms-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-      -o-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-      transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s; }
+      -webkit-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
     /* line 21, _supported.scss */
     .mankini-supported .supported-item.animate .version {
-      -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-      -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-      -ms-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-      -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+      -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     /* line 26, _supported.scss */
     .mankini-supported .supported-item.on .version {
       opacity: 1;
       -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
       transform: scale(1); }
     /* line 31, _supported.scss */
     .mankini-supported .supported-item.on:not(.no-support) img {
@@ -895,9 +820,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     .mankini-supported .supported-item.deactivated .version {
       opacity: 0;
       -webkit-transform: scale(0.1);
-      -moz-transform: scale(0.1);
-      -ms-transform: scale(0.1);
-      -o-transform: scale(0.1);
       transform: scale(0.1); }
     /* line 40, _supported.scss */
     .mankini-supported .supported-item.deactivated:not(.no-support) img {
@@ -917,9 +839,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-weight: bold;
     opacity: 0;
     -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    -o-transform: scale(0.1);
     transform: scale(0.1); }
   /* line 62, _supported.scss */
   .mankini-supported img {
@@ -929,11 +848,8 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     display: block; }
   /* line 69, _supported.scss */
   .mankini-supported.animate {
-    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -ms-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   /* line 73, _supported.scss */
   .mankini-supported.on {
     opacity: 1; }
@@ -954,21 +870,12 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     margin: 0;
     font-size: 1em;
     -webkit-transform: translate(0, 100%);
-    -moz-transform: translate(0, 100%);
-    -ms-transform: translate(0, 100%);
-    -o-transform: translate(0, 100%);
     transform: translate(0, 100%); }
   /* line 19, _sub-heading.scss */
   .mankini-sub-heading.animate h2 {
-    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -ms-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; }
+    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   /* line 23, _sub-heading.scss */
   .mankini-sub-heading.on h2 {
     -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
     transform: none; }

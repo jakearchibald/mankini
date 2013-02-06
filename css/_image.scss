@@ -12,7 +12,7 @@
 	}
 
 	&.animate img {
-		@include transition(opacity, 0.5s, $ease-out-quad);
+		@include transition(opacity 0.5s $ease-out-quad);
 	}
 
 	&.on img {

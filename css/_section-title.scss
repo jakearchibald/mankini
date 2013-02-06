@@ -23,7 +23,7 @@
 		@include transform( translate(300px,0) );
 
 		&.animate {
-			@include transition(all, 1s, $ease-out-quint);
+			@include transition(all 1s $ease-out-quint);
 		}
 
 		&.on {
@@ -42,7 +42,7 @@
 		@include transform( translate(-300px,0) );
 
 		&.animate {
-			@include transition(all, 1s, $ease-out-quint);
+			@include transition(all 1s $ease-out-quint);
 		}
 
 		&.on {
