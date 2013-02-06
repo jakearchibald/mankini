@@ -22,15 +22,18 @@ $.fn.fullHeight = function() {
 		var deferreds = [];
 
 		$items.each(function() {
-			var $item = $( this ),
-				deferred = $.Deferred();
+			var el = this;
+			var $item = $( el );
+			var deferred = $.Deferred();
 
 			deferreds.push( deferred );
 
-			function complete() {
-				$item.removeClass( animateClassName );
-				$item.off( transitionend, complete );
-				deferred.resolve();
+			function complete(event) {
+				if (event.target == el) {
+					$item.removeClass( animateClassName );
+					$item.off( transitionend, complete );
+					deferred.resolve();
+				}
 			}
 
 			if ( animate ) {
