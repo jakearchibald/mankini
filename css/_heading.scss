@@ -22,7 +22,7 @@
 		left: 0;
 		bottom: -8px;
 
-		@include transform-origin(0, 0);
+		@include transform-origin(0 0);
 		@include transform( rotate(-2.6deg) translate(-180px,0) );
 	}
 

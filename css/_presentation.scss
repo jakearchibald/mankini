@@ -32,7 +32,7 @@
 @if $debug-hd {
 	@include hd {
 		.mankini-presentation {
-			@include transform-origin(0, 0);
+			@include transform-origin(0 0);
 			@include transform( scale(0.56) );
 		}
 	}

@@ -3,7 +3,7 @@
 	background: url(imgs/section-title/bg.png) no-repeat;
 
 	& .titles {
-		@include transform-origin(0,0);
+		@include transform-origin(0 0);
 		@include transform( rotate(9deg) );
 		height: 100%;
 		position: relative;

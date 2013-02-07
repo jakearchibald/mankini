@@ -4,7 +4,7 @@
 	left: 0;
 	width: 112px;
 	height: 204px;
-	@include transform-origin(0, 0);
+	@include transform-origin(0 0);
 
 	&.animate {
 		@include transition(all .5s $ease-in-out-quad);

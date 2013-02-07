@@ -141,7 +141,7 @@
 		this._stopPos = this.position = position;
 		// move the syncTime for this position if we're playing
 		if (this.playing) {
-			this._syncTime = new Date() - (position * 1000);
+			this._syncTime = Date.now() - (position * 1000);
 		}
 		this.value = this.easing(position / this.duration);
 		this.trigger('frame');
@@ -157,7 +157,7 @@
 			This is the drill sgt of the Anim world.
 	*/
 	function onInterval( now ) {
-		var dateNum = now.valueOf(),
+		var dateNum = Date.now(),
 			i = activeAnimsLen,
 			anim;
 		
