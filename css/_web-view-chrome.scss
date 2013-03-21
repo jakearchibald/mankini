@@ -1,0 +1,92 @@
+.mankini-web-view-chrome {
+	margin: 0 46px 20px;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+
+	& .iframe-container {
+		height: 553px;
+		position: relative;
+	}
+
+	& iframe {
+		opacity: 1;
+	}
+
+	@include hd {
+		margin: 0 346px 20px;
+
+		box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3);
+
+		& .iframe-container {
+			height: 697px;
+		}
+
+		& iframe {
+			width: 71.4285714%;
+			height: 71.4285714%;
+			@include transform-origin(0 0);
+			@include transform( scale(1.4) );
+		}
+	}
+}
+
+.mankini-toolbar {
+	overflow: hidden;
+	padding: 0.4em 0.5em 0;
+	position: relative;
+	border-style: solid;
+	border-width: 1px 0;
+	border-color: #e2e2e2 #000 #888;
+	border-radius: 0.6em 0.6em 0 0;
+
+	@include linear-gradient(top, #d0d0d0, #a7a7a7);
+
+	& [role='button'] {
+		float: left;
+		margin: 0 0.4em 0.4em 0;
+		border: 1px solid #888;
+		border-radius: 0.35em;
+
+		@include linear-gradient(top, #fefefe, #b8b8b8);
+
+		&.active {
+			background: #707070;
+			box-shadow: inset 0 3px 7px rgba(0,0,0,0.6);
+			color: #fff;
+		}
+
+		&.no-label div {
+			width: 2.1em;
+			padding: 0.38em 0;
+			text-indent: -5000px;
+		}
+
+		& div {
+			padding: 0.38em 0.64em 0.38em 2em;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+	}
+	& .back div {
+		background-image: url(imgs/web-view/back.png);
+	}
+	& .refresh div {
+		background-image: url(imgs/web-view/reload.png);
+	}
+
+	@include hd {
+		border-width: 2px 0;
+		font-size: 25px;
+
+		& [role='button'] {
+			float: left;
+			border-width: 2px;
+
+			& div {
+				background-size: 30px;
+			}
+		}
+	}
+}

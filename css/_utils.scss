@@ -50,6 +50,12 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 	}
 }
 
+@mixin perspective($type) {
+	@each $prefix in -webkit-, '' {
+		#{$prefix}perspective: $type;
+	}
+}
+
 @mixin transform-style($type) {
 	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
 		#{$prefix}transform-style: $type;

@@ -1,79 +1,51 @@
 (function() {
-	function WebView(className) {
-		var webView = this;
+  function WebView(className) {
+    var webView = this;
 
-		this.$container = $('' +
-			'<div class="mankini-web-view">' +
-				'<div class="mankini-toolbar">' +
-					'<div role="button" class="back no-label"><div>Back</div></div>' +
-					'<div role="button" class="refresh no-label"><div>Refresh</div></div>' +
-				'</div>' +
-				'<div class="iframe-container">' +
-					'<iframe src="about:blank"></iframe>' +
-				'</div>' +
-			'</div>' +
-		'').addClass( className || '' ).on('click', function(event) {
-			event.stopPropagation();
-		});
+    this.$container = $('<iframe src="about:blank" class="mankini-web-view"></iframe>').addClass( className || '' );
+    this._$iframe = this.$container;
+    this.hasUrl = false;
+  }
 
-		this._$iframe = this.$container.find('iframe');
-		this._shown = false;
+  var WebViewProto = WebView.prototype;
 
-		this.$container.find('.back').on('click', function(event) {
-			webView.back();
-			event.preventDefault();
-		});
+  WebViewProto.url = function(animate, str) {
+    var webView = this;
+    var deferred = $.Deferred();
+    var doAnim = !this.hasUrl && animate;
 
-		this.$container.find('.refresh').on('click', function(event) {
-			webView.refresh();
-			event.preventDefault();
-		});
-	}
+    this._$iframe.one('load', function() {
+      if ( doAnim ) {
+        mankini.utils.transition(animate, webView._$iframe, {
+          opacity: 1
+        }, {
+          duration: 300,
+          easing: 'easeInOutQuad'
+        });
+      }
+      deferred.resolve();
+    });
 
-	var WebViewProto = WebView.prototype;
+    this.hasUrl = true;
+    this._$iframe[0].src = str;
 
-	WebViewProto.url = function(animate, str) {
-		var webView = this;
+    return deferred;
+  };
 
-		if ( !this._shown ) {
-			if (animate) {
-				this._$iframe.one('load', function() {
-					webView.$container.transition({
-						height: webView.$container.fullHeight(),
-						opacity: 1
-					}, {
-						duration: 300,
-						easing: 'easeOutQuad'
-					});
-				});
-			}
-			else {
-				webView.$container.css({
-					height: 'auto',
-					opacity: 1
-				});
-			}
-			this._shown = true;
-		}
-		this._$iframe[0].src = str;
+  WebViewProto.back = function(str) {
+    this._$iframe[0].contentWindow.history.back();
+    return this;
+  };
 
-		return this;
-	};
+  WebViewProto.forward = function(str) {
+    this._$iframe[0].contentWindow.history.forward();
+    return this;
+  };
 
-	WebViewProto.back = function(str) {
-		this._$iframe[0].contentWindow.history.back();
-		return this;
-	};
+  WebViewProto.refresh = function(str) {
+    this._$iframe[0].contentWindow.history.go();
+    return this;
+  };
 
-	WebViewProto.forward = function(str) {
-		this._$iframe[0].contentWindow.history.forward();
-		return this;
-	};
-
-	WebViewProto.refresh = function(str) {
-		this._$iframe[0].contentWindow.history.go();
-		return this;
-	};
-
-	mankini.slide.WebView = WebView;
+  mankini.slide.WebView = WebView;
 })();

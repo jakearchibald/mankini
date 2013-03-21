@@ -294,6 +294,18 @@
 		});
 	};
 
+	BuilderProto.webViewChrome = function(url, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			if ( !builder._webView ) {
+				builder._webView = new ui.WebViewChrome(className);
+				builder._webView.$container.appendTo( $slide );
+			}
+			builder._webView.url( animate, url );
+		});
+	};
+
 	BuilderProto.webViewBack = function() {
 		var builder = this;
 

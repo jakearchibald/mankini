@@ -24,6 +24,7 @@
 		'mankini/slide/Heading.js',
 		'mankini/slide/SectionTitle.js',
 		'mankini/slide/WebView.js',
+		'mankini/slide/WebViewChrome.js',
 		'mankini/slide/Title.js',
 		'mankini/slide/Image.js',
 		'mankini/slide/Video.js',
