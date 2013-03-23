@@ -289,6 +289,7 @@
 			if ( !builder._webView ) {
 				builder._webView = new ui.WebView(className);
 				builder._webView.$container.appendTo( $slide );
+				builder._pointer.proxyIframe( builder._webView._$iframe );
 			}
 			builder._webView.url( animate, url );
 		});
@@ -301,6 +302,7 @@
 			if ( !builder._webView ) {
 				builder._webView = new ui.WebViewChrome(className);
 				builder._webView.$container.appendTo( $slide );
+				builder._pointer.proxyIframe( builder._webView._webView._$iframe );
 			}
 			builder._webView.url( animate, url );
 		});
