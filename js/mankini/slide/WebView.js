@@ -15,14 +15,12 @@
     var doAnim = !this.hasUrl && animate;
 
     this._$iframe.one('load', function() {
-      if ( doAnim ) {
-        mankini.utils.transition(animate, webView._$iframe, {
-          opacity: 1
-        }, {
-          duration: 300,
-          easing: 'easeInOutQuad'
-        });
-      }
+      mankini.utils.transition(doAnim, webView.$container, {
+        opacity: 1
+      }, {
+        duration: 300,
+        easing: 'easeInOutQuad'
+      });
       deferred.resolve();
     });
 
@@ -45,6 +43,20 @@
   WebViewProto.refresh = function(str) {
     this._$iframe[0].contentWindow.history.go();
     return this;
+  };
+
+  WebViewProto.remove = function(animate) {
+    var webView = this;
+
+    mankini.utils.transition(animate, webView.$container, {
+      opacity: 0
+    }, {
+      duration: 300,
+      easing: 'easeInOutQuad',
+      complete: function() {
+        webView.$container.remove();
+      }
+    });
   };
 
   mankini.slide.WebView = WebView;

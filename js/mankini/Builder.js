@@ -295,6 +295,14 @@
 		});
 	};
 
+	BuilderProto.webViewHide = function() {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._webView.remove(animate);
+		});
+	};
+
 	BuilderProto.webViewChrome = function(url, className) {
 		var builder = this;
 
@@ -414,6 +422,14 @@
 
 		return this.action(function( animate, $slide ) {
 			builder._video.play(animate, time);
+		});
+	};
+
+	BuilderProto.videoLoop = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video.loop(animate, time);
 		});
 	};
 

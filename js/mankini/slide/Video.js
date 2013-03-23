@@ -73,6 +73,11 @@
 		});
 	};
 
+	VideoProto.loop = function(animate) {
+		this._video.loop = true;
+		this.play(animate);
+	};
+
 	VideoProto.pause = function(time) {
 		var video = this;
 

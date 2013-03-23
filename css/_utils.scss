@@ -38,6 +38,17 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 	}
 }
 
+@mixin animation($type) {
+	@each $prefix in -webkit-, '' {
+		#{$prefix}animation: $type;
+	}
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes $name { @content; }
+	@keyframes         $name { @content; }
+}
+
 @mixin transform-origin($spec) {
 	@each $prefix in -webkit-, '' {
 		#{$prefix}transform-origin: $spec;
