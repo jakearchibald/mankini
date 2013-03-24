@@ -30,6 +30,7 @@
 		'mankini/slide/Video.js',
 		'mankini/slide/Supported.js',
 		'mankini/slide/SubHeading.js',
+		'mankini/slide/Timeline.js',
 		'mankini/Builder.js'
 	];
 

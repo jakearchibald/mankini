@@ -110,7 +110,7 @@
 			var prop = getCssPropName(key);
 			if (prop) {
 				translatedProps[prop] = value;
-				propsStr += (propsStr ? ',' : '') + prop;				
+				propsStr += (propsStr ? ',' : '') + prop;
 			}
 		});
 		
@@ -127,18 +127,15 @@
 				// need to use set timeout else next animation won't transition
 				setTimeout(next,0);
 			}
-			
-			// using setTimeout to let any .css() calls apply, eg $('#blah').css('top', 50).transition({ top: 0 })
-			setTimeout(function() {
-				$elm.bind(transitionend, complete)
-					.css( transitionProp, 'all ' + (+opts.duration/1000) + 's ' + (easings[opts.easing] || opts.easing) )
-					.vendorCss('transition-property', propsStr);
-					
-				// opera needs the new CSS applied after a render
-				setTimeout(function() {
-					$elm.css(translatedProps);
-				}, 0);
-			}, 0);
+
+			// force layout
+			$elm[0].offsetWidth;
+
+			$elm.bind(transitionend, complete)
+				.css( transitionProp, 'all ' + (+opts.duration/1000) + 's ' + (easings[opts.easing] || opts.easing) )
+				.vendorCss('transition-property', propsStr);
+				
+			$elm.css(translatedProps);
 		});
 		
 		return this;

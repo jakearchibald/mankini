@@ -890,3 +890,59 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   .mankini-sub-heading.on h2 {
     -webkit-transform: none;
     transform: none; }
+
+/* line 1, _timeline.scss */
+.mankini-timeline {
+  background: url(imgs/paper.png);
+  margin: 0 2.3em 1em;
+  font-size: 20px;
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0; }
+  /* line 9, _timeline.scss */
+  .mankini-timeline .inner {
+    overflow: hidden;
+    height: 0; }
+  @media screen and (min-width: 1900px) {
+    /* line 1, _timeline.scss */
+    .mankini-timeline {
+      font-size: 33px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); } }
+  /* line 19, _timeline.scss */
+  .mankini-timeline .timeline-row {
+    height: 40px;
+    position: relative; }
+  /* line 24, _timeline.scss */
+  .mankini-timeline .timeline-item {
+    background-image: -webkit-linear-gradient(180deg, white, #e6e6e6);
+    background-image: -moz-linear-gradient(180deg, white, #e6e6e6);
+    background-image: -o-linear-gradient(180deg, white, #e6e6e6);
+    background-image: linear-gradient(180deg, white, #e6e6e6);
+    border: 1px solid #CCC;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #B3B3B3;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    height: 100%;
+    position: absolute;
+    width: 0;
+    left: 0;
+    top: 0;
+    opacity: 0; }
+  /* line 40, _timeline.scss */
+  .mankini-timeline .event {
+    background-image: -webkit-linear-gradient(180deg, #fbf450, #ffc717);
+    background-image: -moz-linear-gradient(180deg, #fbf450, #ffc717);
+    background-image: -o-linear-gradient(180deg, #fbf450, #ffc717);
+    background-image: linear-gradient(180deg, #fbf450, #ffc717);
+    border: 1px solid #CCC;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+  /* line 48, _timeline.scss */
+  .mankini-timeline .stripe .timeline-item:nth-child(odd) {
+    background-image: -webkit-linear-gradient(180deg, #f3f3f3, #cccccc);
+    background-image: -moz-linear-gradient(180deg, #f3f3f3, #cccccc);
+    background-image: -o-linear-gradient(180deg, #f3f3f3, #cccccc);
+    background-image: linear-gradient(180deg, #f3f3f3, #cccccc); }

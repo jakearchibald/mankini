@@ -87,6 +87,8 @@
 			this._arrow =
 			this._image =
 			this._video =
+			this._timeline =
+			this._timelineItems =
 			this._bullets = undefined;
 
 		this._authorShow();
@@ -459,6 +461,54 @@
 
 	BuilderProto.stateSubHeading = function(text, className) {
 		return this.state( text ).subHeading( text, className );
+	};
+
+	BuilderProto.timelineNew = function(className) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._timeline = new ui.Timeline(className);
+			builder._timelineRows = {};
+			$slide.append(builder._timeline.$container);
+		});
+	};
+
+	BuilderProto.timelineUpdate = function(className) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._timeline.update(animate);
+		});
+	};
+
+	BuilderProto.timelineScale = function(start, duration) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._timeline.scale(start, duration);
+		});
+	};
+
+	BuilderProto.timelineItem = function(rowName, itemName, start, duration) {
+		var builder = this;
+		return this.action(function(animate, $slide) {
+			var row = builder._timelineRows[rowName];
+			if (!row) {
+				row = builder._timelineRows[rowName] = {
+					obj: builder._timeline.addRow(rowName),
+					items: {}
+				};
+			}
+			var item = row.items[itemName];
+			if (!item) {
+				item = row.items[itemName] = row.obj.addItem(itemName, start, duration);
+			}
+			else {
+				item.start = start;
+				item.duration = duration;
+				item.dirty = true;
+			}
+		});
 	};
 
 	mankini.Builder = Builder;
