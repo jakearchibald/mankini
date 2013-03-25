@@ -22,6 +22,13 @@
         easing: 'easeInOutQuad'
       });
       deferred.resolve();
+
+      webView._$iframe[0].contentWindow.document.addEventListener('keyup', function(event) {
+        if (event.keyCode == 27) { // esc
+          window.focus();
+          event.preventDefault();
+        }
+      });
     });
 
     this.hasUrl = true;
