@@ -52,4 +52,8 @@
   & .stripe .timeline-item:nth-child(odd) {
     @include linear-gradient(180deg, #f3f3f3, #ccc);
   }
+
+  & .stripe .timeline-item.event:nth-child(odd) {
+    @include linear-gradient(180deg, #FBE050, #FF9917);
+  }
 }

@@ -950,3 +950,9 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     background-image: -moz-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -o-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: linear-gradient(180deg, #f3f3f3, #cccccc); }
+  /* line 56, _timeline.scss */
+  .mankini-timeline .stripe .timeline-item.event:nth-child(odd) {
+    background-image: -webkit-linear-gradient(180deg, #fbe050, #ff9917);
+    background-image: -moz-linear-gradient(180deg, #fbe050, #ff9917);
+    background-image: -o-linear-gradient(180deg, #fbe050, #ff9917);
+    background-image: linear-gradient(180deg, #fbe050, #ff9917); }
