@@ -302,6 +302,7 @@
 
 		return this.action(function( animate, $slide ) {
 			builder._webView.remove(animate);
+			builder._webView = undefined;
 		});
 	};
 
