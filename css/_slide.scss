@@ -17,6 +17,10 @@
 		background: #fff;
 	}
 
+	&.black {
+		background: #000;
+	}
+
 	&.scrap-paper {
 		background: url('imgs/slide/scrap-paper.jpg');
 		@include hd {

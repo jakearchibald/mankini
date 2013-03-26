@@ -100,7 +100,8 @@
 		opts = $.extend({
 			duration: 500,
 			easing: 'swing',
-			complete: $.noop
+			complete: $.noop,
+			delay: 0
 		}, opts || {});
 		
 		var translatedProps = {},
@@ -132,7 +133,7 @@
 			$elm[0].offsetWidth;
 
 			$elm.bind(transitionend, complete)
-				.css( transitionProp, 'all ' + (+opts.duration/1000) + 's ' + (easings[opts.easing] || opts.easing) )
+				.css( transitionProp, 'all ' + (+opts.duration/1000) + 's ' + (easings[opts.easing] || opts.easing) + ' ' + (opts.delay/1000) + 's' )
 				.vendorCss('transition-property', propsStr);
 				
 			$elm.css(translatedProps);
