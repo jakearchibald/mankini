@@ -5,6 +5,7 @@
     this.$container = $('<iframe src="about:blank" class="mankini-web-view"></iframe>').addClass( className || '' );
     this._$iframe = this.$container;
     this.hasUrl = false;
+    this._ready = null;
   }
 
   var WebViewProto = WebView.prototype;
@@ -33,7 +34,7 @@
 
     this.hasUrl = true;
     this._$iframe[0].src = str;
-
+    this._ready = deferred;
     return deferred;
   };
 
@@ -63,6 +64,14 @@
       complete: function() {
         webView.$container.remove();
       }
+    });
+  };
+
+  WebViewProto.eval = function(func) {
+    var webView = this;
+
+    webView._ready.done(function() {
+      webView._$iframe[0].contentWindow.eval('a=' + func.toString() + '()');
     });
   };
 

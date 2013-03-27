@@ -335,6 +335,14 @@
 		});
 	};
 
+	BuilderProto.webViewEval = function(func) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._webView.eval(func);
+		});
+	};
+
 	BuilderProto.supported = function(supportItems, className) {
 		var builder = this;
 
