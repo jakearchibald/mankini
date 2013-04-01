@@ -497,7 +497,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     /* line 1, _code.scss */
     .mankini-code {
       font-size: 33px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); } }
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); }
+      /* line 21, _code.scss */
+      .mankini-code code {
+        padding: 1.7rem 2rem 1.5rem; } }
 
 /* line 1, _section-title.scss */
 .mankini-section-title {

@@ -436,6 +436,14 @@
 		});
 	};
 
+	BuilderProto.videoPause = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._video.pause(animate, time);
+		});
+	};
+
 	BuilderProto.videoLoop = function(time) {
 		var builder = this;
 

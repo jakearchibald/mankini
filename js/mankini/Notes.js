@@ -90,13 +90,13 @@
 
 		this._ready.done(function() {
 			var time = notes._time;
-			var startTime = new Date();
+			var startTime = Date.now();
 			
 			clearInterval( notes._interval );
 			time.textContent = '00:00:00';
 
 			notes._interval = setInterval(function() {
-				var duration = new Date() - startTime;
+				var duration = Date.now() - startTime;
 				var hours   = Math.floor(duration / (1000 * 60 * 60));
 				var minutes = Math.floor(duration / (1000 * 60)) - hours * 60;
 				var seconds = Math.floor(duration / 1000) - hours * 60 * 60 - minutes * 60;
