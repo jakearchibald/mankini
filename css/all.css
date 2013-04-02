@@ -861,13 +861,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   .mankini-supported img {
     width: 142px;
     -webkit-filter: grayscale(1) blur(0.2em);
+    -webkit-transform: translateZ(0);
     margin: 0 auto;
     display: block; }
-  /* line 69, _supported.scss */
+  /* line 70, _supported.scss */
   .mankini-supported.animate {
     -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 73, _supported.scss */
+  /* line 74, _supported.scss */
   .mankini-supported.on {
     opacity: 1; }
 
@@ -940,7 +941,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     left: 0;
     top: 0;
     opacity: 0; }
-  /* line 44, _timeline.scss */
+    /* line 43, _timeline.scss */
+    .mankini-timeline .timeline-item:first-child {
+      -webkit-transform: translateZ(0); }
+  /* line 49, _timeline.scss */
   .mankini-timeline .event {
     background-image: -webkit-linear-gradient(180deg, #fbf450, #ffc717);
     background-image: -moz-linear-gradient(180deg, #fbf450, #ffc717);
@@ -950,13 +954,13 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
-  /* line 52, _timeline.scss */
+  /* line 57, _timeline.scss */
   .mankini-timeline .stripe .timeline-item:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -moz-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -o-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: linear-gradient(180deg, #f3f3f3, #cccccc); }
-  /* line 56, _timeline.scss */
+  /* line 61, _timeline.scss */
   .mankini-timeline .stripe .timeline-item.event:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #fbe050, #ff9917);
     background-image: -moz-linear-gradient(180deg, #fbe050, #ff9917);

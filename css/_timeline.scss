@@ -39,6 +39,11 @@
     left: 0;
     top: 0;
     opacity: 0;
+
+    &:first-child {
+      // urgh, layout hack
+      -webkit-transform: translateZ(0);
+    }
   }
 
   & .event {
