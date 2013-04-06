@@ -2,7 +2,7 @@
   background: url(imgs/paper.png);
   margin: 0 2.3em 1em;
   font-size: 20px;
-  padding: 1.1rem 1.1rem 1rem;
+  padding: 1.1rem 1.1rem;
   box-shadow: 0 3px 12px rgba(0,0,0,0.2);
   opacity: 0;
 
@@ -14,12 +14,18 @@
   @include hd {
     font-size: 33px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    padding: 1.8rem 1.9rem;
   }
 
   & .timeline-row {
     height: 40px;
     position: relative;
     margin: 6px 0 0;
+
+    @include hd {
+      height: 65px;
+      margin: 10px 0 0;
+    }
     &:first-child {
       margin-top: 0;
     }
@@ -39,6 +45,12 @@
     left: 0;
     top: 0;
     opacity: 0;
+
+    @include hd {
+      border-width: 2px;
+      border-radius: 10px;
+      box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.2), 0 3px 5px rgba(0, 0, 0, 0.05);
+    }
 
     &:first-child {
       // urgh, layout hack
