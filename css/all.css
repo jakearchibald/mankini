@@ -967,13 +967,19 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
-  /* line 69, _timeline.scss */
+    @media screen and (min-width: 1900px) {
+      /* line 61, _timeline.scss */
+      .mankini-timeline .event {
+        border-width: 2px;
+        border-radius: 10px;
+        box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.2), 0 3px 5px rgba(0, 0, 0, 0.05); } }
+  /* line 75, _timeline.scss */
   .mankini-timeline .stripe .timeline-item:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -moz-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -o-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: linear-gradient(180deg, #f3f3f3, #cccccc); }
-  /* line 73, _timeline.scss */
+  /* line 79, _timeline.scss */
   .mankini-timeline .stripe .timeline-item.event:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #fbe050, #ff9917);
     background-image: -moz-linear-gradient(180deg, #fbe050, #ff9917);
