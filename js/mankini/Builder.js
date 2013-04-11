@@ -136,6 +136,14 @@
 		return this.bulletsClass( bulletStrings );
 	};
 
+	BuilderProto.bulletsFade = function() {
+		var builder = this;
+		
+		return this.action(function(animate, $slide) {
+			builder._bullets.fadeCurrent(animate);
+		});
+	};
+
 	BuilderProto.newBullets = function() {
 		var builder = this;
 

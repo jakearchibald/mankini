@@ -10,7 +10,7 @@
 		var $container = this.$container,
 			$newLis = $();
 		
-		this._fadeCurrent( animate );
+		this.fadeCurrent( animate );
 
 		bullets.forEach(function(bullet) {
 			var $li = $('<li class="mankini-bullet" />').text( bullet );
@@ -26,7 +26,7 @@
 		mankini.utils.animateToClass( animate, $newLis );
 	};
 
-	BulletsProto._fadeCurrent = function( animate ) {
+	BulletsProto.fadeCurrent = function( animate ) {
 		var $toFade = this.$container.children().slice( this._fadedTo );
 		
 		this._fadedTo += $toFade.length;
