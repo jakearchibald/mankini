@@ -213,25 +213,28 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   @media screen and (min-width: 1900px) {
     /* line 1, _presentation.scss */
     .presentation {
-      -webkit-perspective: 1200; } }
+      -webkit-perspective: 1200;
+      width: 1920px;
+      height: 1080px; } }
 
-/* line 18, _presentation.scss */
+/* line 20, _presentation.scss */
 * {
   cursor: none !important; }
 
-/* line 22, _presentation.scss */
-.mankini-presentation {
+/* line 25, _presentation.scss */
+.mankini-presentation,
+.mankini-luma-fix {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0; }
 
-@media screen and (min-width: 1900px) {
-  /* line 42, _presentation.scss */
-  .presentation {
-    width: 1920px;
-    height: 1080px; } }
+/* line 33, _presentation.scss */
+.mankini-luma-fix {
+  pointer-events: none;
+  z-index: 3; }
+
 /* line 1, _slide.scss */
 .slide {
   width: 100%;
@@ -307,46 +310,52 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   text-align: right;
   background: #333333; }
 
-/* line 54, _notes.scss */
-.mankini-notes.showIndex > * {
+/* line 53, _notes.scss */
+.mankini-notes .index {
   display: none; }
 /* line 57, _notes.scss */
+.mankini-notes.showIndex > * {
+  display: none; }
+/* line 60, _notes.scss */
 .mankini-notes.showIndex .index {
   display: block; }
-/* line 61, _notes.scss */
-.mankini-notes .index {
-  display: none;
+/* line 64, _notes.scss */
+.mankini-notes .index-list {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
   font-size: 20px; }
-  /* line 66, _notes.scss */
-  .mankini-notes .index li {
+  /* line 68, _notes.scss */
+  .mankini-notes .index-list li {
     padding: 0 10px;
     margin: 10px 0;
     cursor: pointer !important; }
-    /* line 71, _notes.scss */
-    .mankini-notes .index li:hover {
+    /* line 73, _notes.scss */
+    .mankini-notes .index-list li:hover {
       color: #ff0; }
+/* line 79, _notes.scss */
+.mankini-notes .luma-range {
+  cursor: pointer !important;
+  outline: 1px solid #fff; }
 
-/* line 78, _notes.scss */
+/* line 85, _notes.scss */
 .mankini-notes-in-page {
   position: absolute;
   top: 0;
   left: 1024px;
   right: 0;
   font: normal 18px/1.3 sans-serif; }
-  /* line 85, _notes.scss */
-  .mankini-notes-in-page .index {
+  /* line 92, _notes.scss */
+  .mankini-notes-in-page .index-list {
     font-size: 15px;
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3; }
-    /* line 89, _notes.scss */
-    .mankini-notes-in-page .index li {
+    /* line 96, _notes.scss */
+    .mankini-notes-in-page .index-list li {
       margin: 13px 0; }
   @media screen and (min-width: 1900px) {
-    /* line 78, _notes.scss */
+    /* line 85, _notes.scss */
     .mankini-notes-in-page {
       left: 1072px; } }
 

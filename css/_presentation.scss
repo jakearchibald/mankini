@@ -11,6 +11,8 @@
 
 	@include hd {
 		-webkit-perspective: 1200;
+		width: 1920px;
+		height: 1080px;
 	}
 }
 
@@ -19,14 +21,18 @@
 	cursor: none !important;
 }
 
-.mankini-presentation {
+.mankini-presentation,
+.mankini-luma-fix {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+}
 
-	//@include transform-style(preserve-3d);
+.mankini-luma-fix {
+	pointer-events: none;
+	z-index: 3;
 }
 
 @if $debug-hd {
@@ -35,12 +41,5 @@
 			@include transform-origin(0 0);
 			@include transform( scale(0.56) );
 		}
-	}
-}
-
-@include hd {
-	.presentation {
-		width: 1920px;
-		height: 1080px;
 	}
 }

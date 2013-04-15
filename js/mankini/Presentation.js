@@ -1,6 +1,7 @@
 (function() {
 	function Presentation( container, authoring ) {
 		this.$container = $('<div class="mankini-presentation"/>').appendTo( container );
+		this._$lumaFix = $('<div class="mankini-luma-fix"/>').appendTo( container );
 		this._slides = [];
 		this._slideIndex = 0;
 		this.authoring = authoring;
@@ -62,6 +63,19 @@
 				slide.transition( false, prevSlide );
 				prevSlide.gotoLastState();
 			}
+		}
+	};
+
+	// val - 0 is normal, -1 dark, 1 bright
+	PresentationProto.lumaFix = function(val) {
+		if (val == 0) {
+			this._$lumaFix.css('background', 'none');
+		}
+		else if (val > 0) {
+			this._$lumaFix.css('background', 'rgba(255, 255, 255, ' + val + ')');
+		}
+		else {
+			this._$lumaFix.css('background', 'rgba(0, 0, 0, ' + (val*-1) + ')');
 		}
 	};
 

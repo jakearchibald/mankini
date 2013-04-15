@@ -50,6 +50,9 @@ $overlay-bg: #333;
 }
 
 .mankini-notes {
+	& .index {
+		display: none;
+	}
 	&.showIndex {
 		& > * {
 			display: none;
@@ -58,8 +61,7 @@ $overlay-bg: #333;
 			display: block;
 		}
 	}
-	& .index {
-		display: none;
+	& .index-list {
 		@include column-count(4);
 		font-size: 20px;
 
@@ -73,6 +75,11 @@ $overlay-bg: #333;
 			}
 		}
 	}
+
+	& .luma-range {
+		cursor: pointer !important;
+		outline: 1px solid #fff;
+	}
 }
 
 .mankini-notes-in-page {
@@ -82,7 +89,7 @@ $overlay-bg: #333;
 	right: 0;
 	font: normal 18px/1.3 sans-serif;
 
-	& .index {
+	& .index-list {
 		font-size: 15px;
 		@include column-count(3);
 		

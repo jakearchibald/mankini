@@ -43,9 +43,12 @@
 		this._$next  = $('.slide-next', doc);
 		this._$container = $('.mankini-notes', doc);
 		this._time   = $('time', doc)[0];
-		this._$index = $('.index', doc).on('click', 'li', function(event) {
+		this._$index = $('.index-list', doc).on('click', 'li', function(event) {
 			notes._presentation.goTo( $(this).data('slideNum') );
 			event.preventDefault();
+		});
+		$('.luma-range', doc).on('change', function() {
+			notes._presentation.lumaFix(this.value);
 		});
 	};
 
@@ -83,7 +86,7 @@
 		});
 
 		return this;
-	}
+	};
 
 	NotesProto.startTime = function() {
 		var notes = this;
