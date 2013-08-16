@@ -1,6 +1,6 @@
 (function() {
 	var scripts = [
-		'jquery-1.8.1.js',
+		'jquery-2.0.3.js',
 		'jquery.transition.js',
 		'MicroEvent.js',
 		'Anim/base.js',

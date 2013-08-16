@@ -35,12 +35,10 @@
   src: url(fonts/ReenieBeanie.ttf);
   font-weight: normal; }
 
-/* line 43, all.scss */
 html {
   background: #000;
   overflow: hidden; }
 
-/* line 48, all.scss */
 html, body {
   margin: 0;
   padding: 0;
@@ -48,98 +46,78 @@ html, body {
   height: 100%; }
 
 /* Reset */
-/* line 56, all.scss */
 ul, ol, li, form, dl, dt, dd {
   padding: 0;
   margin: 0;
   display: block; }
 
-/* line 61, all.scss */
 ul, ol {
   list-style: none; }
 
-/* line 65, all.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 68, all.scss */
 img {
   -ms-interpolation-mode: bicubic; }
 
 /* Text/Fonts */
-/* line 70, all.scss */
 body, select, input, textarea {
   color: #000; }
 
-/* line 73, all.scss */
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small; }
 
-/* line 77, all.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif; }
 
-/* line 78, all.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative; }
 
-/* line 79, all.scss */
 sup {
   top: -0.5em; }
 
-/* line 80, all.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 81, all.scss */
 p {
   line-height: 1.4; }
 
 /* Links */
-/* line 85, all.scss */
 a img {
   border: 0; }
 
-/* line 89, all.scss */
 a:link, a:visited {
   text-decoration: none;
   color: #289de9; }
 
-/* line 94, all.scss */
 a:hover, a:active {
   text-decoration: underline; }
 
 /* Forms */
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-/* line 99, all.scss */
 select, input, textarea, button {
   font: 99% sans-serif;
   margin: 0; }
 
-/* line 101, all.scss */
 input, select {
   vertical-align: middle;
   _vertical-align: text-bottom; }
 
-/* line 106, all.scss */
 input[type="radio"] {
   vertical-align: text-bottom; }
 
-/* line 107, all.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
   *vertical-align: baseline; }
 
-/* line 109, all.scss */
 textarea, input {
   font-family: arial, sans-serif;
   font-size: 1em; }
 
-/* line 114, all.scss */
 button.custom {
   padding: 0;
   margin: 0;
@@ -151,16 +129,13 @@ button.custom {
   font-size: 1em;
   width: auto; }
 
-/* line 125, all.scss */
 button.custom::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 129, all.scss */
 legend {
   *margin-left: -7px; }
 
-/* line 131, all.scss */
 label, input[type="button"], input[type="submit"], input[type="image"], button {
   cursor: pointer; }
 
@@ -199,7 +174,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /********************************************
  ************* Global functions *************
  ********************************************/
-/* line 1, _presentation.scss */
 .presentation {
   width: 1024px;
   height: 768px;
@@ -211,17 +185,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   user-select: none;
   -webkit-perspective: 823; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _presentation.scss */
     .presentation {
       -webkit-perspective: 1200;
       width: 1920px;
       height: 1080px; } }
 
-/* line 20, _presentation.scss */
 * {
   cursor: none !important; }
 
-/* line 25, _presentation.scss */
 .mankini-presentation,
 .mankini-luma-fix {
   width: 100%;
@@ -230,12 +201,10 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   top: 0;
   left: 0; }
 
-/* line 33, _presentation.scss */
 .mankini-luma-fix {
   pointer-events: none;
   z-index: 3; }
 
-/* line 1, _slide.scss */
 .slide {
   width: 100%;
   height: 100%;
@@ -247,24 +216,18 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   background-size: 100% 100%;
   overflow: hidden; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _slide.scss */
     .slide {
       background-image: url("imgs/slide/bg@hd.jpg"); } }
-  /* line 16, _slide.scss */
   .slide.white {
     background: #fff; }
-  /* line 20, _slide.scss */
   .slide.black {
     background: #000; }
-  /* line 24, _slide.scss */
   .slide.scrap-paper {
     background: url("imgs/slide/scrap-paper.jpg"); }
     @media screen and (min-width: 1900px) {
-      /* line 24, _slide.scss */
       .slide.scrap-paper {
         background: url("imgs/slide/scrap-paper@hd.jpg"); } }
 
-/* line 5, _notes.scss */
 .notes-page body,
 .mankini-notes-in-page {
   background: #000;
@@ -273,35 +236,28 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: auto;
   height: 100%; }
 
-/* line 13, _notes.scss */
 .notes-workshop {
   overflow: visible; }
-  /* line 16, _notes.scss */
   .notes-workshop body {
     font-size: 23px;
     line-height: 1.1; }
 
-/* line 23, _notes.scss */
 .slide-next,
 .notes-page time {
   padding: 13px 20px; }
 
-/* line 27, _notes.scss */
 .slide-notes li {
   display: list-item;
   padding: 22px 20px; }
-  /* line 31, _notes.scss */
   .slide-notes li:nth-child(even) {
     background: #222222; }
 
-/* line 36, _notes.scss */
 .slide-next {
   float: right;
   background: #333333;
   margin: 0 0 10px 10px;
   max-width: 33%; }
 
-/* line 43, _notes.scss */
 .notes-page time {
   position: fixed;
   bottom: 0;
@@ -310,60 +266,47 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   text-align: right;
   background: #333333; }
 
-/* line 53, _notes.scss */
 .mankini-notes .index {
   display: none; }
-/* line 57, _notes.scss */
 .mankini-notes.showIndex > * {
   display: none; }
-/* line 60, _notes.scss */
 .mankini-notes.showIndex .index {
   display: block; }
-/* line 64, _notes.scss */
 .mankini-notes .index-list {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
   font-size: 20px; }
-  /* line 68, _notes.scss */
   .mankini-notes .index-list li {
     padding: 0 10px;
     margin: 10px 0;
     cursor: pointer !important; }
-    /* line 73, _notes.scss */
     .mankini-notes .index-list li:hover {
       color: #ff0; }
-/* line 79, _notes.scss */
 .mankini-notes .luma-range {
   cursor: pointer !important;
   outline: 1px solid #fff; }
 
-/* line 85, _notes.scss */
 .mankini-notes-in-page {
   position: absolute;
   top: 0;
   left: 1024px;
   right: 0;
   font: normal 18px/1.3 sans-serif; }
-  /* line 92, _notes.scss */
   .mankini-notes-in-page .index-list {
     font-size: 15px;
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3; }
-    /* line 96, _notes.scss */
     .mankini-notes-in-page .index-list li {
       margin: 13px 0; }
   @media screen and (min-width: 1900px) {
-    /* line 85, _notes.scss */
     .mankini-notes-in-page {
       left: 1072px; } }
 
-/* line 1, _bullets.scss */
 .mankini-bullets {
   padding: 0 0 10px; }
 
-/* line 5, _bullets.scss */
 .mankini-bullet {
   color: #AB540D;
   font-family: voltaire, sans-serif;
@@ -372,7 +315,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   margin-left: 2.39em;
   position: relative;
   opacity: 0; }
-  /* line 14, _bullets.scss */
   .mankini-bullet::before {
     content: '➤';
     position: absolute;
@@ -381,21 +323,16 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-size: 0.68em;
     -webkit-transform: translateZ(0); }
   @media screen and (min-width: 1900px) {
-    /* line 5, _bullets.scss */
     .mankini-bullet {
       font-size: 55px; } }
-  /* line 28, _bullets.scss */
   .mankini-bullet.animate {
     -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-  /* line 32, _bullets.scss */
   .mankini-bullet.on {
     opacity: 1; }
-  /* line 36, _bullets.scss */
   .mankini-bullet.previous {
     opacity: 0.5; }
 
-/* line 1, _arrows.scss */
 .mankini-arrow1 {
   position: absolute;
   top: 0;
@@ -404,18 +341,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   height: 204px;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0; }
-  /* line 9, _arrows.scss */
   .mankini-arrow1.animate {
     -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-  /* line 13, _arrows.scss */
   .mankini-arrow1.off {
     opacity: 0; }
-  /* line 17, _arrows.scss */
   .mankini-arrow1 svg {
     position: relative;
     left: -93px; }
-  /* line 22, _arrows.scss */
   .mankini-arrow1 path {
     stroke: #f00;
     fill: none;
@@ -423,17 +356,14 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     stroke-linecap: round;
     stroke-linejoin: round; }
 
-/* line 1, _heading.scss */
 .mankini-heading {
   height: 103px;
   background: url(imgs/heading/bg.png);
   position: relative;
   margin: 0 0 22px; }
-  /* line 8, _heading.scss */
   .mankini-heading .mask {
     height: 100%;
     -webkit-mask-image: url(imgs/heading/mask.png); }
-  /* line 14, _heading.scss */
   .mankini-heading h1 {
     font-family: share, sans-serif;
     margin: 0;
@@ -448,25 +378,20 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     transform-origin: 0 0;
     -webkit-transform: rotate(-2.6deg) translate(-180px, 0);
     transform: rotate(-2.6deg) translate(-180px, 0); }
-  /* line 29, _heading.scss */
   .mankini-heading.animate h1 {
     -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 33, _heading.scss */
   .mankini-heading.on h1 {
     -webkit-transform: rotate(-2.6deg) translate(18px, 0);
     transform: rotate(-2.6deg) translate(18px, 0); }
   @media screen and (min-width: 1900px) {
-    /* line 1, _heading.scss */
     .mankini-heading {
       height: 182px;
       background-image: url(imgs/heading/bg@hd.jpg);
       margin: 0 0 33px; }
-      /* line 42, _heading.scss */
       .mankini-heading .mask {
         -webkit-mask-image: url(imgs/heading/mask@hd.png);
         -webkit-mask-repeat: no-repeat; }
-      /* line 47, _heading.scss */
       .mankini-heading h1 {
         text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         font-size: 92px;
@@ -475,7 +400,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
         -webkit-transform: rotate(-2.6deg) translate(-360px, 0);
         transform: rotate(-2.6deg) translate(-360px, 0); } }
 
-/* line 1, _transitions.scss */
 .mankini-black-fader {
   width: 100%;
   height: 100%;
@@ -486,7 +410,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   left: 0;
   top: 0; }
 
-/* line 1, _code.scss */
 .mankini-code {
   background: url(imgs/paper.png);
   margin: 0 2.3em 1em;
@@ -496,27 +419,22 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   height: 0;
   opacity: 0;
   font-size: 20px; }
-  /* line 11, _code.scss */
   .mankini-code code {
     display: block;
     padding: 1.1rem 1.1rem 1rem;
     font-family: consolas, monospace;
     line-height: 1.3; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _code.scss */
     .mankini-code {
       font-size: 33px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
       margin: 0 75px 33px; }
-      /* line 22, _code.scss */
       .mankini-code code {
         padding: 1.7rem 2rem 1.5rem; } }
 
-/* line 1, _section-title.scss */
 .mankini-section-title {
   height: 100%;
   background: url(imgs/section-title/bg.png) no-repeat; }
-  /* line 5, _section-title.scss */
   .mankini-section-title .titles {
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
@@ -524,7 +442,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     transform: rotate(9deg);
     height: 100%;
     position: relative; }
-  /* line 12, _section-title.scss */
   .mankini-section-title h1 {
     margin: 0;
     position: absolute;
@@ -537,15 +454,12 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     -webkit-transform: translate(300px, 0);
     transform: translate(300px, 0); }
-    /* line 25, _section-title.scss */
     .mankini-section-title h1.animate {
       -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
       transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); }
-    /* line 29, _section-title.scss */
     .mankini-section-title h1.on {
       -webkit-transform: none;
       transform: none; }
-  /* line 34, _section-title.scss */
   .mankini-section-title h2 {
     margin: 0;
     position: absolute;
@@ -555,20 +469,16 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-size: 29px;
     -webkit-transform: translate(-300px, 0);
     transform: translate(-300px, 0); }
-    /* line 44, _section-title.scss */
     .mankini-section-title h2.animate {
       -webkit-transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
       transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); }
-    /* line 48, _section-title.scss */
     .mankini-section-title h2.on {
       -webkit-transform: none;
       transform: none; }
 
 @media screen and (min-width: 1900px) {
-  /* line 55, _section-title.scss */
   .mankini-section-title {
     background-image: url(imgs/section-title/bg@hd.jpg); }
-    /* line 58, _section-title.scss */
     .mankini-section-title h1 {
       bottom: 641px;
       left: 260px;
@@ -576,14 +486,12 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
       text-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
       -webkit-transform: translate(600px, 0);
       transform: translate(600px, 0); }
-    /* line 66, _section-title.scss */
     .mankini-section-title h2 {
       top: 443px;
       left: 273px;
       font-size: 50px;
       -webkit-transform: translate(-600px, 0);
       transform: translate(-600px, 0); } }
-/* line 1, _web-view.scss */
 .mankini-web-view {
   position: absolute;
   top: 0;
@@ -597,29 +505,23 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   border: 0;
   opacity: 0; }
 
-/* line 1, _web-view-chrome.scss */
 .mankini-web-view-chrome {
   margin: 0 46px 20px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   height: 0;
   opacity: 0; }
-  /* line 8, _web-view-chrome.scss */
   .mankini-web-view-chrome .iframe-container {
     height: 553px;
     position: relative; }
-  /* line 13, _web-view-chrome.scss */
   .mankini-web-view-chrome iframe {
     opacity: 1; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _web-view-chrome.scss */
     .mankini-web-view-chrome {
       margin: 0 346px 20px;
       box-shadow: 0 9px 16px rgba(0, 0, 0, 0.3); }
-      /* line 22, _web-view-chrome.scss */
       .mankini-web-view-chrome .iframe-container {
         height: 697px; }
-      /* line 26, _web-view-chrome.scss */
       .mankini-web-view-chrome iframe {
         width: 71.4285714%;
         height: 71.4285714%;
@@ -628,7 +530,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
         -webkit-transform: scale(1.4);
         transform: scale(1.4); } }
 
-/* line 35, _web-view-chrome.scss */
 .mankini-toolbar {
   overflow: hidden;
   padding: 0.4em 0.5em 0;
@@ -641,7 +542,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   background-image: -moz-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: -o-linear-gradient(top, #d0d0d0, #a7a7a7);
   background-image: linear-gradient(top, #d0d0d0, #a7a7a7); }
-  /* line 46, _web-view-chrome.scss */
   .mankini-toolbar [role='button'] {
     float: left;
     margin: 0 0.4em 0.4em 0;
@@ -651,45 +551,35 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     background-image: -moz-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: -o-linear-gradient(top, #fefefe, #b8b8b8);
     background-image: linear-gradient(top, #fefefe, #b8b8b8); }
-    /* line 54, _web-view-chrome.scss */
     .mankini-toolbar [role='button'].active {
       background: #707070;
       box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.6);
       color: #fff; }
-    /* line 60, _web-view-chrome.scss */
     .mankini-toolbar [role='button'].no-label div {
       width: 2.1em;
       padding: 0.38em 0;
       text-indent: -5000px; }
-    /* line 66, _web-view-chrome.scss */
     .mankini-toolbar [role='button'] div {
       padding: 0.38em 0.64em 0.38em 2em;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
-  /* line 72, _web-view-chrome.scss */
   .mankini-toolbar .back div {
     background-image: url(imgs/web-view/back.png); }
-  /* line 75, _web-view-chrome.scss */
   .mankini-toolbar .refresh div {
     background-image: url(imgs/web-view/reload.png); }
   @media screen and (min-width: 1900px) {
-    /* line 35, _web-view-chrome.scss */
     .mankini-toolbar {
       border-width: 2px 0;
       font-size: 25px; }
-      /* line 83, _web-view-chrome.scss */
       .mankini-toolbar [role='button'] {
         float: left;
         border-width: 2px; }
-        /* line 87, _web-view-chrome.scss */
         .mankini-toolbar [role='button'] div {
           background-size: 30px; } }
 
-/* line 1, _pointer.scss */
 .mankini-pointer {
   position: fixed;
   pointer-events: none; }
-  /* line 5, _pointer.scss */
   .mankini-pointer .cursor {
     width: 171px;
     height: 211px;
@@ -698,7 +588,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     left: -64px;
     background: url(imgs/pointer.png);
     z-index: 2; }
-  /* line 15, _pointer.scss */
   .mankini-pointer .click-hit {
     width: 80px;
     height: 80px;
@@ -710,11 +599,9 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     z-index: 1;
     opacity: 0; }
 
-/* line 1, _title.scss */
 .mankini-title {
   height: 100%;
   background: url(imgs/title/bg.jpg) no-repeat; }
-  /* line 5, _title.scss */
   .mankini-title h1 {
     margin: 0;
     position: absolute;
@@ -730,40 +617,32 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     width: 867px; }
 
 @media screen and (min-width: 1900px) {
-  /* line 22, _title.scss */
   .mankini-title {
     background-image: url("imgs/title/bg@hd.jpg"); }
-    /* line 25, _title.scss */
     .mankini-title h1 {
       bottom: 416px;
       right: 35px;
       text-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
       font-size: 164px;
       width: 1822px; } }
-/* line 1, _image.scss */
 .mankini-image {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0; }
-  /* line 8, _image.scss */
   .mankini-image img {
     display: block;
     margin: 0 auto;
     opacity: 0; }
-  /* line 14, _image.scss */
   .mankini-image.animate img {
     -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 18, _image.scss */
   .mankini-image.on img {
     opacity: 1; }
-  /* line 22, _image.scss */
   .mankini-image.off img {
     opacity: 0; }
 
-/* line 27, _image.scss */
 .mankini-image-inner {
   display: table-cell;
   text-align: center;
@@ -771,35 +650,28 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: 1024px;
   height: 768px; }
   @media screen and (min-width: 1900px) {
-    /* line 27, _image.scss */
     .mankini-image-inner {
       width: 1920px;
       height: 1080px; } }
 
-/* line 1, _video.scss */
 .mankini-video {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0; }
-  /* line 8, _video.scss */
   .mankini-video video {
     display: block;
     margin: 0 auto;
     opacity: 0; }
-  /* line 14, _video.scss */
   .mankini-video.animate video {
     -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 18, _video.scss */
   .mankini-video.on video {
     opacity: 1; }
-  /* line 22, _video.scss */
   .mankini-video.off video {
     opacity: 0; }
 
-/* line 27, _video.scss */
 .mankini-video-inner {
   display: table-cell;
   text-align: center;
@@ -807,51 +679,40 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   width: 1024px;
   height: 768px; }
   @media screen and (min-width: 1900px) {
-    /* line 27, _video.scss */
     .mankini-video-inner {
       width: 1920px;
       height: 1080px; } }
 
-/* line 1, _supported.scss */
 .mankini-supported {
   text-align: center;
   opacity: 0; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _supported.scss */
     .mankini-supported {
       font-size: 24px; } }
-  /* line 9, _supported.scss */
   .mankini-supported .supported-item {
     display: inline-block;
     position: relative;
     margin: 0 2.2em;
     vertical-align: top;
     -webkit-filter: grayscale(0) blur(0); }
-    /* line 18, _supported.scss */
     .mankini-supported .supported-item.animate img {
       -webkit-transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       transition: -webkit-filter 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-    /* line 21, _supported.scss */
     .mankini-supported .supported-item.animate .version {
       -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    /* line 26, _supported.scss */
     .mankini-supported .supported-item.on .version {
       opacity: 1;
       -webkit-transform: scale(1);
       transform: scale(1); }
-    /* line 31, _supported.scss */
     .mankini-supported .supported-item.on:not(.no-support) img {
       -webkit-filter: grayscale(0) blur(0); }
-    /* line 35, _supported.scss */
     .mankini-supported .supported-item.deactivated .version {
       opacity: 0;
       -webkit-transform: scale(0.1);
       transform: scale(0.1); }
-    /* line 40, _supported.scss */
     .mankini-supported .supported-item.deactivated:not(.no-support) img {
       -webkit-filter: grayscale(1) blur(0.2em); }
-  /* line 45, _supported.scss */
   .mankini-supported .version {
     position: absolute;
     top: 0;
@@ -867,31 +728,25 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     opacity: 0;
     -webkit-transform: scale(0.1);
     transform: scale(0.1); }
-  /* line 62, _supported.scss */
   .mankini-supported img {
     width: 142px;
     -webkit-filter: grayscale(1) blur(0.2em);
     -webkit-transform: translateZ(0);
     margin: 0 auto;
     display: block; }
-  /* line 70, _supported.scss */
   .mankini-supported.animate {
     -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 74, _supported.scss */
   .mankini-supported.on {
     opacity: 1; }
 
-/* line 1, _sub-heading.scss */
 .mankini-sub-heading {
   margin: 0 1.5em 0.3em;
   overflow: hidden;
   font-size: 30px; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _sub-heading.scss */
     .mankini-sub-heading {
       font-size: 50px; } }
-  /* line 10, _sub-heading.scss */
   .mankini-sub-heading h2 {
     color: #AB540D;
     font-family: voltaire, sans-serif;
@@ -899,16 +754,13 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     font-size: 1em;
     -webkit-transform: translate(0, 100%);
     transform: translate(0, 100%); }
-  /* line 19, _sub-heading.scss */
   .mankini-sub-heading.animate h2 {
     -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  /* line 23, _sub-heading.scss */
   .mankini-sub-heading.on h2 {
     -webkit-transform: none;
     transform: none; }
 
-/* line 1, _timeline.scss */
 .mankini-timeline {
   background: url(imgs/paper.png);
   margin: 0 2.3em 1em;
@@ -916,30 +768,24 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
   padding: 1.1rem 1.1rem;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   opacity: 0; }
-  /* line 9, _timeline.scss */
   .mankini-timeline .inner {
     overflow: hidden;
     height: 0; }
   @media screen and (min-width: 1900px) {
-    /* line 1, _timeline.scss */
     .mankini-timeline {
       font-size: 33px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
       padding: 1.8rem 1.9rem; } }
-  /* line 20, _timeline.scss */
   .mankini-timeline .timeline-row {
     height: 40px;
     position: relative;
     margin: 6px 0 0; }
     @media screen and (min-width: 1900px) {
-      /* line 20, _timeline.scss */
       .mankini-timeline .timeline-row {
         height: 65px;
         margin: 10px 0 0; } }
-    /* line 29, _timeline.scss */
     .mankini-timeline .timeline-row:first-child {
       margin-top: 0; }
-  /* line 34, _timeline.scss */
   .mankini-timeline .timeline-item {
     background-image: -webkit-linear-gradient(180deg, white, #e6e6e6);
     background-image: -moz-linear-gradient(180deg, white, #e6e6e6);
@@ -958,15 +804,12 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     top: 0;
     opacity: 0; }
     @media screen and (min-width: 1900px) {
-      /* line 34, _timeline.scss */
       .mankini-timeline .timeline-item {
         border-width: 2px;
         border-radius: 10px;
         box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.2), 0 3px 5px rgba(0, 0, 0, 0.05); } }
-    /* line 55, _timeline.scss */
     .mankini-timeline .timeline-item:first-child {
       -webkit-transform: translateZ(0); }
-  /* line 61, _timeline.scss */
   .mankini-timeline .event {
     background-image: -webkit-linear-gradient(180deg, #fbf450, #ffc717);
     background-image: -moz-linear-gradient(180deg, #fbf450, #ffc717);
@@ -977,20 +820,19 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
     border-radius: 4px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
     @media screen and (min-width: 1900px) {
-      /* line 61, _timeline.scss */
       .mankini-timeline .event {
         border-width: 2px;
         border-radius: 10px;
         box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.2), 0 3px 5px rgba(0, 0, 0, 0.05); } }
-  /* line 75, _timeline.scss */
   .mankini-timeline .stripe .timeline-item:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -moz-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: -o-linear-gradient(180deg, #f3f3f3, #cccccc);
     background-image: linear-gradient(180deg, #f3f3f3, #cccccc); }
-  /* line 79, _timeline.scss */
   .mankini-timeline .stripe .timeline-item.event:nth-child(odd) {
     background-image: -webkit-linear-gradient(180deg, #fbe050, #ff9917);
     background-image: -moz-linear-gradient(180deg, #fbe050, #ff9917);
     background-image: -o-linear-gradient(180deg, #fbe050, #ff9917);
     background-image: linear-gradient(180deg, #fbe050, #ff9917); }
+
+/*# sourceMappingURL=all.css.map */
