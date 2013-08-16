@@ -5,7 +5,7 @@
 
 		this._ready = $.Deferred();
 		this._presentation = presentation;
-		
+
 		function done() {
 			notes._getElements( win.document );
 			if (!inPage) {
@@ -26,7 +26,8 @@
 				'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
 			);
 
-			if ( win.document.body.innerHTML ) {
+
+			if ( win && win.document && win.document.body && win.document.body.innerHTML ) {
 				setTimeout(done, 500);
 			}
 			else {
