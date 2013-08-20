@@ -38,6 +38,12 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 	}
 }
 
+@mixin transition-delay($spec...) {
+	@each $prefix in -webkit-, '' {
+		#{$prefix}transition-delay: $spec;
+	}
+}
+
 @mixin animation($type) {
 	@each $prefix in -webkit-, '' {
 		#{$prefix}animation: $type;
