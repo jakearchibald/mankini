@@ -83,7 +83,7 @@
 		var notes = this;
 
 		this._ready.done(function() {
-			notes._$index.append( $('<li/>').text(stateName).data('slideNum', slideNum) )
+			notes._$index.append( $('<li/>').text(stateName).data('slideNum', slideNum) );
 		});
 
 		return this;
