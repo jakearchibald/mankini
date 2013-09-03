@@ -29,8 +29,10 @@
 	};
 
 	PresentationProto.goTo = function( num ) {
-		this._slides[ this._slideIndex ].$container.remove();
-		this.start( num );
+		var currentSlide = this._slides[ this._slideIndex ];
+		var nextSlide = this._slides[ num ];
+		currentSlide.setTransition(mankini.transitions.fadeBlack);
+		currentSlide.transition(true, nextSlide);
 	};
 
 	PresentationProto.next = function( animate ) {
