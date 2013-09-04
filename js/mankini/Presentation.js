@@ -31,6 +31,7 @@
 	PresentationProto.goTo = function( num ) {
 		var currentSlide = this._slides[ this._slideIndex ];
 		var nextSlide = this._slides[ num ];
+		this._slideIndex = num;
 		currentSlide.setTransition(mankini.transitions.fadeBlack);
 		currentSlide.transition(true, nextSlide);
 	};
