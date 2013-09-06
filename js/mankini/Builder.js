@@ -52,6 +52,9 @@
 					builder._pointer.toggle();
 					event.preventDefault();
 					break;
+				case 70:
+					document.documentElement.webkitRequestFullscreen();
+					break;
 			}
 		}, false);
 	};
