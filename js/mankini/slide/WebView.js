@@ -25,7 +25,7 @@
       deferred.resolve();
 
       webView._$iframe[0].contentWindow.document.addEventListener('keyup', function(event) {
-        if (event.keyCode == 27) { // esc
+        if (event.keyCode == 192) { // §
           window.focus();
           event.preventDefault();
         }
