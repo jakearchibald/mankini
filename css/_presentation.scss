@@ -33,6 +33,7 @@
 .mankini-luma-fix {
 	pointer-events: none;
 	z-index: 3;
+	display: none;
 }
 
 @if $debug-hd {

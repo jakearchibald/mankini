@@ -74,13 +74,22 @@
 	// val - 0 is normal, -1 dark, 1 bright
 	PresentationProto.lumaFix = function(val) {
 		if (val == 0) {
-			this._$lumaFix.css('background', 'none');
+			this._$lumaFix.css({
+				background: 'none',
+				display: 'none'
+			});
 		}
 		else if (val > 0) {
-			this._$lumaFix.css('background', 'rgba(255, 255, 255, ' + val + ')');
+			this._$lumaFix.css({
+				background: 'rgba(255, 255, 255, ' + val + ')',
+				display: 'block'
+			});
 		}
 		else {
-			this._$lumaFix.css('background', 'rgba(0, 0, 0, ' + (val*-1) + ')');
+			this._$lumaFix.css({
+				background: 'rgba(0, 0, 0, ' + (val*-1) + ')',
+				display: 'block'
+			});
 		}
 	};
 
