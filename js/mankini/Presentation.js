@@ -6,7 +6,6 @@
 		this._slideIndex = 0;
 		this.authoring = authoring;
 		this.builder = new mankini.Builder( this );
-		this.hd = this.$container.width() == 1920;
 	}
 
 	var PresentationProto = Presentation.prototype;
