@@ -240,6 +240,13 @@
 		});
 	};
 
+	BuilderProto.codeFile = function(filePath, lang) {
+		var builder = this;
+		return this.action(function( animate, $slide ) {
+			builder._code.fromFile( filePath, lang );
+		});
+	};
+
 	BuilderProto.showCode = function(from, to, fontSize) {
 		var builder = this;
 		return this.action(function(animate) {
