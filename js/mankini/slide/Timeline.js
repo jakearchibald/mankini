@@ -1,6 +1,11 @@
 (function() {
-  function Item(className, start, duration) {
+  function Item(className, start, duration, label) {
     this.$container = $('<div class="timeline-item"></div>').addClass( className || '' );
+
+    if (label) {
+      $('<div class="timeline-label"></div>').text(label).appendTo(this.$container);
+    }
+
     this.start = start;
     this.duration = duration;
     this.dirty = true;
@@ -17,8 +22,8 @@
 
   var RowProto = Row.prototype;
 
-  RowProto.addItem = function(className, start, duration) {
-    var item = new Item(className, start, duration);
+  RowProto.addItem = function(className, start, duration, label) {
+    var item = new Item(className, start, duration, label);
     this.items.push(item);
     this.$container.append(item.$container);
     return item;
@@ -85,6 +90,7 @@
         }
         var left = (item.start - timeline.start) / timeline.duration;
         var width = item.duration / timeline.duration;
+        var opacity = width ? 1 : 0;
 
         if (!item.drawn) {
           item.$container.css('left', left*100 + "%");
@@ -93,7 +99,7 @@
         mankini.utils.transition(animate, item.$container, {
           left: left*100 + "%",
           width: width*100 + "%",
-          opacity: 1
+          opacity: opacity
         }, {
           duration: 600,
           easing: item.drawn ? 'easeInOutQuad' : 'easeOutQuad'

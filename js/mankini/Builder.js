@@ -508,7 +508,7 @@
 		});
 	};
 
-	BuilderProto.timelineUpdate = function(className) {
+	BuilderProto.timelineUpdate = function() {
 		var builder = this;
 
 		return this.action(function(animate, $slide) {
@@ -524,19 +524,25 @@
 		});
 	};
 
-	BuilderProto.timelineItem = function(rowName, itemName, start, duration) {
+	BuilderProto.timelineRow = function(rowName) {
 		var builder = this;
 		return this.action(function(animate, $slide) {
-			var row = builder._timelineRows[rowName];
-			if (!row) {
-				row = builder._timelineRows[rowName] = {
+			if (!builder._timelineRows[rowName]) {
+				builder._timelineRows[rowName] = {
 					obj: builder._timeline.addRow(rowName),
 					items: {}
 				};
 			}
+		});
+	};
+
+	BuilderProto.timelineItem = function(rowName, itemName, start, duration, label) {
+		var builder = this;
+		return this.timelineRow(rowName).action(function(animate, $slide) {
+			var row = builder._timelineRows[rowName];
 			var item = row.items[itemName];
 			if (!item) {
-				item = row.items[itemName] = row.obj.addItem(itemName, start, duration);
+				item = row.items[itemName] = row.obj.addItem(itemName, start, duration, label);
 			}
 			else {
 				item.start = start;
