@@ -2,6 +2,10 @@
 	margin: 0 1.5em 0.3em;
 	overflow: hidden;
 	font-size: 30px;
+	
+	.mankini-cols .col:not(:first-child) & {
+		margin-left: 0.75em;
+	}
 
 	@include hd {
 		font-size: 50px;

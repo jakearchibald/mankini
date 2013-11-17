@@ -92,6 +92,8 @@
 			this._video =
 			this._timeline =
 			this._timelineItems =
+			this._columns =
+			this._$uiTarget =
 			this._bullets = undefined;
 
 		this._authorShow();
@@ -124,8 +126,13 @@
 	};
 
 	BuilderProto.action = function(func) {
-		this._state.addAction( func );
-		return this;
+		var builder = this;
+
+		builder._state.addAction(function(animate, $slide) {
+			return func(animate, builder._$uiTarget || $slide);
+		});
+
+		return builder;
 	};
 
 	BuilderProto.stateBullets = function() {
@@ -549,6 +556,23 @@
 				item.duration = duration;
 				item.dirty = true;
 			}
+		});
+	};
+
+	BuilderProto.columns = function(num, className, hdOnly) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._columns = new ui.Columns(num, className, hdOnly);
+			$slide.append(builder._columns.$container);
+		});
+	};
+
+	BuilderProto.columnsUse = function(index) {
+		var builder = this;
+
+		return this.action(function(animate, $slide) {
+			builder._$uiTarget = builder._columns.$cols.eq(index-1);
 		});
 	};
 

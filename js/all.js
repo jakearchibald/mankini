@@ -31,6 +31,7 @@
 		'mankini/slide/Supported.js',
 		'mankini/slide/SubHeading.js',
 		'mankini/slide/Timeline.js',
+		'mankini/slide/Columns.js',
 		'mankini/Builder.js'
 	];
 
