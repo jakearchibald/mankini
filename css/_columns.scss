@@ -1,14 +1,5 @@
 .mankini-cols {
-
-  &.all-cols {
-    display: flex;
-  }
-  
-  &.hd-cols {
-    @include hd {
-      display: flex;
-    }
-  }
+  display: flex;
 
   & .col {
     flex: 1;

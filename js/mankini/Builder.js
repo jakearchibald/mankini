@@ -559,11 +559,11 @@
 		});
 	};
 
-	BuilderProto.columns = function(num, className, hdOnly) {
+	BuilderProto.columns = function(num, className) {
 		var builder = this;
 
 		return this.action(function(animate, $slide) {
-			builder._columns = new ui.Columns(num, className, hdOnly);
+			builder._columns = new ui.Columns(num, className);
 			$slide.append(builder._columns.$container);
 		});
 	};
@@ -574,6 +574,25 @@
 		return this.action(function(animate, $slide) {
 			builder._$uiTarget = builder._columns.$cols.eq(index-1);
 		});
+	};
+
+	BuilderProto.sdHd = function(funcSd, funcHd) {
+		if ($('.mankini-presentation').height() == 1080) {
+			if (funcHd) funcHd(this);
+		}
+		else {
+			if (funcSd) funcSd(this);
+		}
+
+		return this;
+	};
+
+	BuilderProto.hd = function(func) {
+		return this.sdHd(undefined, func);
+	};
+
+	BuilderProto.sd = function(func) {
+		return this.sdHd(func, undefined);
 	};
 
 	mankini.Builder = Builder;
