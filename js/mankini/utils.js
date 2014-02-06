@@ -38,10 +38,8 @@ $.fn.fullHeight = function() {
 
 			if ( animate ) {
 				$item.on( transitionend, complete ).addClass( animateClassName );
-
-				requestAnimationFrame(function() {
-					$item.addClass( className );
-				});
+				$item[0].offsetWidth;
+				$item.addClass( className );
 			}
 			else {
 				$item.addClass( className );
