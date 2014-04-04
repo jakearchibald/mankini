@@ -37,15 +37,16 @@ $.fn.fullHeight = function() {
 			}
 
 			if ( animate ) {
-				$item.on( transitionend, complete ).addClass( animateClassName );
+				$item.on( transitionend, complete )
+				$item[0].classList.add(animateClassName);
 
 				requestAnimationFrame(function() {
 					$item[0].offsetWidth;
-					$item.addClass( className );
+					$item[0].classList.add(className);
 				});
 			}
 			else {
-				$item.addClass( className );
+				$item[0].classList.add(className);
 			}
 		});
 
