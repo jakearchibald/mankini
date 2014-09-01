@@ -90,6 +90,7 @@
 			this._arrow =
 			this._image =
 			this._video =
+			this._audio =
 			this._timeline =
 			this._timelineItems =
 			this._columns =
@@ -474,6 +475,47 @@
 
 		return this.action(function( animate, $slide ) {
 			builder._video.loop(animate, time);
+		});
+	};
+
+	BuilderProto.audio = function(src, className) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._audio = new ui.Audio(src, className);
+			$slide.append( builder._audio.$container );
+		});
+	};
+
+	BuilderProto.audioSeekTo = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._audio.seekTo(time);
+		});
+	};
+
+	BuilderProto.audioPlay = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._audio.play(animate, time);
+		});
+	};
+
+	BuilderProto.audioPause = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._audio.pause(animate, time);
+		});
+	};
+
+	BuilderProto.audioLoop = function(time) {
+		var builder = this;
+
+		return this.action(function( animate, $slide ) {
+			builder._audio.loop(animate, time);
 		});
 	};
 

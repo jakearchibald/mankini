@@ -28,6 +28,7 @@
 		'mankini/slide/Title.js',
 		'mankini/slide/Image.js',
 		'mankini/slide/Video.js',
+		'mankini/slide/Audio.js',
 		'mankini/slide/Supported.js',
 		'mankini/slide/SubHeading.js',
 		'mankini/slide/Timeline.js',

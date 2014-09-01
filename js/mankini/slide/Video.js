@@ -11,7 +11,7 @@
 		this._canPlay = $.Deferred();
 		this._loadedMeta = $.Deferred();
 
-		window.testVid = this._video = document.createElement('video');
+		this._video = document.createElement('video');
 
 		this._video.addEventListener('canplaythrough', function() {
 			video._canPlay.resolve();
