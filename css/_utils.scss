@@ -2,7 +2,7 @@
  ************* Global functions *************
  ********************************************/
 
-$debug-hd: false;
+$debug-hd: true;
 
 $ease-in-quad:      cubic-bezier(0.550, 0.085, 0.680, 0.530);
 $ease-in-cubic:     cubic-bezier(0.550, 0.055, 0.675, 0.190);
@@ -51,8 +51,8 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 
 @mixin keyframes($name) {
-	@-webkit-keyframes $name { @content; }
-	@keyframes         $name { @content; }
+	@-webkit-keyframes #{$name} { @content; }
+	@keyframes         #{$name} { @content; }
 }
 
 @mixin transform-origin($spec) {
@@ -123,3 +123,58 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 		}
 	}
 }
+
+/**
+ * Flexbox
+ */
+ 
+ @mixin display-flex {
+   @each $prefix in -webkit-, '' {
+     display: #{$prefix}flex;
+   }
+ }
+ @mixin flex-direction($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}flex-direction: $spec;
+   }
+ }
+ @mixin justify-content($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}justify-content: $spec;
+   }
+ }
+ @mixin flex($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}flex: $spec;
+   }
+ }
+ @mixin flex-flow($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}flex-flow: $spec;
+   }
+ }
+ @mixin align-items($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}align-items: $spec;
+   }
+ }
+ @mixin max-height-max-content {
+   @each $prefix in -webkit-, -moz-, '' {
+     max-height: #{$prefix}max-content;
+   }
+ }
+ @mixin max-height-min-content {
+   @each $prefix in -webkit-, -moz-, '' {
+     max-height: #{$prefix}max-content;
+   }
+ }
+ @mixin min-height-min-content {
+   @each $prefix in -webkit-, -moz-, '' {
+     min-height: #{$prefix}min-content;
+   }
+ }
+ @mixin min-width-min-content {
+   @each $prefix in -webkit-, -moz-, '' {
+     min-width: #{$prefix}min-content;
+   }
+ }
