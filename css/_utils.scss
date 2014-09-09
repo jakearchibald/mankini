@@ -158,6 +158,11 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
      #{$prefix}align-items: $spec;
    }
  }
+ @mixin align-self($spec...) {
+   @each $prefix in -webkit-, '' {
+     #{$prefix}align-self: $spec;
+   }
+ }
  @mixin max-height-max-content {
    @each $prefix in -webkit-, -moz-, '' {
      max-height: #{$prefix}max-content;

@@ -47,7 +47,7 @@
 		return this;
 	};
 
-	CodeProto.showLines = function(animate, from, to, fontSize) {
+	CodeProto.showLines = function(animate, from, to, className) {
 		var code = this;
 
 		this._codeLoader.done(function() {
@@ -59,8 +59,8 @@
 				code.$container.height( code.$container[0].offsetHeight );
 			}
 
-			if (fontSize) {
-				code.$container.css('font-size', fontSize);
+			if (className) {
+				code.$container[0].className = 'mankini-code ' + className;
 			}
 
 			if ( code._lang == 'plain' ) {

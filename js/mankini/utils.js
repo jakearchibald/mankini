@@ -10,7 +10,7 @@ $.fn.fullHeight = function() {
 
 (function() {
 	function requestAnimationFrame(func) {
-		(window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)(func);
+		(window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)(func);
 	}
 
 	var transitionend = 'transitionend webkitTransitionEnd oTransitionEnd';

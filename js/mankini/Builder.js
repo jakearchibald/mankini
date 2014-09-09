@@ -255,10 +255,10 @@
 		});
 	};
 
-	BuilderProto.showCode = function(from, to, fontSize) {
+	BuilderProto.showCode = function(from, to, className) {
 		var builder = this;
 		return this.action(function(animate) {
-			builder._code.showLines(animate, from, to, fontSize);
+			builder._code.showLines(animate, from, to, className);
 		});
 	};
 
