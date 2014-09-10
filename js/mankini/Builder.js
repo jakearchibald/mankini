@@ -10,6 +10,8 @@
 		this._notes = new mankini.Notes( presentation, presentation.authoring );
 		this._pointer = new mankini.Pointer();
 		this._pointer.$container.appendTo( document.body );
+		this._camera = new mankini.Camera();
+		this._camera.$container.appendTo( document.body );
 		this._$authorInfo = $('.author');
 		this._slideNum = 0;
 		this._startAt = 0;
@@ -38,6 +40,10 @@
 					break;
 				case 39: // right
 					presentation.next( false );
+					event.preventDefault();
+					break;
+				case 67: // c
+					builder._camera.toggle();
 					event.preventDefault();
 					break;
 				case 84: // t

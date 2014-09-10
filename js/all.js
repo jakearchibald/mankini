@@ -16,6 +16,7 @@
 		'mankini/Slide.js',
 		'mankini/State.js',
 		'mankini/Pointer.js',
+		'mankini/Camera.js',
 		'mankini/transitions.js',
 		'mankini/slide/base.js',
 		'mankini/slide/Bullets.js',
