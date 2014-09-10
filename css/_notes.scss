@@ -49,6 +49,21 @@ $overlay-bg: #333;
 	background: $overlay-bg;
 }
 
+.cam-mirror {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0) scaleX(-1);
+	opacity: 0.9;
+	overflow: hidden;
+
+	& video {
+		display: none;
+		width: 1024px;
+		object-fit: cover;
+	}
+}
+
 .mankini-notes {
 	& .index {
 		display: none;

@@ -7,8 +7,8 @@
 
 	function Builder(presentation) {
 		this._presentation = presentation;
-		this._notes = new mankini.Notes( presentation, presentation.authoring );
 		this._pointer = new mankini.Pointer();
+		this._notes = new mankini.Notes( presentation, presentation.authoring );
 		this._pointer.$container.appendTo( document.body );
 		this._camera = new mankini.Camera();
 		this._camera.$container.appendTo( document.body );
@@ -18,6 +18,14 @@
 
 		this._initControls();
 		this._stateNames = [];
+
+		this._camera.on('start', function(url, aspect) {
+			this._notes.playVideo(url, aspect);
+		}.bind(this));
+
+		this._camera.on('stop', function() {
+			this._notes.stopVideo();
+		}.bind(this));
 	}
 
 	var BuilderProto = Builder.prototype;

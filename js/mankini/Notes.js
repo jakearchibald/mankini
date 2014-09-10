@@ -44,6 +44,7 @@
 		this._$next  = $('.slide-next', doc);
 		this._$container = $('.mankini-notes', doc);
 		this._time   = $('time', doc)[0];
+		this._video = $('.cam-mirror video', doc)[0];
 		this._$index = $('.index-list', doc).on('click', 'li', function(event) {
 			notes._presentation.goTo( $(this).data('slideNum') );
 			event.preventDefault();
@@ -124,6 +125,18 @@
 
 	NotesProto.toggleIndex = function() {
 		this._$container.toggleClass('showIndex');
+	};
+
+	NotesProto.playVideo = function(url, aspect) {
+		this._video.src = url;
+		this._video.style.display = 'block';
+		this._video.style.height = this._video.offsetWidth / aspect + 'px';
+		this._video.play();
+	};
+
+	NotesProto.stopVideo = function() {
+		this._video.src = '';
+		this._video.style.display = 'none';
 	};
 
 	mankini.Notes = Notes;

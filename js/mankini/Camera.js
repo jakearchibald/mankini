@@ -11,7 +11,7 @@
     this.$container.append(this._video);
   }
 
-  var CameraProto = Camera.prototype;
+  var CameraProto = Camera.prototype = Object.create(MicroEvent.prototype);
 
   CameraProto.show = function() {
     if (this._active) { return; }
@@ -23,15 +23,22 @@
     }, function(localMediaStream) {
       this._stream = localMediaStream;
       this._video.src = URL.createObjectURL(localMediaStream);
+      this._video.onplaying = function() {
+        this._video.onplaying = null;
+        this.$container.show().vendorCss({
+          opacity: 0
+        }).transition({
+          opacity: 1
+        }, {
+          duration: 200,
+          easing: 'easeInOutQuad',
+          complete: function() {
+            this.trigger('start', this._video.src, this._video.offsetWidth / this._video.offsetHeight);
+          }.bind(this)
+        });
+
+      }.bind(this);
       this._video.play();
-      this.$container.show().vendorCss({
-        opacity: 0
-      }).transition({
-        opacity: 1
-      }, {
-        duration: 200,
-        easing: 'easeInOutQuad'
-      });
     }.bind(this), function(err) {
       console.log("The following error occured: " + err);
     });
@@ -50,6 +57,7 @@
         URL.revokeObjectURL(this._video.src);
         this._stream.getVideoTracks()[0].stop();
         this._video.src = '';
+        this.trigger('stop');
       }.bind(this)
     });
     this._active = false;
