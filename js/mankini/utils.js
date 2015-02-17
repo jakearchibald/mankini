@@ -30,7 +30,7 @@ $.fn.fullHeight = function() {
 
 			function complete(event) {
 				if (event.target == el) {
-					$item.removeClass( animateClassName );
+					$item[0].classList.remove( animateClassName );
 					$item.off( transitionend, complete );
 					deferred.resolve();
 				}
