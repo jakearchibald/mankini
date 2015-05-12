@@ -54,10 +54,6 @@
 			from = from || 1;
 			to = to || from || code._codeLines.length;
 			var codeSlice = code._codeLines.slice(from - 1, to ).join('\n');
-			
-			if (animate) {
-				code.$container.height( code.$container[0].offsetHeight );
-			}
 
 			if (className) {
 				code.$container[0].className = 'mankini-code ' + className;
@@ -70,23 +66,12 @@
 				code._$code.html( prettyPrintOne(codeSlice, code._lang) );
 			}
 
-			var fullHeight = code.$container.fullHeight();
+			code.$container.css({
+				height: 'auto',
+				opacity: 1
+			});
 
-			if (animate && code.$container.height() != fullHeight) {
-				code.$container.transition({
-					height: fullHeight,
-					opacity: 1
-				}, {
-					duration: 300,
-					easing: 'easeOutQuad'
-				});
-			}
-			else {
-				code.$container.css({
-					height: 'auto',
-					opacity: 1
-				});
-			}
+			mankini.utils.animateToClass(animate, code.$container);
 		});
 		return this;
 	};

@@ -33,6 +33,11 @@
 			presentation.$container.append( newSlide.$container );
 			newSlide.init();
 		},
+		swapAnim: function(presentation, oldSlide, newSlide) {
+			oldSlide.$container.remove();
+			presentation.$container.append( newSlide.$container );
+			newSlide.init(true);
+		},
 		cubeSpin: function(presentation, oldSlide, newSlide) {
 			presentation.$container.append( newSlide.$container );
 			newSlide.init();
