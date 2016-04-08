@@ -3,7 +3,7 @@ mankini.utils = {};
 $.fn.fullHeight = function() {
 	var height = this.height(),
 		autoHeight = this.height('auto').height();
-		
+
 	this.height(height);
 	return autoHeight;
 };
@@ -57,14 +57,14 @@ $.fn.fullHeight = function() {
 		if (opts && !opts.easing) {
 			opts.easing = 'easeInOutQuad';
 		}
-		
+
 		if (animate) {
 			$items.transitionStop(true).transition(props, opts);
 		}
 		else {
 
 			$items.transitionStop(true).vendorCss(props);
-			
+
 			if ( opts && opts.complete ) {
 				opts.complete();
 			}
@@ -86,9 +86,10 @@ $.fn.fullHeight = function() {
 		}, opts);
 
 		paths.forEach(function(path, i) {
-			$(path).css('display', 'inline');
+			$(path).css('display', 'none');
 
 			if ( !animate ) {
+				$(path).css('display', 'inline');
 				return;
 			}
 
@@ -104,7 +105,7 @@ $.fn.fullHeight = function() {
 			});
 
 			anim = thisAnim;
-			
+
 			path.setAttribute( 'stroke-dasharray', length + ' ' + length );
 			path.setAttribute( 'stroke-dashoffset', direction * length );
 
@@ -118,10 +119,12 @@ $.fn.fullHeight = function() {
 
 			if ( begin ) {
 				setTimeout(function() {
+					$(path).css('display', 'inline');
 					thisAnim.start();
 				}, begin);
 			}
 			else {
+				$(path).css('display', 'inline');
 				thisAnim.start();
 			}
 

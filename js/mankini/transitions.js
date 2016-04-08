@@ -10,7 +10,7 @@
 			newSlide.$container.vendorCss({
 				transform: 'translate3d(' + newSlideStart + ',0,0)'
 			});
-			
+
 			presentation.$container.vendorCss({
 				transform: 'translate3d(0,0,0)'
 			}).transition({
@@ -33,6 +33,11 @@
 			presentation.$container.append( newSlide.$container );
 			newSlide.init();
 		},
+		swapAnim: function(presentation, oldSlide, newSlide) {
+			oldSlide.$container.remove();
+			presentation.$container.append( newSlide.$container );
+			newSlide.init(true);
+		},
 		cubeSpin: function(presentation, oldSlide, newSlide) {
 			presentation.$container.append( newSlide.$container );
 			newSlide.init();
@@ -40,7 +45,7 @@
 			newSlide.$container.vendorCss({
 				transform: 'translate3d(50%,0,0) rotateY(90deg) translate3d(50%,0,0)'
 			});
-			
+
 			presentation.$container.vendorCss({
 				transform: 'translate3d(0,0,0) rotateY(0deg) translate3d(0,0,0)',
 				transformStyle: 'preserve-3d',
@@ -89,7 +94,7 @@
 					oldSlide.$container.remove();
 					presentation.$container.append( newSlide.$container );
 					newSlide.init( true );
-					
+
 					$div.transition({
 						opacity: 0
 					}, {
@@ -107,7 +112,7 @@
 			newSlide.init(true);
 
 			presentation.$container.prepend( newSlide.$container );
-			
+
 			oldSlide.$container.transition({
 				opacity: 0
 			}, {
