@@ -241,7 +241,7 @@
 		});
 	};
 
-	BuilderProto.arrowHide = function(arrowType, className) {
+	BuilderProto.arrowHide = function() {
 		var builder = this;
 
 		return this.action(function(animate, $slide) {
