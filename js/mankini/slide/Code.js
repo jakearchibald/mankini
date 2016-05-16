@@ -19,6 +19,8 @@
 		this._lang = '';
 		this._codeLines = [];
 		this._codeLoader = null;
+		this._lastFrom = 1;
+		this._lastTo = 1;
 	}
 
 	var CodeProto = Code.prototype;
@@ -53,7 +55,8 @@
 		this._codeLoader.done(function() {
 			from = from || 1;
 			to = to || from || code._codeLines.length;
-			var codeSlice = code._codeLines.slice(from - 1, to ).join('\n');
+			
+			var codeSlice = code._codeLines.slice(from - 1, to).join('\n');
 			
 			if (animate) {
 				code.$container.height( code.$container[0].offsetHeight );
@@ -71,6 +74,20 @@
 			}
 
 			var fullHeight = code.$container.fullHeight();
+			
+			if (from == code._lastFrom && to < code._lastTo) {
+				codeSlice = code._codeLines.slice(from - 1, code._lastTo).join('\n');
+				
+				if ( code._lang == 'plain' ) {
+					code._$code.html( codeSlice );
+				}
+				else {
+					code._$code.html( prettyPrintOne(codeSlice, code._lang) );
+				}
+			}
+			
+			code._lastFrom = from;
+			code._lastTo = to;
 
 			if (animate && code.$container.height() != fullHeight) {
 				code.$container.transition({
