@@ -39,10 +39,12 @@
 			switch(event.keyCode) {
 				case 32: // space
 				case 13: // enter
+				case 34: // page down
 					presentation.next( true );
 					event.preventDefault();
 					break;
 				case 37: // left
+				case 33: // page up
 					presentation.prev();
 					event.preventDefault();
 					break;
