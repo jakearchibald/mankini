@@ -20,9 +20,9 @@
 		this._transitionFunc = transitionFunc;
 	};
 
-	SlideProto.transition = function(animate, newSlide) {
+	SlideProto.transition = async function(animate, newSlide) {
 		var transitionFunc = animate ? this._transitionFunc : mankini.transitions.swap;
-		transitionFunc( this._presentation, this, newSlide );
+		await transitionFunc( this._presentation, this, newSlide );
 	};
 
 	SlideProto.init = async function(animate) {

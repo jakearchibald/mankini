@@ -54,7 +54,7 @@
 		}
 	};
 
-	PresentationProto.prev = function() {
+	PresentationProto.prev = async function() {
 		var slide = this._slides[ this._slideIndex ],
 			prevSlide;
 
@@ -65,7 +65,7 @@
 			prevSlide = this._slides[ --this._slideIndex ];
 
 			if ( prevSlide ) {
-				slide.transition( false, prevSlide );
+				await slide.transition( false, prevSlide );
 				prevSlide.gotoLastState();
 			}
 		}

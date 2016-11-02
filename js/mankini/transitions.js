@@ -1,11 +1,11 @@
 (function() {
 	function slideFrom(right) {
-		return function(presentation, oldSlide, newSlide) {
+		return async function(presentation, oldSlide, newSlide) {
 			var newSlideStart   = right ? '100%' : '-100%';
 			var presentationEnd = right ? '-100%' : '100%';
 
 			presentation.$container.append( newSlide.$container );
-			newSlide.init();
+			await newSlide.init();
 
 			newSlide.$container.vendorCss({
 				transform: 'translate3d(' + newSlideStart + ',0,0)'
@@ -28,19 +28,19 @@
 	}
 
 	var transitions = {
-		swap: function(presentation, oldSlide, newSlide) {
+		swap: async function(presentation, oldSlide, newSlide) {
 			oldSlide.$container.remove();
 			presentation.$container.append( newSlide.$container );
-			newSlide.init();
+			await newSlide.init();
 		},
-		swapAnim: function(presentation, oldSlide, newSlide) {
+		swapAnim: async function(presentation, oldSlide, newSlide) {
 			oldSlide.$container.remove();
 			presentation.$container.append( newSlide.$container );
-			newSlide.init(true);
+			await newSlide.init(true);
 		},
-		cubeSpin: function(presentation, oldSlide, newSlide) {
+		cubeSpin: async function(presentation, oldSlide, newSlide) {
 			presentation.$container.append( newSlide.$container );
-			newSlide.init();
+			await newSlide.init();
 
 			newSlide.$container.vendorCss({
 				transform: 'translate3d(50%,0,0) rotateY(90deg) translate3d(50%,0,0)'
@@ -62,9 +62,9 @@
 				}
 			});
 		},
-		zoom: function(presentation, oldSlide, newSlide) {
+		zoom: async function(presentation, oldSlide, newSlide) {
 			presentation.$container.append( newSlide.$container );
-			newSlide.init( true );
+			await newSlide.init( true );
 
 			newSlide.$container.vendorCss({
 				transform: 'scale(15)',
@@ -83,33 +83,36 @@
 			});
 		},
 		fadeBlack: function(presentation, oldSlide, newSlide) {
-			var $div = $('<div class="mankini-black-fader" />').appendTo( presentation.$container );
+			return new Promise(resolve => {
+				var $div = $('<div class="mankini-black-fader" />').appendTo( presentation.$container );
 
-			$div.transition({
-				opacity: 1
-			}, {
-				duration: 600,
-				easing: 'easeInOutQuad',
-				complete: function() {
-					oldSlide.$container.remove();
-					presentation.$container.append( newSlide.$container );
-					newSlide.init( true );
+				$div.transition({
+					opacity: 1
+				}, {
+					duration: 600,
+					easing: 'easeInOutQuad',
+					complete: async function() {
+						oldSlide.$container.remove();
+						presentation.$container.append( newSlide.$container );
+						await newSlide.init( true );
 
-					$div.transition({
-						opacity: 0
-					}, {
-						duration: 600,
-						easing: 'easeInOutQuad',
-						complete: function() {
-							$div.remove();
-						}
-					});
-				}
+						$div.transition({
+							opacity: 0
+						}, {
+							duration: 600,
+							easing: 'easeInOutQuad',
+							complete: function() {
+								$div.remove();
+							}
+						});
+						resolve();
+					}
+				});
 			});
 
 		},
-		fade: function(presentation, oldSlide, newSlide) {
-			newSlide.init(true);
+		fade: async function(presentation, oldSlide, newSlide) {
+			await newSlide.init(true);
 
 			presentation.$container.prepend( newSlide.$container );
 
