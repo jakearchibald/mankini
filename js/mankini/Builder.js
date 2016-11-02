@@ -224,12 +224,16 @@
 		});
 	};
 
-	BuilderProto.notes = function() {
-		var noteStrings = toArray( arguments ),
-			builder = this;
+	BuilderProto.notes = function(...args) {
+		const noteStrings = [];
 
-		return this.action(function() {
-			builder._notes.setNotes( noteStrings );
+		args.forEach(str => {
+			const strs = str.split(/\n/g).map(s => s.trim()).filter(s => !!s);
+			noteStrings.push(...strs);
+		});
+
+		return this.action(() => {
+			this._notes.setNotes(noteStrings);
 		});
 	};
 
