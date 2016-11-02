@@ -6,12 +6,12 @@
 
 	var StateProto = State.prototype;
 
-	StateProto.go = function(animate) {
-		var $container = this.slide.$container;
+	StateProto.go = async function(animate) {
+		const $container = this.slide.$container;
 
-		this._actions.forEach( function(action) {
-			action( animate, $container );
-		});
+		for (const action of this._actions) {
+			await action(animate, $container);
+		}
 	};
 
 	StateProto.addAction = function(func) {

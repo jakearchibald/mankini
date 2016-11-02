@@ -25,12 +25,12 @@
 		transitionFunc( this._presentation, this, newSlide );
 	};
 
-	SlideProto.init = function(animate) {
+	SlideProto.init = async function(animate) {
 		this.$container.empty();
 		this.$container[0].style.cssText = '';
 		this.trigger('show');
 		this._stateIndex = 0;
-		this._states[0].go( animate );
+		await this._states[0].go( animate );
 	};
 
 	SlideProto.hasNext = function() {
@@ -41,24 +41,24 @@
 		return this._stateIndex !== 0;
 	};
 
-	SlideProto.prev = function() {
+	SlideProto.prev = async function() {
 		var target = this._stateIndex - 1;
 		
 		this._stateIndex = 0;
-		this.init( false );
+		await this.init( false );
 
 		while ( this._stateIndex < target ) {
-			this.next( false );
+			await this.next( false );
 		}
 	};
 
-	SlideProto.next = function(animate) {
-		this._states[ ++this._stateIndex ].go( animate );
+	SlideProto.next = async function(animate) {
+		await this._states[ ++this._stateIndex ].go( animate );
 	};
 
-	SlideProto.gotoLastState = function() {
+	SlideProto.gotoLastState = async function() {
 		for ( var target = this._states.length -1; this._stateIndex < target; ) {
-			this.next(false);
+			await this.next(false);
 		}
 	};
 
