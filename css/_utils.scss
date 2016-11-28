@@ -44,6 +44,10 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
   &.on {
     opacity: 1;
   }
+
+	&.off {
+		opacity: 0;
+	}
 }
 
 @mixin linear-gradient($angle, $start, $end) {

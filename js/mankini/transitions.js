@@ -109,12 +109,31 @@
 					}
 				});
 			});
+		},
+		fadeBlackPlay: function(presentation, oldSlide, newSlide) {
+			return new Promise(resolve => {
+				var $div = $('<div class="mankini-black-fader" />').appendTo( presentation.$container );
 
+				$div.transition({
+					opacity: 1
+				}, {
+					duration: 600,
+					easing: 'easeInOutQuad',
+					complete: async function() {
+						oldSlide.$container.remove();
+						presentation.$container.append( newSlide.$container );
+						await newSlide.init( true );
+
+						$div.remove();
+						resolve();
+					}
+				});
+			});
 		},
 		fade: async function(presentation, oldSlide, newSlide) {
+			presentation.$container.prepend( newSlide.$container );
 			await newSlide.init(true);
 
-			presentation.$container.prepend( newSlide.$container );
 
 			oldSlide.$container.transition({
 				opacity: 0
