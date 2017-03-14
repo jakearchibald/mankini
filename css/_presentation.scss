@@ -35,11 +35,3 @@
 	z-index: 3;
 	display: none;
 }
-
-@if $debug-hd {
-	@include hd {
-		.mankini-presentation {
-			@include transform( translate(-50%, -50%) scale(0.56) translate(50%, 50%) );
-		}
-	}
-}
