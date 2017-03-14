@@ -2,7 +2,7 @@
  ************* Global functions *************
  ********************************************/
 
-$debug-hd: true;
+$debug-hd: false;
 
 $ease-in-quad:      cubic-bezier(0.550, 0.085, 0.680, 0.530);
 $ease-in-cubic:     cubic-bezier(0.550, 0.055, 0.675, 0.190);
@@ -124,7 +124,9 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 
 @mixin hd {
 	@if $debug-hd {
-		@content;
+		@media screen and (min-width: 1025px) {
+			@content;
+		}
 	}
 	@else {
 		@media screen and (min-width: 1900px) {
@@ -135,6 +137,9 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
 
 @mixin not-hd {
 	@if $debug-hd {
+		@media screen and (max-width: 1025px) {
+			@content;
+		}
 	}
 	@else {
 		@media screen and (max-width: 1900px) {
