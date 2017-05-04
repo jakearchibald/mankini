@@ -3,37 +3,37 @@
 		var notes = this,
 			win = window;
 
-		this._ready = $.Deferred();
 		this._presentation = presentation;
-
-		function done() {
-			notes._getElements( win.document );
-			if (!inPage) {
-				win.document.documentElement.className += ' notes-workshop';
+		this._ready = new Promise(resolve => {
+			function done() {
+				notes._getElements( win.document );
+				if (!inPage) {
+					win.document.documentElement.className += ' notes-workshop';
+				}
+				resolve();
 			}
-			notes._ready.resolve();
-		}
 
-		if ( inPage ) {
-			$.ajax(scriptRoot + '../html/notes.html').done(function(response) {
-				$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page notes-page');
-				done();
-			});
-		}
-		else {
-			win = window.open(
-				scriptRoot + '../html/notes.html', 'notes',
-				'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
-			);
-
-
-			if ( win && win.document && win.document.body && win.document.body.innerHTML ) {
-				setTimeout(done, 500);
+			if ( inPage ) {
+				$.ajax(scriptRoot + '../html/notes.html').done(function(response) {
+					$(response).filter('.mankini-notes').appendTo('body').addClass('mankini-notes-in-page notes-page');
+					done();
+				});
 			}
 			else {
-				$(win).on('load', done);
+				win = window.open(
+					scriptRoot + '../html/notes.html', 'notes',
+					'menubar=no,toolbar=no,location=no,status=no,dependent=yes'
+				);
+
+				if ( win && win.document && win.document.body && win.document.body.innerHTML ) {
+					setTimeout(done, 500);
+				}
+				else {
+					$(win).on('load', done);
+				}
 			}
-		}
+		});
+
 	}
 
 	var NotesProto = Notes.prototype;
@@ -57,14 +57,20 @@
 	NotesProto.setNotes = function(strs) {
 		var notes = this;
 
-		this._ready.done(function() {
-			var $lis = $();
+		this._ready.then(function() {
+			notes._$notes[0].innerHTML = '';
 
-			strs.forEach(function(note) {
-				$lis.push( $('<li/>').text(note)[0] );
-			});
+			for (const s of strs) {
+				const name = /^\w+:/.exec(s);
+				const li = document.createElement('li');
+				li.textContent = s;
 
-			notes._$notes.empty().append( $lis );
+				if (name) {
+					li.classList.add('name-' + name[0].slice(0, -1));
+				}
+
+				notes._$notes[0].appendChild(li);
+			}
 		});
 
 		return this;
@@ -73,8 +79,8 @@
 	NotesProto.setNext = function(text) {
 		var notes = this;
 
-		this._ready.done(function() {
-			notes._$next.text(text);
+		this._ready.then(function() {
+			notes._$next[0].textContent = text;
 		});
 
 		return this;
@@ -83,7 +89,7 @@
 	NotesProto.addIndexItem = function(slideNum, stateName) {
 		var notes = this;
 
-		this._ready.done(function() {
+		this._ready.then(function() {
 			notes._$index.append( $('<li/>').text(stateName).data('slideNum', slideNum) );
 		});
 
@@ -93,23 +99,21 @@
 	NotesProto.startTime = function() {
 		var notes = this;
 
-		this._ready.done(function() {
+		this._ready.then(function() {
 			var time = notes._time;
 			var startTime = Date.now();
 			
 			clearInterval( notes._interval );
-			time.textContent = '00:00:00';
+			time.textContent = '00:00';
 
 			notes._interval = setInterval(function() {
 				var duration = Date.now() - startTime;
 				var hours   = Math.floor(duration / (1000 * 60 * 60));
 				var minutes = Math.floor(duration / (1000 * 60)) - hours * 60;
-				var seconds = Math.floor(duration / 1000) - hours * 60 * 60 - minutes * 60;
-				var i = 3;
+				var i = 2;
 				var timeParts = [
 					hours,
-					minutes,
-					seconds
+					minutes
 				];
 
 				while (i--) {
@@ -117,7 +121,7 @@
 				}
 				
 				time.textContent = timeParts.join(':');
-			}, 1000);
+			}, 1000 * 60);
 		});
 
 		return this;

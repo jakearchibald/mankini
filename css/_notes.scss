@@ -1,4 +1,3 @@
-$minor-bg: #222;
 $overlay-bg: #333;
 
 .notes-page body,
@@ -28,8 +27,26 @@ $overlay-bg: #333;
 	display: list-item;
 	padding: 22px 20px;
 
+	--bg-color-r: 0;
+	--bg-color-g: 0;
+	--bg-color-b: 0;
+
+	&.name-P {
+		--bg-color-r: 0;
+		--bg-color-g: 50;
+		--bg-color-b: 0;
+	}
+
+	&.name-J {
+		--bg-color-r: 66;
+    --bg-color-g: 21;
+    --bg-color-b: 94;
+	}
+
+	background: unquote("rgb(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b))");
+
 	&:nth-child(even) {
-		background: $minor-bg;
+		background: unquote("rgb(calc(var(--bg-color-r) + 34), calc(var(--bg-color-g) + 34), calc(var(--bg-color-b) + 34))");
 	}
 }
 
