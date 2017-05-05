@@ -60,7 +60,7 @@
 					notes.startTime();
 					event.preventDefault();
 					break;
-				case 83: // t
+				case 83: // s
 					notes.toggleIndex();
 					event.preventDefault();
 					break;
@@ -68,7 +68,7 @@
 					builder._pointer.toggle();
 					event.preventDefault();
 					break;
-				case 70:
+				case 70: // f
 					document.documentElement.webkitRequestFullscreen();
 					break;
 			}
