@@ -7,9 +7,6 @@
 		this._ready = new Promise(resolve => {
 			function done() {
 				notes._getElements( win.document );
-				if (!inPage) {
-					win.document.documentElement.className += ' notes-workshop';
-				}
 				resolve();
 			}
 
